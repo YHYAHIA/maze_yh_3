@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvnlgpauscy5w"]
+
+[ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="1_xwj0r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cyw4"]
+texture = ExtResource("1_xwj0r")
+20:16/0 = 0
+21:16/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+41:33/0 = 0
+40:33/0 = 0
+41:34/0 = 0
+40:34/0 = 0
+16:0/size_in_atlas = Vector2i(2, 4)
+16:0/0 = 0
+16:5/size_in_atlas = Vector2i(2, 5)
+16:5/0 = 0
+16:11/size_in_atlas = Vector2i(2, 3)
+16:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7r18n"]
+tile_size = Vector2i(2, 2)
+sources/0 = SubResource("TileSetAtlasSource_5cyw4")
+
+[node name="num" type="TileMapLayer"]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_7r18n")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctklm73civu0o"]
+
+[ext_resource type="Script" path="res://gd/exit.gd" id="1_pi7iq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqbt6"]
+radius = 16.9966
+height = 46.0
+
+[node name="numarea" type="Area2D"]
+position = Vector2(1424, -1042)
+collision_layer = 8
+script = ExtResource("1_pi7iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57252
+shape = SubResource("CapsuleShape2D_pqbt6")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

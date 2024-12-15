@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=3 uid="uid://bplb0s8vxiw8v"]
+
+[ext_resource type="Texture2D" uid="uid://dlql4clo2y5xr" path="res://ui/Default/Background.png" id="1_jmuvc"]
+[ext_resource type="Script" path="res://scene/start.gd" id="1_otg3n"]
+[ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_3u55e"]
+[ext_resource type="Texture2D" uid="uid://duop4cyqcgmgs" path="res://ui/Hover/Background.png" id="2_t06u1"]
+[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="3_03luc"]
+[ext_resource type="Texture2D" uid="uid://cbda2jbmqrbfp" path="res://ui/Icon/SoundOn@2x.png" id="4_qpt4w"]
+[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="5_q7o86"]
+[ext_resource type="Texture2D" uid="uid://cbf47i86n3l0x" path="res://ui/Icon/Levels@2x.png" id="6_wg2qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tbko"]
+
+[node name="start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_otg3n")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" parent="Panel" instance=ExtResource("2_3u55e")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CanvasLayer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_right = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 4.67
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_stretch_ratio = 3.65
+
+[node name="start" type="TextureButton" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer"]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("1_jmuvc")
+texture_pressed = ExtResource("1_jmuvc")
+texture_hover = ExtResource("2_t06u1")
+
+[node name="Label" type="Label" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer/start"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "start"
+
+[node name="exit" type="TextureButton" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_jmuvc")
+texture_pressed = ExtResource("1_jmuvc")
+texture_hover = ExtResource("2_t06u1")
+
+[node name="Label" type="Label" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer/exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -27.5
+offset_right = 36.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "exit"
+
+[node name="levels" type="TextureButton" parent="Panel/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -164.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(125, 150)
+texture_normal = ExtResource("3_03luc")
+texture_pressed = ExtResource("3_03luc")
+texture_hover = ExtResource("5_q7o86")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CanvasLayer/levels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wg2qv")
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 52.0
+offset_right = 137.0
+offset_bottom = 149.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Panel/CanvasLayer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 0.580392)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_constants/line_spacing = 6
+theme_override_constants/shadow_offset_x = -15
+theme_override_constants/shadow_offset_y = 11
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = -19
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1tbko")
+text = "maze yh"
+
+[node name="v" type="TextureButton" parent="Panel/CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -164.0
+offset_right = 162.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 150)
+texture_normal = ExtResource("3_03luc")
+texture_pressed = ExtResource("3_03luc")
+texture_hover = ExtResource("5_q7o86")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CanvasLayer/v"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -56.0
+offset_right = 60.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qpt4w")
+
+[connection signal="pressed" from="Panel/CanvasLayer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer/HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer/levels" to="." method="_on_levels_pressed"]

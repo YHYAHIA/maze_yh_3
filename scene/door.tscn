@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh8nff4ruujpv"]
+
+[ext_resource type="Script" path="res://scene/door_interactable.gd" id="1_0l6l6"]
+[ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="1_ld0ja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osrpk"]
+atlas = ExtResource("1_ld0ja")
+region = Rect2(1, 81, 81, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy1u7"]
+atlas = ExtResource("1_ld0ja")
+region = Rect2(1, 162, 81, 81)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4tk46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osrpk")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy1u7")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2b6l"]
+size = Vector2(36, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuhg4"]
+radius = 51.0098
+
+[node name="door" type="Node2D"]
+z_index = -1
+
+[node name="Camera2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+sprite_frames = SubResource("SpriteFrames_4tk46")
+animation = &"closed"
+frame_progress = 0.973041
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Camera2D"]
+light_mask = 16
+position = Vector2(6, 10.5)
+shape = SubResource("RectangleShape2D_v2b6l")
+debug_color = Color(0.996405, 0, 0.187348, 0.42)
+
+[node name="dooriteractableArea2D" type="Area2D" parent="." node_paths=PackedStringArray("anim")]
+script = ExtResource("1_0l6l6")
+is_open = false
+anim = NodePath("../Camera2D/AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dooriteractableArea2D"]
+position = Vector2(8, 11)
+shape = SubResource("CircleShape2D_cuhg4")

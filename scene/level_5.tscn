@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://bsrrf7y6uktp1"]
+
+[ext_resource type="PackedScene" uid="uid://du0si3r6htr47" path="res://scene/map.tscn" id="1_60sn0"]
+[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="4_uax5c"]
+[ext_resource type="Script" path="res://gd/next_level_5.gd" id="5_v44gm"]
+[ext_resource type="PackedScene" uid="uid://dh8nff4ruujpv" path="res://scene/door.tscn" id="6_xveo6"]
+[ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="7_57q3s"]
+[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="7_px1g7"]
+[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="8_gb88g"]
+[ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="9_mfe0x"]
+[ext_resource type="PackedScene" uid="uid://c20b83am6kmeu" path="res://scene/touchcontsrole.tscn" id="11_oaeto"]
+[ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="12_fotv8"]
+[ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="13_7afv7"]
+[ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="14_cujmf"]
+[ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="15_csojn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y514i"]
+radius = 17.9662
+height = 48.0
+
+[sub_resource type="Theme" id="Theme_16hxq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource("1_60sn0")]
+
+[node name="player1" parent="." instance=ExtResource("4_uax5c")]
+position = Vector2(237, 1174)
+collision_mask = 519
+
+[node name="door" parent="." instance=ExtResource("6_xveo6")]
+light_mask = 512
+z_index = 0
+position = Vector2(747, 1054)
+
+[node name="door2" parent="." instance=ExtResource("6_xveo6")]
+light_mask = 512
+z_index = 0
+position = Vector2(234, 1074)
+
+[node name="nbc" parent="." instance=ExtResource("7_57q3s")]
+position = Vector2(804, 1659)
+scale = Vector2(0.4, 0.4)
+
+[node name="next_level4" type="Area2D" parent="."]
+position = Vector2(-640, 1518)
+collision_layer = 8
+script = ExtResource("5_v44gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
+position = Vector2(896, -1134)
+rotation = 1.57252
+shape = SubResource("CapsuleShape2D_y514i")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="touchcontsrole" parent="Control" instance=ExtResource("11_oaeto")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Control"]
+offset = Vector2(20, 20)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
+
+[node name="TextureButton2" type="TextureButton" parent="Control/CanvasLayer2"]
+y_sort_enabled = true
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 170.0
+offset_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("7_px1g7")
+texture_pressed = ExtResource("7_px1g7")
+texture_hover = ExtResource("8_gb88g")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/CanvasLayer2/TextureButton2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.084
+anchor_top = 0.175
+anchor_right = 0.084
+anchor_bottom = 0.175
+offset_left = 9.392
+offset_top = -5.7
+offset_right = 121.392
+offset_bottom = 106.3
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_16hxq")
+texture = ExtResource("9_mfe0x")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_fotv8")
+volume_db = 7.564
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_7afv7")
+volume_db = 10.0
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_cujmf")
+autoplay = true
+
+[node name="key" parent="." instance=ExtResource("15_csojn")]
+position = Vector2(-365, 191)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]

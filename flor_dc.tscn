@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=3 uid="uid://rq7e2to3rm14"]
+
+[ext_resource type="Texture2D" uid="uid://eatuis6krg3" path="res://Texture/TX Struct.png" id="1_vhigp"]
+[ext_resource type="Texture2D" uid="uid://cbkyopgdml2ex" path="res://Texture/TX Shadow.png" id="2_7pi2g"]
+[ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="2_wlbpf"]
+[ext_resource type="Script" path="res://flor_dc.gd" id="4_snitu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ax430"]
+texture = ExtResource("1_vhigp")
+14:2/size_in_atlas = Vector2i(4, 6)
+14:2/0 = 0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+14:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+14:2/0/custom_data_0 = "stair"
+8:2/size_in_atlas = Vector2i(4, 6)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+8:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+8:2/0/custom_data_0 = "stair"
+2:2/size_in_atlas = Vector2i(4, 6)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+2:2/0/custom_data_0 = "stair"
+14:10/size_in_atlas = Vector2i(4, 6)
+14:10/next_alternative_id = 2
+14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+14:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+14:10/0/custom_data_0 = "stair"
+14:10/1 = 1
+14:10/1/custom_data_0 = "stair"
+8:10/size_in_atlas = Vector2i(4, 6)
+8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+8:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+8:10/0/custom_data_0 = "stair"
+2:10/size_in_atlas = Vector2i(4, 6)
+2:10/0 = 0
+2:10/0/y_sort_origin = 13
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+2:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+2:10/0/custom_data_0 = "stair"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkebi"]
+texture = ExtResource("2_wlbpf")
+22:16/size_in_atlas = Vector2i(6, 6)
+22:16/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8xob"]
+texture = ExtResource("2_7pi2g")
+6:11/size_in_atlas = Vector2i(2, 1)
+6:11/0 = 0
+6:15/size_in_atlas = Vector2i(2, 1)
+6:15/0 = 0
+18:5/size_in_atlas = Vector2i(5, 3)
+18:5/0 = 0
+18:2/size_in_atlas = Vector2i(5, 2)
+18:2/0 = 0
+24:0/size_in_atlas = Vector2i(3, 4)
+24:0/0 = 0
+14:1/size_in_atlas = Vector2i(3, 3)
+14:1/0 = 0
+10:1/size_in_atlas = Vector2i(3, 3)
+10:1/0 = 0
+6:2/size_in_atlas = Vector2i(3, 2)
+6:2/0 = 0
+2:1/size_in_atlas = Vector2i(3, 3)
+2:1/0 = 0
+6:5/size_in_atlas = Vector2i(3, 3)
+6:5/0 = 0
+1:7/size_in_atlas = Vector2i(4, 3)
+1:7/0 = 0
+1:12/size_in_atlas = Vector2i(4, 2)
+1:12/0 = 0
+10:14/size_in_atlas = Vector2i(2, 2)
+10:14/0 = 0
+10:10/size_in_atlas = Vector2i(3, 2)
+10:10/0 = 0
+14:12/size_in_atlas = Vector2i(3, 2)
+14:12/0 = 0
+10:6/size_in_atlas = Vector2i(3, 2)
+10:6/0 = 0
+14:7/size_in_atlas = Vector2i(3, 3)
+14:7/0 = 0
+27:3/size_in_atlas = Vector2i(4, 3)
+27:3/0 = 0
+28:8/size_in_atlas = Vector2i(3, 2)
+28:8/0 = 0
+24:7/size_in_atlas = Vector2i(3, 3)
+24:7/0 = 0
+18:10/size_in_atlas = Vector2i(3, 4)
+18:10/0 = 0
+30:12/size_in_atlas = Vector2i(2, 3)
+30:12/0 = 0
+26:13/size_in_atlas = Vector2i(3, 3)
+26:13/0 = 0
+22:12/size_in_atlas = Vector2i(3, 4)
+22:12/0 = 0
+30:16/size_in_atlas = Vector2i(2, 6)
+30:16/0 = 0
+30:22/size_in_atlas = Vector2i(1, 2)
+30:22/0 = 0
+26:22/size_in_atlas = Vector2i(4, 4)
+26:22/0 = 0
+22:16/size_in_atlas = Vector2i(6, 6)
+22:16/0 = 0
+18:16/size_in_atlas = Vector2i(3, 2)
+18:16/0 = 0
+18:19/size_in_atlas = Vector2i(3, 3)
+18:19/0 = 0
+14:16/size_in_atlas = Vector2i(3, 2)
+14:16/0 = 0
+14:19/size_in_atlas = Vector2i(3, 3)
+14:19/0 = 0
+10:18/size_in_atlas = Vector2i(2, 2)
+10:18/0 = 0
+10:22/size_in_atlas = Vector2i(2, 2)
+10:22/0 = 0
+0:27/size_in_atlas = Vector2i(4, 3)
+0:27/0 = 0
+10:30/size_in_atlas = Vector2i(2, 2)
+10:30/0 = 0
+8:30/size_in_atlas = Vector2i(2, 2)
+8:30/0 = 0
+6:30/size_in_atlas = Vector2i(2, 2)
+6:30/0 = 0
+4:30/size_in_atlas = Vector2i(2, 2)
+4:30/0 = 0
+2:30/size_in_atlas = Vector2i(2, 2)
+2:30/0 = 0
+0:30/size_in_atlas = Vector2i(2, 2)
+0:30/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3cy1s"]
+tile_size = Vector2i(2, 2)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "tilename"
+custom_data_layer_0/type = 4
+sources/4 = SubResource("TileSetAtlasSource_n8xob")
+sources/0 = SubResource("TileSetAtlasSource_ax430")
+sources/1 = SubResource("TileSetAtlasSource_hkebi")
+
+[node name="flor dc" type="TileMapLayer"]
+z_index = -1
+y_sort_enabled = true
+tile_set = SubResource("TileSet_3cy1s")
+script = ExtResource("4_snitu")

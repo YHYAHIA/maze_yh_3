@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://jo65dinrcyo0"]
+
+[ext_resource type="Texture2D" uid="uid://eatuis6krg3" path="res://Texture/TX Struct.png" id="1_xv1ox"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ax430"]
+texture = ExtResource("1_xv1ox")
+14:2/size_in_atlas = Vector2i(4, 6)
+14:2/0 = 0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+14:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+14:2/0/custom_data_0 = "stairs"
+8:2/size_in_atlas = Vector2i(4, 6)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+8:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+8:2/0/custom_data_0 = "stairs"
+2:2/size_in_atlas = Vector2i(4, 6)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+2:2/0/custom_data_0 = "stairs"
+14:10/size_in_atlas = Vector2i(4, 6)
+14:10/next_alternative_id = 2
+14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+14:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+14:10/0/custom_data_0 = "stairs"
+14:10/1 = 1
+14:10/1/custom_data_0 = "stairs"
+8:10/size_in_atlas = Vector2i(4, 6)
+8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+8:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+8:10/0/custom_data_0 = "stairs"
+2:10/size_in_atlas = Vector2i(4, 6)
+2:10/0 = 0
+2:10/0/y_sort_origin = 13
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -48, 32, -48, 32, 48, 24, 48)
+2:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 48, -24, 48, -24, -48, -32, -48)
+2:10/0/custom_data_0 = "stairs"
+
+[sub_resource type="TileSet" id="TileSet_3cy1s"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "tilename"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_ax430")
+
+[node name="stairs" type="TileMapLayer"]
+z_index = -2
+y_sort_enabled = true
+tile_set = SubResource("TileSet_3cy1s")

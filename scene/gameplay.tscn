@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://djl2nxckd335i"]
+
+[ext_resource type="PackedScene" uid="uid://bplb0s8vxiw8v" path="res://scene/start.tscn" id="1_vch2b"]
+[ext_resource type="PackedScene" uid="uid://c80u63dkfsetm" path="res://scene/level_1.tscn" id="1_wwjw3"]
+[ext_resource type="PackedScene" uid="uid://c570uffcicj36" path="res://scene/levels.tscn" id="2_ia32h"]
+[ext_resource type="PackedScene" uid="uid://lmltn8cmw3ip" path="res://scene/level_2.tscn" id="2_vhha5"]
+[ext_resource type="PackedScene" uid="uid://bqb7wxk7s2g6i" path="res://scene/level_4.tscn" id="3_1cjsk"]
+
+[node name="gameplay" type="Node"]
+
+[node name="start" parent="." instance=ExtResource("1_vch2b")]
+
+[node name="levels" parent="." instance=ExtResource("2_ia32h")]
+
+[node name="level1" parent="." instance=ExtResource("1_wwjw3")]
+
+[node name="level2" parent="." instance=ExtResource("2_vhha5")]
+
+[node name="level3" parent="." instance=ExtResource("2_vhha5")]
+
+[node name="level4" parent="." instance=ExtResource("3_1cjsk")]
