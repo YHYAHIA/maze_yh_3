@@ -288,7 +288,6 @@ value = 100.0
 scale = Vector2(0.515625, 0.498992)
 sprite_frames = SubResource("SpriteFrames_clor0")
 animation = &"move_down"
-frame_progress = 0.804741
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.515625, 0.498992)

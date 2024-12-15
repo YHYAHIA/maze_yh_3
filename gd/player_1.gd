@@ -1,87 +1,51 @@
 extends CharacterBody2D
 
+# Player stats
+var health: int = 100
+var speed: float = 300
 
-var health =100
+# Handles input and updates velocity
+func handle_input() -> void:
+	velocity = Vector2.ZERO  # Reset velocity to prevent diagonal movement
+	if Input.is_action_pressed("up"):
+		velocity.y = -1
+	elif Input.is_action_pressed("down"):
+		velocity.y = 1
+	elif Input.is_action_pressed("left"):
+		velocity.x = -1
+	elif Input.is_action_pressed("right"):
+		velocity.x = 1
 
-#var looking=Vector2.ZERO
+	velocity = velocity.normalized() * speed
 
-var speed=300
-func handled_input():
-	var direction = Input.get_vector("left","right","up","down")
-	velocity=direction*speed
-func updateanmition():
-	if velocity.length() ==0:
+# Updates animations based on movement direction
+func update_animation() -> void:
+	if velocity.length() == 0:
 		$AnimatedSprite2D.stop()
-	else :
-		if velocity.x<0:
-			
-			$AnimatedSprite2D.play("move_left")
-		if velocity.x>0:
-			
-			$AnimatedSprite2D.play("move_right")
-		if velocity.y <0:
-			
-			$AnimatedSprite2D.play("move_up")
-		if velocity.y>0:
-			
-			$AnimatedSprite2D.play("move_down")
-		
+	else:
+		if velocity.x < 0:
+			if $AnimatedSprite2D.animation != "move_left":
+				$AnimatedSprite2D.play("move_left")
+		elif velocity.x > 0:
+			if $AnimatedSprite2D.animation != "move_right":
+				$AnimatedSprite2D.play("move_right")
+		elif velocity.y < 0:
+			if $AnimatedSprite2D.animation != "move_up":
+				$AnimatedSprite2D.play("move_up")
+		elif velocity.y > 0:
+			if $AnimatedSprite2D.animation != "move_down":
+				$AnimatedSprite2D.play("move_down")
 
-			#var animdirection = velocity.zero
-		#if velocity.x < 0:animdirection = $AnimatedSprite2D.play("move_left")
-		#else :
-			#pass
-			
-		#elif velocity.x >0 :animdirection = $AnimatedSprite2D.play("move_right")
-		#elif velocity.y <0 :animdirection = $AnimatedSprite2D.play("move_up")
-		#elif velocity.y >0 :animdirection = $AnimatedSprite2D.play("move_down")
-	
-	
-func _physics_process(_delta):
-	#if velocity.x<0:
-		#velocity.y =0
-	#if velocity.x>0:
-	#	velocity.y =0
-	#if velocity.y<0:
-	#	velocity.x=0
-	#if velocity.y>0:
-	#	velocity.x=0
-	
-	
-	
-		handled_input()
-		move_and_slide()
-		updateanmition()
-		velocity=velocity.normalized()
-		
-		
+# Handles physics and movement
+func _physics_process(delta: float) -> void:
+	handle_input()
+	move_and_slide()
+	update_animation()
+
+# Updates health and UI elements
 func _process(delta: float) -> void:
-	$ProgressBar.max_value = health
-	
-#func _on_exit_body_entered(body: Node2D) -> void:
-	#pass # Replace with function body.
-
-
-#func _on_texture_button_2_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scene/start.tscn")
-	#pass # Replace with function body.
-
-
-#func _on_flor_dc_tree_entered() -> void:
-	#if body.is_in_group("player"):
-	#	if velocity.x >0 :velocity.y+=speed/1.3
-		#elif  velocity.x <0 : velocity.y -=speed/1.3
+	$ProgressBar.max_value = 100
+	$ProgressBar.value = health
+	if health <= 0:
+		queue_free()
 		
-	
-	
-	
-	#pass # Replace with function body.
-
-
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if body: is_in_group("player")
-		#set_velocity(velocity.y/1.3)
-	
-	 
-	
- # Replace with function body.

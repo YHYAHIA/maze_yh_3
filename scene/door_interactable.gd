@@ -1,6 +1,9 @@
 extends "res://interactable.gd"
 
 
+var collected_key = 0
+
+
 @export var is_open = true :
 	set(value):
 		if (is_open==value):

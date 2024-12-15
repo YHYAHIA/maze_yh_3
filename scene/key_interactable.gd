@@ -8,6 +8,7 @@ class_name door_keys
 
 
 func interact(user: Node2D):
+	
 	key.queue_free()
 	push_warning("not_implemented")
 	
