@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="1_335wd"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_i3aaa"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="3_0chqy"]
-[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://flor_dc.tscn" id="5_hmln2"]
+[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="5_hmln2"]
 [ext_resource type="PackedScene" uid="uid://dfrvqhfsjqr6s" path="res://scene/wall.tscn" id="5_pn2um"]
 [ext_resource type="PackedScene" uid="uid://cvnlgpauscy5w" path="res://scene/num.tscn" id="6_q5o1q"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="6_qsgk5"]
@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="13_ec71b"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="19_kkq1u"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="20_cvn2f"]
-[ext_resource type="Script" path="res://scene/dam.gd" id="21_8gm3t"]
+[ext_resource type="Script" path="res://gd/dam.gd" id="21_8gm3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dgqy"]
 texture = ExtResource("7_vs2d4")

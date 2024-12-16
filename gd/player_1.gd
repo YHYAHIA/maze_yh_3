@@ -48,7 +48,11 @@ func _process(delta: float) -> void:
 	$ProgressBar.max_value = 100
 	$ProgressBar.value = health
 	if health <= 0:
+		#$AudioStreamPlayer2D.play()
 		queue_free()
+		TransitionScene.transition()
+		
+		#await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file(currnt_scene_file)
 		
 		

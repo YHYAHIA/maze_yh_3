@@ -1,4 +1,4 @@
-extends "res://interactable.gd"
+extends "res://gd/interactable.gd"
 
 class_name door_keys
 

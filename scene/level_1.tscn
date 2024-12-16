@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="5_y5kpi"]
 [ext_resource type="PackedScene" uid="uid://cvnlgpauscy5w" path="res://scene/num.tscn" id="6_rpce2"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="6_thw1w"]
-[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://flor_dc.tscn" id="6_xy0e7"]
+[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="6_xy0e7"]
 [ext_resource type="PackedScene" uid="uid://ctklm73civu0o" path="res://scene/next_level.tscn" id="7_ys3eg"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="9_x7jx0"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="11_f3qe0"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="18_akdx7"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_2cium"]
 [ext_resource type="PackedScene" uid="uid://c6mxk03pqvyep" path="res://scene/stirs_2.tscn" id="19_3810j"]
-[ext_resource type="Script" path="res://scene/dam.gd" id="21_lvfbv"]
+[ext_resource type="Script" path="res://gd/dam.gd" id="21_lvfbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7dw8"]
 radius = 164.128

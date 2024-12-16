@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c570uffcicj36"]
 
-[ext_resource type="Script" path="res://scene/levels.gd" id="1_7wwe4"]
+[ext_resource type="Script" path="res://gd/levels.gd" id="1_7wwe4"]
 [ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="1_54i4o"]
 [ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="2_dgs3u"]
 [ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_nqkum"]

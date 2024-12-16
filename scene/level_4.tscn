@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://bqb7wxk7s2g6i"]
+[gd_scene load_steps=23 format=4 uid="uid://bqb7wxk7s2g6i"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_xr1nn"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_xxemb"]
-[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://flor_dc.tscn" id="4_2458l"]
+[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="4_2458l"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="4_fkvh1"]
 [ext_resource type="PackedScene" uid="uid://dfrvqhfsjqr6s" path="res://scene/wall.tscn" id="5_cl7cn"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="5_mhmik"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="12_mdku7"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="15_jmo1y"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="18_4fvgr"]
+[ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="19_eemvw"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="21_23yog"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rv54"]
@@ -435,6 +436,20 @@ offset_left = 24.0
 offset_top = 323.0
 offset_right = 64.0
 offset_bottom = 363.0
+
+[node name="stirs" parent="." instance=ExtResource("19_eemvw")]
+
+[node name="stirs2" parent="." instance=ExtResource("19_eemvw")]
+position = Vector2(644, 1176)
+rotation = 0.0194841
+
+[node name="stirs3" parent="." instance=ExtResource("19_eemvw")]
+position = Vector2(261, 732)
+rotation = 1.57407
+
+[node name="stirs4" parent="." instance=ExtResource("19_eemvw")]
+position = Vector2(968, 82.9999)
+rotation = 1.57407
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://cn1di4x7xyr38"]
+[gd_scene load_steps=39 format=3 uid="uid://cn1di4x7xyr38"]
 
 [ext_resource type="Texture2D" uid="uid://bywefuqvdkagu" path="res://Texture/Thief.png" id="1_n2xn7"]
 [ext_resource type="Script" path="res://gd/player_1.gd" id="1_yyot2"]
-[ext_resource type="Script" path="res://scene/interaction_area_2d.gd" id="3_d40v0"]
+[ext_resource type="Script" path="res://gd/interaction_area_2d.gd" id="3_d40v0"]
+[ext_resource type="AudioStream" uid="uid://dqq8ywvmsgxsm" path="res://sfx/Win.wav" id="4_vkcg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn2hl"]
 radius = 27.0185
@@ -292,3 +293,7 @@ animation = &"move_down"
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.515625, 0.498992)
 zoom = Vector2(2, 2)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vkcg5")
+pitch_scale = 1.56

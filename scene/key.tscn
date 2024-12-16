@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://q04mf5dnwpmk" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0006.png" id="6_r2d0s"]
 [ext_resource type="Texture2D" uid="uid://dkt7f7t1vc0bs" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0007.png" id="7_fhvn5"]
 [ext_resource type="Texture2D" uid="uid://dd66lte2aa6rr" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0008.png" id="8_sbnwq"]
-[ext_resource type="Script" path="res://scene/key_interactable.gd" id="9_tdt47"]
+[ext_resource type="Script" path="res://gd/key_interactable.gd" id="9_tdt47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kk6wd"]
 atlas = ExtResource("1_01cql")

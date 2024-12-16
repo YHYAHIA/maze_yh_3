@@ -24,6 +24,8 @@ scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.592157)
+self_modulate = Color(1, 1, 1, 0.537255)
 y_sort_enabled = true
 offset_left = 8.0
 offset_top = 16.0
@@ -60,7 +62,8 @@ offset_right = 1830.0
 offset_bottom = 873.0
 
 [node name="int" type="TouchScreenButton" parent="CanvasLayer/BoxContainer2"]
-modulate = Color(0.812841, 0.563152, 0.601908, 1)
+modulate = Color(0.811765, 0.564706, 0.6, 0.72549)
+self_modulate = Color(1, 1, 1, 0.654902)
 texture_normal = ExtResource("4_p84j5")
 action = "interact"
 
@@ -73,24 +76,32 @@ theme_override_font_sizes/font_size = 50
 text = "E"
 
 [node name="up" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.560784)
+self_modulate = Color(1, 1, 1, 0.623529)
 position = Vector2(98.0961, 679)
 rotation = -1.57056
 texture_normal = ExtResource("6_e37e8")
 action = "up"
 
 [node name="right" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.564706)
+self_modulate = Color(1, 1, 1, 0.572549)
 position = Vector2(207.596, 681)
 rotation = -0.0102204
 texture_normal = ExtResource("6_e37e8")
 action = "right"
 
 [node name="down" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.627451)
+self_modulate = Color(1, 1, 1, 0.596078)
 position = Vector2(212.596, 788.5)
 rotation = 1.55097
 texture_normal = ExtResource("6_e37e8")
 action = "down"
 
 [node name="left" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.556863)
+self_modulate = Color(1, 1, 1, 0.513726)
 position = Vector2(97.5961, 786)
 rotation = 3.13177
 texture_normal = ExtResource("6_e37e8")

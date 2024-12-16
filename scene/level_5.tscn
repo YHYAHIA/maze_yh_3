@@ -1,8 +1,8 @@
-[gd_scene load_steps=41 format=4 uid="uid://bsrrf7y6uktp1"]
+[gd_scene load_steps=42 format=4 uid="uid://bsrrf7y6uktp1"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_0lh8r"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_y7x0n"]
-[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://flor_dc.tscn" id="3_3uxfj"]
+[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="3_3uxfj"]
 [ext_resource type="PackedScene" uid="uid://dfrvqhfsjqr6s" path="res://scene/wall.tscn" id="4_a3h30"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="4_uax5c"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="5_w7kjp"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="13_7afv7"]
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="14_cujmf"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="15_csojn"]
+[ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="20_x5250"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="21_dllpy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yik7p"]
@@ -525,6 +526,7 @@ height = 0.09
 max_distance = 9995.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.127506, 0.0516793, 0.0480863, 1)
 
 [node name="occluder1" type="Node2D" parent="."]
@@ -612,6 +614,20 @@ occluder = SubResource("OccluderPolygon2D_7fqww")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="occluder 17"]
 occluder = SubResource("OccluderPolygon2D_3obuj")
+
+[node name="stirs" parent="." instance=ExtResource("20_x5250")]
+
+[node name="stirs2" parent="." instance=ExtResource("20_x5250")]
+position = Vector2(644, 1176)
+rotation = 0.0194841
+
+[node name="stirs3" parent="." instance=ExtResource("20_x5250")]
+position = Vector2(261, 732)
+rotation = 1.57407
+
+[node name="stirs4" parent="." instance=ExtResource("20_x5250")]
+position = Vector2(968, 82.9999)
+rotation = 1.57407
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=44 format=4 uid="uid://b5gk6mmobyy1d"]
+[gd_scene load_steps=45 format=4 uid="uid://b5gk6mmobyy1d"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_t7owv"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_nmk4p"]
-[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://flor_dc.tscn" id="3_teo40"]
+[ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="3_teo40"]
 [ext_resource type="PackedScene" uid="uid://dfrvqhfsjqr6s" path="res://scene/wall.tscn" id="4_ebisw"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="5_etrqg"]
 [ext_resource type="PackedScene" uid="uid://cvnlgpauscy5w" path="res://scene/num.tscn" id="6_wbw85"]
@@ -19,12 +19,13 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="17_xuhin"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_ym6ip"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_ink4n"]
-[ext_resource type="Script" path="res://scene/dam.gd" id="20_5di7b"]
+[ext_resource type="Script" path="res://gd/dam.gd" id="20_5di7b"]
+[ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_5aof2"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dw5gj"]
 polygon = PackedVector2Array(-67.7227, -40.1997, -58.5313, -44.1777, -47.7192, -59.915, -37.501, -83.2944, -41.1577, -89.6106, -25.4053, -123.284, -5.81812, -172.835, -10.6616, -194.435, -24.3604, -199.564, -45.8069, -190.282, -68.2805, -161.599, -85.9902, -128.658, -95.9521, -110.129, -111.528, -98.6489, -120.383, -82.1787, -113.405, -82.0393, -103.7, -95.7178, -95.3589, -102.487, -90.9314, -110.723, -82.0767, -127.193, -73.2217, -143.663, -66.5806, -156.016, -63.2598, -162.192, -47.1704, -183.373, -39.936, -188.084, -30.7446, -192.062, -24.6172, -194.714, -13.9824, -188.258, -11.1753, -184.734, -11.689, -175.033, -10.2456, -164.6, -20.4641, -141.22, -25.1484, -128.134, -37.3237, -105.488, -39.7944, -96.5198, -44.2217, -88.2847, -45.5854, -81.3755, -40.5645, -81.9685, -47.4626, -64.7656, -52.9971, -54.4717, -62.4451, -45.6433)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4nkd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gskgc"]
 texture = ExtResource("8_rohp7")
 2:2/0 = 0
 3:2/0 = 0
@@ -343,7 +344,7 @@ texture = ExtResource("8_rohp7")
 11:21/0/y_sort_origin = 10
 
 [sub_resource type="TileSet" id="TileSet_vpjbr"]
-sources/0 = SubResource("TileSetAtlasSource_r4nkd")
+sources/0 = SubResource("TileSetAtlasSource_gskgc")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybub2"]
 radius = 17.9662
@@ -428,6 +429,7 @@ tile_map_data = PackedByteArray("AAD3AkP+AgACAAwAAACXAkP+AgACAAwAAAA3A0P+AgACAAw
 tile_map_data = PackedByteArray("AAAoAEoAAAACAAoAAGAPAC0AAAAOAAoAAAA7AAUAAAACAAoAAAA=")
 
 [node name="num" parent="." instance=ExtResource("6_wbw85")]
+visible = false
 z_index = -3
 position = Vector2(1, 43)
 tile_map_data = PackedByteArray("AADGAgX+AAAUABEAAADeAvj9AAAVABEAAACyAvP9AAAUABAAAADKAub9AAAVABAAAADO/v8CAAAVABAAAADh/hEDAAAVABEAAADJ/h4DAAAUABEAAAC2/gwDAAAUABAAAABaAQwAAAAVABAAAABCARkAAAAUABAAAABtAR4AAAAVABEAAABWASwAAAAUABEAAAA=")
@@ -671,6 +673,7 @@ offset_right = 1818.0
 offset_bottom = -295.0
 theme = SubResource("Theme_f36fy")
 color = Color(0.742537, 0.174715, 0, 0.580392)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="damge"]
 z_index = -1
@@ -679,6 +682,7 @@ offset_top = -441.0
 offset_right = 1703.0
 offset_bottom = -388.0
 color = Color(0.742537, 0.174715, 0, 0.580392)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="damge"]
 z_index = -1
@@ -688,6 +692,7 @@ offset_right = 2234.0
 offset_bottom = -650.0
 rotation = 1.57497
 color = Color(0.742537, 0.174715, 0, 0.580392)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect4" type="ColorRect" parent="damge"]
 z_index = -1
@@ -698,6 +703,21 @@ offset_right = 2027.0
 offset_bottom = -569.0
 rotation = 1.57497
 color = Color(0.742537, 0.174715, 0, 0.580392)
+metadata/_edit_use_anchors_ = true
+
+[node name="stirs" parent="." instance=ExtResource("21_5aof2")]
+
+[node name="stirs2" parent="." instance=ExtResource("21_5aof2")]
+position = Vector2(644, 1176)
+rotation = 0.0194841
+
+[node name="stirs3" parent="." instance=ExtResource("21_5aof2")]
+position = Vector2(261, 732)
+rotation = 1.57407
+
+[node name="stirs4" parent="." instance=ExtResource("21_5aof2")]
+position = Vector2(968, 82.9999)
+rotation = 1.57407
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
