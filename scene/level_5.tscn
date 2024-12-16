@@ -23,7 +23,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yik7p"]
 polygon = PackedVector2Array(-67.7227, -40.1997, -58.5313, -44.1777, -47.7192, -59.915, -37.501, -83.2944, -41.1577, -89.6106, -25.4053, -123.284, -5.81812, -172.835, -10.6616, -194.435, -24.3604, -199.564, -45.8069, -190.282, -68.2805, -161.599, -85.9902, -128.658, -95.9521, -110.129, -111.528, -98.6489, -120.383, -82.1787, -113.405, -82.0393, -103.7, -95.7178, -95.3589, -102.487, -90.9314, -110.723, -82.0767, -127.193, -73.2217, -143.663, -66.5806, -156.016, -63.2598, -162.192, -47.1704, -183.373, -39.936, -188.084, -30.7446, -192.062, -24.6172, -194.714, -13.9824, -188.258, -11.1753, -184.734, -11.689, -175.033, -10.2456, -164.6, -20.4641, -141.22, -25.1484, -128.134, -37.3237, -105.488, -39.7944, -96.5198, -44.2217, -88.2847, -45.5854, -81.3755, -40.5645, -81.9685, -47.4626, -64.7656, -52.9971, -54.4717, -62.4451, -45.6433)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gqai"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_isrd2"]
 texture = ExtResource("8_cl7kr")
 2:2/0 = 0
 3:2/0 = 0
@@ -342,7 +342,7 @@ texture = ExtResource("8_cl7kr")
 11:21/0/y_sort_origin = 10
 
 [sub_resource type="TileSet" id="TileSet_y3mw6"]
-sources/0 = SubResource("TileSetAtlasSource_3gqai")
+sources/0 = SubResource("TileSetAtlasSource_isrd2")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcidw"]
 radius = 17.9662
@@ -399,7 +399,7 @@ polygon = PackedVector2Array(-113, 1622, -113, 1616, -110, 1614, -108, 1614, -10
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3obuj"]
 polygon = PackedVector2Array(904, 1577, 906, 1571, 909, 1559, 911, 1551, 908, 1544, 911, 1548, 912, 1553, 911, 1558, 908, 1569)
 
-[node name="Node2D" type="Node2D"]
+[node name="level5" type="Node2D"]
 
 [node name="flor" parent="." instance=ExtResource("1_0lh8r")]
 z_index = -6
@@ -469,7 +469,7 @@ collision_mask = 519
 [node name="PointLight2D" type="PointLight2D" parent="player1"]
 position = Vector2(-15.4545, 1.81815)
 scale = Vector2(0.3, 0.3)
-energy = 1.4
+energy = 0.99
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
