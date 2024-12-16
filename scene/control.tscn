@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvbwxxqijyjm1"]
+
+[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="1_7e11r"]
+[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="2_cpddd"]
+[ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="3_6aahh"]
+[ext_resource type="Texture2D" uid="uid://wdmpif8acq0m" path="res://Texture/LargeHandleFilled.png" id="4_p84j5"]
+[ext_resource type="Texture2D" uid="uid://cvwrhq35nhnhq" path="res://ui/Icon/ArrowRight@2x.png" id="6_e37e8"]
+
+[sub_resource type="Theme" id="Theme_4e64q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(20, 20)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+y_sort_enabled = true
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 170.0
+offset_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("1_7e11r")
+texture_pressed = ExtResource("1_7e11r")
+texture_hover = ExtResource("2_cpddd")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureButton2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.084
+anchor_top = 0.175
+anchor_right = 0.084
+anchor_bottom = 0.175
+offset_left = 9.392
+offset_top = -5.7
+offset_right = 121.392
+offset_bottom = 106.3
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4e64q")
+texture = ExtResource("3_6aahh")
+metadata/_edit_use_anchors_ = true
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer"]
+offset_left = 1830.0
+offset_top = 665.0
+offset_right = 1830.0
+offset_bottom = 873.0
+
+[node name="int" type="TouchScreenButton" parent="CanvasLayer/BoxContainer2"]
+modulate = Color(0.812841, 0.563152, 0.601908, 1)
+texture_normal = ExtResource("4_p84j5")
+action = "interact"
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer2/int"]
+offset_left = 85.0
+offset_top = 60.0
+offset_right = 125.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 50
+text = "E"
+
+[node name="up" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(98.0961, 679)
+rotation = -1.57056
+texture_normal = ExtResource("6_e37e8")
+action = "up"
+
+[node name="right" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(207.596, 681)
+rotation = -0.0102204
+texture_normal = ExtResource("6_e37e8")
+action = "right"
+
+[node name="down" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(212.596, 788.5)
+rotation = 1.55097
+texture_normal = ExtResource("6_e37e8")
+action = "down"
+
+[node name="left" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(97.5961, 786)
+rotation = 3.13177
+texture_normal = ExtResource("6_e37e8")
+action = "left"

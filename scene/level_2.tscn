@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://lmltn8cmw3ip"]
+[gd_scene load_steps=18 format=4 uid="uid://lmltn8cmw3ip"]
 
 [ext_resource type="Script" path="res://gd/level_2.gd" id="1_nk5c7"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_y2d8c"]
@@ -10,21 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="6_g0vj3"]
 [ext_resource type="PackedScene" uid="uid://deo3pbuiw2k2d" path="res://scene/dec.tscn" id="6_jqj3j"]
 [ext_resource type="Script" path="res://gd/next_level_2.gd" id="7_jashd"]
-[ext_resource type="PackedScene" uid="uid://c20b83am6kmeu" path="res://scene/touchcontsrole.tscn" id="8_g77f7"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="9_1bwc0"]
+[ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="10_lnfe6"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="11_3x10f"]
-[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="11_mfsvg"]
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="12_bd32k"]
-[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="12_jnfyf"]
-[ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="13_hde7j"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="18_0ad7x"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="20_hocl8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gxkb"]
 radius = 17.9662
 height = 48.0
-
-[sub_resource type="Theme" id="Theme_khtl0"]
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_nk5c7")
@@ -61,6 +56,12 @@ tile_map_data = PackedByteArray("AABcAND/BAAWAAoAAABTAF4AAQAGAA4AABBSAF4AAQAHAA4
 [node name="player1" parent="." instance=ExtResource("4_6fh4l")]
 position = Vector2(1424, -1055)
 
+[node name="Control" parent="." instance=ExtResource("10_lnfe6")]
+offset_left = -9.0
+offset_top = 340.0
+offset_right = 31.0
+offset_bottom = 380.0
+
 [node name="next_level2" type="Area2D" parent="."]
 position = Vector2(-613, 1562)
 collision_layer = 8
@@ -69,49 +70,6 @@ script = ExtResource("7_jashd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level2"]
 rotation = 1.57252
 shape = SubResource("CapsuleShape2D_2gxkb")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="touchcontsrole" parent="Control" instance=ExtResource("8_g77f7")]
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Control"]
-offset = Vector2(20, 20)
-scale = Vector2(0.4, 0.4)
-transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
-
-[node name="TextureButton2" type="TextureButton" parent="Control/CanvasLayer2"]
-y_sort_enabled = true
-offset_left = 8.0
-offset_top = 16.0
-offset_right = 170.0
-offset_bottom = 180.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("11_mfsvg")
-texture_pressed = ExtResource("11_mfsvg")
-texture_hover = ExtResource("12_jnfyf")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Control/CanvasLayer2/TextureButton2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.084
-anchor_top = 0.175
-anchor_right = 0.084
-anchor_bottom = 0.175
-offset_left = 9.392
-offset_top = -5.7
-offset_right = 121.392
-offset_bottom = 106.3
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_khtl0")
-texture = ExtResource("13_hde7j")
-metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_1bwc0")
