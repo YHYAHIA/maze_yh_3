@@ -8,7 +8,7 @@ class_name door_keys
 
 
 func interact(user: Node2D):
-	
+	GlobalInteract.collectedKeys += 1;
 	key.queue_free()
 	push_warning("not_implemented")
 	
