@@ -485,7 +485,7 @@ scale = Vector2(0.4, 0.4)
 [node name="Control" parent="." instance=ExtResource("11_bnitt")]
 
 [node name="player1" parent="." instance=ExtResource("12_s4u43")]
-position = Vector2(-523, 1555)
+position = Vector2(1669, 851)
 collision_mask = 519
 
 [node name="PointLight2D" type="PointLight2D" parent="player1"]
@@ -665,12 +665,10 @@ rotation = 0.0194841
 [node name="stirs3" parent="stirs" instance=ExtResource("22_p3lr5")]
 position = Vector2(261, 732)
 rotation = 1.57407
-scale = Vector2(1, 1)
 
 [node name="stirs4" parent="stirs" instance=ExtResource("22_p3lr5")]
 position = Vector2(968, 82.9999)
 rotation = 1.57407
-scale = Vector2(1, 1)
 
 [node name="stirs5" parent="stirs" instance=ExtResource("22_p3lr5")]
 position = Vector2(938, -603)
@@ -790,6 +788,7 @@ occluder = SubResource("OccluderPolygon2D_cahcd")
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
 [connection signal="body_entered" from="numarea2" to="numarea2" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea2" to="numarea2" method="_on_body_exited"]
+[connection signal="body_entered" from="damge" to="player1" method="_on_damge_body_entered"]
 [connection signal="body_entered" from="damge" to="damge" method="_on_body_entered"]
 [connection signal="body_exited" from="damge" to="damge" method="_on_body_exited"]
 [connection signal="body_entered" from="damge2" to="damge2" method="_on_body_entered"]

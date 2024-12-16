@@ -56,3 +56,10 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file(currnt_scene_file)
 		
 		
+
+
+func _on_damge_body_entered(body: Node2D) -> void:
+	print("da5al");
+	if(body == self):
+		print("player da5al");	
+	pass # Replace with function body.

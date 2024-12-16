@@ -526,7 +526,6 @@ height = 0.09
 max_distance = 9995.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.127506, 0.0516793, 0.0480863, 1)
 
 [node name="occluder1" type="Node2D" parent="."]

@@ -28,10 +28,15 @@ var door_open:bool
 
 
 @onready var collision=$CollisionShape2D
+var locked = true;
 
 
 func interact(user: Node2D):
-	is_open = not is_open
+	if  not locked or GlobalInteract.collectedKeys > 0:
+		if not locked:
+			GlobalInteract.collectedKeys -= 1;
+		locked = false;
+		is_open = true;
 		#if (is_open)=(is_open):
 		#	collision_polygon_2d.set_disabled(true)
 		#door_open=true
@@ -54,6 +59,7 @@ func stop_interaction(user : Node2D):
 	#collision_polygon_2d.set_disabled(false)
 	collision_polygon_2d.set_deferred("disabled",false)
 	anim.play(closed_anim)
+	is_open = false;
 #func _process(_delta):
 	#if (is_open):
 		#collision.set_deferred("disable",true)
