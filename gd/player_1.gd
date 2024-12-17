@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 	$ProgressBar.value = health
 	if health <= 0:
 		#$AudioStreamPlayer2D.play()
+		GlobalInteract.collectedKeys = 0
 		queue_free()
 		TransitionScene.transition()
 		

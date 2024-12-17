@@ -32,11 +32,23 @@ var locked = true;
 
 
 func interact(user: Node2D):
-	if  not locked or GlobalInteract.collectedKeys > 0:
-		if not locked:
-			GlobalInteract.collectedKeys -= 1;
-		locked = false;
-		is_open = true;
+	# Check if the door is already unlocked
+	if not locked:
+		is_open=not is_open
+		print("The door is already open.")
+		return  # Do nothing further if the door is already open
+	
+	# Check if the player has keys to unlock the door
+	if GlobalInteract.collectedKeys > 0:
+		GlobalInteract.collectedKeys -= 1  # Use a key to unlock the door
+		locked = false  # Unlock the door
+		is_open = true  # Open the door
+		print("Door unlocked!")
+	else:
+		print("The door is locked. You need a key!")
+	
+
+			
 		#if (is_open)=(is_open):
 		#	collision_polygon_2d.set_disabled(true)
 		#door_open=true

@@ -6,7 +6,7 @@
 radius = 16.9966
 height = 46.0
 
-[node name="numarea" type="Area2D"]
+[node name="transtionscene" type="Area2D"]
 position = Vector2(1424, -1042)
 collision_layer = 8
 script = ExtResource("1_pi7iq")
