@@ -257,6 +257,7 @@ animations = [{
 
 [node name="player1" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
+position = Vector2(428, 192)
 scale = Vector2(1.1, 1.1)
 collision_mask = 7
 script = ExtResource("1_yyot2")
@@ -273,25 +274,35 @@ y_sort_enabled = true
 scale = Vector2(0.46917, 0.359025)
 polygon = PackedVector2Array(-14.92, 31.9768, -12.7885, 45.9034, -8.5257, 51.4741, -4.26285, 48.6888, -4.26285, 45.9034, 2.13142, 43.1181, 2.13142, 45.9034, 4.26285, 48.6888, 4.26285, 51.4741, 10.6571, 48.6888, 12.7885, 45.9034, 12.7885, 34.7622, 12.7885, 31.9768)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color(0.725292, 0.916843, 0.481116, 1)
-texture_filter = 1
-offset_left = -8.18182
-offset_top = -20.0
-offset_right = 7.81818
-offset_bottom = -11.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 3
-min_value = 30.0
-value = 100.0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.515625, 0.498992)
 sprite_frames = SubResource("SpriteFrames_clor0")
 animation = &"move_down"
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.22475, 0.167161, 0.917647, 1)
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 300.909
+offset_top = -163.636
+offset_right = 383.909
+offset_bottom = -136.636
+grow_horizontal = 0
+size_flags_stretch_ratio = 1.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 16
+min_value = 30.0
+value = 100.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.515625, 0.498992)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+follow_viewport_enabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vkcg5")

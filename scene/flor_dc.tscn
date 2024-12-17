@@ -45,7 +45,10 @@ texture = ExtResource("1_vhigp")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkebi"]
 texture = ExtResource("2_wlbpf")
 22:16/size_in_atlas = Vector2i(6, 6)
+22:16/next_alternative_id = 2
 22:16/0 = 0
+22:16/1 = 1
+22:16/1/modulate = Color(1, 0.233556, 0.319268, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8xob"]
 texture = ExtResource("2_7pi2g")
