@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvbwxxqijyjm1"]
+[gd_scene load_steps=8 format=3 uid="uid://dvbwxxqijyjm1"]
 
 [ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="1_7e11r"]
+[ext_resource type="Script" path="res://scene/control.gd" id="1_hbco1"]
 [ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="2_cpddd"]
 [ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="3_6aahh"]
 [ext_resource type="Texture2D" uid="uid://wdmpif8acq0m" path="res://Texture/LargeHandleFilled.png" id="4_p84j5"]
@@ -8,7 +9,7 @@
 
 [sub_resource type="Theme" id="Theme_4e64q"]
 
-[node name="Control" type="Control"]
+[node name="Controls_on_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
+script = ExtResource("1_hbco1")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -23,7 +25,7 @@ offset = Vector2(20, 20)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+[node name="homeButton" type="TextureButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.592157)
 self_modulate = Color(1, 1, 1, 0.537255)
 y_sort_enabled = true
@@ -38,7 +40,7 @@ texture_pressed = ExtResource("1_7e11r")
 texture_hover = ExtResource("2_cpddd")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureButton2"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/homeButton"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.084
@@ -106,3 +108,5 @@ position = Vector2(97.5961, 786)
 rotation = 3.13177
 texture_normal = ExtResource("6_e37e8")
 action = "left"
+
+[connection signal="pressed" from="CanvasLayer/homeButton" to="." method="_on_home_button_pressed"]
