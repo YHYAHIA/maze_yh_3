@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 # Player stats
 var health: int = 100
-var speed: float = 300
+var speed: float = 255
 
 # Handles input and updates velocity
 func handle_input() -> void:
@@ -62,5 +64,16 @@ func _process(delta: float) -> void:
 func _on_damge_body_entered(body: Node2D) -> void:
 	print("da5al");
 	if(body == self):
-		print("player da5al");	
+		#apply_dameg_effect()
+		print("player da5al")
 	pass # Replace with function body.
+#func apply_damge_effect():
+	#var tween = get_tree().create_tween()
+	#tween.tween_method(self,"setshader_blinkintensity", 1.0, 0.0, 0.5)
+	#tween.start()  # Ensure the tween starts
+	
+
+
+#func setshader_blinkintensity(new_value:float):
+	#if animated_sprite_2d.material and animated_sprite_2d.material.has_shader_param("blink_intensity"):
+		#animated_sprite_2d.material.set_shader_parameter("blink_intensity",new_value)
