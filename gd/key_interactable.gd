@@ -22,4 +22,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GlobalInteract.is_pox_open <= 0:
+		key.hide()
+		#print("-1")
+	if GlobalInteract.is_pox_open >= 0:
+		key.show()
+		#print("+1")
+		
+		
+		
+	
+		
+	

@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="10_mfrw0"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="11_kt7wl"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="12_to5sx"]
-[ext_resource type="Texture2D" uid="uid://b46ojcjvkfhin" path="res://ui/Icon/512x512 textures (82).png" id="13_37xw7"]
 [ext_resource type="Script" path="res://gd/next_level_3.gd" id="14_437o0"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="15_qkd12"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="16_fv4hv"]
@@ -21,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_ink4n"]
 [ext_resource type="Script" path="res://gd/dam.gd" id="20_5di7b"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_5aof2"]
+[ext_resource type="PackedScene" uid="uid://betbk120w6gnu" path="res://scene/keybox.tscn" id="21_eml54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gskgc"]
 texture = ExtResource("8_rohp7")
@@ -404,20 +404,8 @@ scale = Vector2(0.4, 0.4)
 [node name="Control" parent="." instance=ExtResource("11_kt7wl")]
 
 [node name="player1" parent="." instance=ExtResource("12_to5sx")]
-position = Vector2(-538, 1563)
+position = Vector2(1407, 833)
 collision_mask = 519
-
-[node name="PointLight2D" type="PointLight2D" parent="player1"]
-position = Vector2(-15.4545, 1.81815)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0.701598, 0.556237, 1)
-energy = 0.59
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-shadow_filter = 1
-shadow_filter_smooth = 2.6
-texture = ExtResource("13_37xw7")
-texture_scale = 2.9
 
 [node name="next_level4" type="Area2D" parent="."]
 position = Vector2(-208, 1187)
@@ -442,8 +430,8 @@ stream = ExtResource("17_xuhin")
 autoplay = true
 
 [node name="key" parent="." instance=ExtResource("18_ym6ip")]
-position = Vector2(1363, 739)
-scale = Vector2(0.3, 0.3)
+position = Vector2(1362, 745)
+scale = Vector2(0.2, 0.2)
 
 [node name="numarea" parent="." instance=ExtResource("19_ink4n")]
 position = Vector2(687, 54)
@@ -526,6 +514,10 @@ rotation = 1.57407
 [node name="stirs4" parent="." instance=ExtResource("21_5aof2")]
 position = Vector2(968, 82.9999)
 rotation = 1.57407
+
+[node name="keybox" parent="." instance=ExtResource("21_eml54")]
+position = Vector2(1365, 723)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

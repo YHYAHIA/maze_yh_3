@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://cn1di4x7xyr38"]
+[gd_scene load_steps=40 format=3 uid="uid://cn1di4x7xyr38"]
 
 [ext_resource type="Texture2D" uid="uid://bywefuqvdkagu" path="res://Texture/Thief.png" id="1_n2xn7"]
 [ext_resource type="Script" path="res://gd/player_1.gd" id="1_yyot2"]
+[ext_resource type="Texture2D" uid="uid://b46ojcjvkfhin" path="res://ui/Icon/512x512 textures (82).png" id="2_kvs31"]
 [ext_resource type="Script" path="res://gd/interaction_area_2d.gd" id="3_d40v0"]
 [ext_resource type="AudioStream" uid="uid://dqq8ywvmsgxsm" path="res://sfx/Win.wav" id="4_vkcg5"]
 
@@ -261,6 +262,17 @@ position = Vector2(428, 192)
 scale = Vector2(1.1, 1.1)
 collision_mask = 7
 script = ExtResource("1_yyot2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-1.81821, 10)
+scale = Vector2(0.3, 0.3)
+energy = 0.99
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+shadow_filter_smooth = 2.6
+texture = ExtResource("2_kvs31")
+texture_scale = 2.9
 
 [node name="interaction_area2d" type="Area2D" parent="."]
 script = ExtResource("3_d40v0")
