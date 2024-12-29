@@ -20,7 +20,7 @@ extends "res://gd/interactable.gd"
 @onready var key = "res://scene/key.tscn" # Reference to the key scene (ensure the node path is correct)
 
 
-func interact(user: Node2D):
+func interact(_user: Node2D):
 	# Toggle the box state
 	is_open = not is_open
 	if is_open:
@@ -48,7 +48,7 @@ func _update_animations():
 		#	if key != null:
 				#key.hide()
 
-func stop_interaction(user: Node2D):
+func stop_interaction(_user: Node2D):
 	pass
 	# Reset the box to the closed state
 	#is_open = false

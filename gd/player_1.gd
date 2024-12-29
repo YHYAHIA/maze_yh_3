@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var flash_hit: AnimationPlayer = $AnimatedSprite2D/flash_hit
 
 # Player stats
 var health: int = 100
@@ -39,13 +40,13 @@ func update_animation() -> void:
 				$AnimatedSprite2D.play("move_down")
 
 # Handles physics and movement
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	handle_input()
 	move_and_slide()
 	update_animation()
 
 # Updates health and UI elements
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var currnt_scene_file=get_tree().current_scene.scene_file_path
 	$ProgressBar.max_value =100
 	$ProgressBar.value = health
@@ -58,7 +59,11 @@ func _process(delta: float) -> void:
 		#await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file(currnt_scene_file)
 		
+	if GlobalInteract.plyer_geting_damge ==true:
+		$AnimatedSprite2D/flash_hit.play()
 		
+		
+	
 
 
 func _on_damge_body_entered(body: Node2D) -> void:

@@ -31,7 +31,7 @@ var door_open:bool
 var locked = true;
 
 
-func interact(user: Node2D):
+func interact(_user: Node2D):
 	# Check if the door is already unlocked
 	if not locked:
 		is_open=not is_open
@@ -67,7 +67,7 @@ func _update_animations():
 		else :
 			anim.play(closed_anim)
 			
-func stop_interaction(user : Node2D):
+func stop_interaction(_user : Node2D):
 	#collision_polygon_2d.set_disabled(false)
 	collision_polygon_2d.set_deferred("disabled",false)
 	anim.play(closed_anim)

@@ -12,9 +12,9 @@ extends interactable
 func _ready() -> void:
 	dy_ui.hide()
 
-func interact(user: Node2D):
+func interact(_user: Node2D):
 	dy_ui.show()
 	
 	
-func stop_interaction(user : Node2D):
+func stop_interaction(_user : Node2D):
 	dy_ui.hide()

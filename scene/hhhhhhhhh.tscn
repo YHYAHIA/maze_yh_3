@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b35mw2yo2rlik"]
 
-[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="1_b4pgy"]
+[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="1_b4pgy"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="2_idsc5"]
 [ext_resource type="Texture2D" uid="uid://eatuis6krg3" path="res://Texture/TX Struct.png" id="2_jefac"]
 

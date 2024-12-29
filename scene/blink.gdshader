@@ -1,14 +1,12 @@
 shader_type canvas_item;
-uniform vec4 blink_color:source_color;
-uniform float blink_intensity =0;
+uniform vec4 flash_color:source_color;
+uniform float flash_value : hint_range(0.0, 1.0, 0.1);
 
 
 
 void fragment() {
-	vec4 color = texture(TEXTURE, UV);
-	color= mix(color,blink_color,blink_intensity*COLOR.a);
-
-	COLOR=color;
-
+	vec4 texture_color = texture(TEXTURE,UV);
+	COLOR = mix(texture_color,flash_color,flash_value);
+	COLOR.a = texture_color.a;
 }
 

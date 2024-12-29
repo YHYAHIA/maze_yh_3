@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_xr1nn"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_xxemb"]
 [ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="4_2458l"]
-[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="4_fkvh1"]
+[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="4_fkvh1"]
 [ext_resource type="PackedScene" uid="uid://dfrvqhfsjqr6s" path="res://scene/wall.tscn" id="5_cl7cn"]
 [ext_resource type="PackedScene" uid="uid://jo65dinrcyo0" path="res://scene/stairs.tscn" id="5_mhmik"]
 [ext_resource type="PackedScene" uid="uid://dh8nff4ruujpv" path="res://scene/door.tscn" id="6_e8r5w"]

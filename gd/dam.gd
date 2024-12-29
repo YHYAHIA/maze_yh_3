@@ -9,8 +9,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		# Start the timer to apply periodic damage
 		$Timer.start()
+		GlobalInteract.plyer_geting_damge =true
 		# Apply immediate damage when entering the area
 		body.health -= 10
+		
 		print("Player entered the area! Health reduced by 10.")
 
 #func _on_Timer_timeout() -> void:
@@ -22,9 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 	 # Replace with function body.
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	$Timer.stop()
-	print("d")
+	GlobalInteract.plyer_geting_damge =false
+	print()
 	pass # Replace with function body.
 
 
