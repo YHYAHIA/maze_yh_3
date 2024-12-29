@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c5telfkrn2y41"]
+[gd_scene load_steps=21 format=4 uid="uid://c5telfkrn2y41"]
 
 [ext_resource type="Script" path="res://gd/level_3.gd" id="1_6pb85"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player 1.tscn" id="1_335wd"]
@@ -17,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="13_ec71b"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="19_kkq1u"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="20_cvn2f"]
-[ext_resource type="Script" path="res://gd/dam.gd" id="21_8gm3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dgqy"]
 texture = ExtResource("7_vs2d4")
@@ -344,9 +343,6 @@ sources/0 = SubResource("TileSetAtlasSource_6dgqy")
 radius = 17.9662
 height = 48.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wx7ww"]
-radius = 164.128
-
 [node name="level3" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6pb85")
@@ -432,17 +428,6 @@ rotation = 1.55607
 [node name="numarea" parent="." instance=ExtResource("20_cvn2f")]
 position = Vector2(687, 54)
 
-[node name="damge" type="Area2D" parent="."]
-visible = false
-position = Vector2(565, 274)
-script = ExtResource("21_8gm3t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="damge"]
-position = Vector2(-533, 1227)
-shape = SubResource("CircleShape2D_wx7ww")
-
 [connection signal="body_entered" from="next_level3" to="next_level3" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
-[connection signal="body_entered" from="damge" to="damge" method="_on_body_entered"]
-[connection signal="body_exited" from="damge" to="damge" method="_on_body_exited"]

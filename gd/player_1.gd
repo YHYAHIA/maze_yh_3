@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 # Updates health and UI elements
 func _process(delta: float) -> void:
 	var currnt_scene_file=get_tree().current_scene.scene_file_path
-	$ProgressBar.max_value = 100
+	$ProgressBar.max_value =100
 	$ProgressBar.value = health
 	if health <= 0:
 		#$AudioStreamPlayer2D.play()

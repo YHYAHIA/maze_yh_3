@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c80u63dkfsetm"]
+[gd_scene load_steps=18 format=4 uid="uid://c80u63dkfsetm"]
 
 [ext_resource type="Script" path="res://gd/level_1.gd" id="1_nmasa"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_skk8k"]
@@ -17,10 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="18_akdx7"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_2cium"]
 [ext_resource type="PackedScene" uid="uid://c6mxk03pqvyep" path="res://scene/stirs_2.tscn" id="19_3810j"]
-[ext_resource type="Script" path="res://gd/dam.gd" id="21_lvfbv"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_u7dw8"]
-radius = 164.128
 
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
@@ -86,17 +82,7 @@ position = Vector2(1447, -892)
 [node name="numarea" parent="." instance=ExtResource("19_2cium")]
 position = Vector2(1424, -1041)
 
-[node name="damge" type="Area2D" parent="."]
-visible = false
-script = ExtResource("21_lvfbv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="damge"]
-position = Vector2(1425, -388)
-shape = SubResource("CircleShape2D_u7dw8")
-
 [connection signal="tree_entered" from="flor dc" to="player1" method="_on_flor_dc_tree_entered"]
 [connection signal="body_entered" from="next_level" to="next_level" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
-[connection signal="body_entered" from="damge" to="damge" method="_on_body_entered"]
-[connection signal="body_exited" from="damge" to="damge" method="_on_body_exited"]

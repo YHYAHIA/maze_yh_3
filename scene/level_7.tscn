@@ -19,8 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="17_lw0wq"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_1a3h4"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_cqanh"]
-[ext_resource type="Script" path="res://gd/dam.gd" id="20_1qnga"]
 [ext_resource type="Script" path="res://scene/damge_2.gd" id="21_rusum"]
+[ext_resource type="PackedScene" uid="uid://bx82bhoewmttr" path="res://scene/damge.tscn" id="22_crlmx"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="22_p3lr5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls065"]
@@ -348,11 +348,11 @@ sources/0 = SubResource("TileSetAtlasSource_ls065")
 radius = 17.9662
 height = 48.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg68a"]
-size = Vector2(287.762, 59.5)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_h3quh"]
 radius = 62.008
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_runxa"]
+size = Vector2(287.762, 59.5)
 
 [node name="level7" type="Node2D"]
 
@@ -479,49 +479,6 @@ max_distance = 9992.0
 visible = false
 color = Color(0.129412, 0.0509804, 0.0470588, 0.54902)
 
-[node name="damge" type="Area2D" parent="."]
-position = Vector2(-19, 1615)
-script = ExtResource("20_1qnga")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="damge"]
-position = Vector2(1316, -416)
-rotation = -0.0120468
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="damge"]
-position = Vector2(1566, -418)
-rotation = -0.0120468
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="damge"]
-position = Vector2(1611, -316)
-rotation = -0.0120468
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="damge"]
-position = Vector2(1679, -554)
-rotation = 1.56847
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="damge"]
-position = Vector2(1784, -553)
-rotation = 1.56847
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="damge"]
-position = Vector2(1784, -440)
-rotation = 1.57068
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="damge"]
-position = Vector2(1316, -317)
-shape = SubResource("RectangleShape2D_xg68a")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="damge"]
-position = Vector2(1610, -552)
-rotation = 1.56565
-shape = SubResource("RectangleShape2D_xg68a")
-
 [node name="damge2" type="Area2D" parent="."]
 position = Vector2(-636, 471)
 script = ExtResource("21_rusum")
@@ -557,13 +514,51 @@ self_modulate = Color(1, 1, 1, 0.235294)
 position = Vector2(443, -3)
 rotation = -3.12939
 
+[node name="damge" parent="." instance=ExtResource("22_crlmx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damge"]
+position = Vector2(1316, -416)
+rotation = -0.0120468
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="damge"]
+position = Vector2(1566, -418)
+rotation = -0.0120468
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="damge"]
+position = Vector2(1611, -316)
+rotation = -0.0120468
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="damge"]
+position = Vector2(1679, -554)
+rotation = 1.56847
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="damge"]
+position = Vector2(1784, -553)
+rotation = 1.56847
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="damge"]
+position = Vector2(1784, -440)
+rotation = 1.57068
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="damge"]
+position = Vector2(1316, -317)
+shape = SubResource("RectangleShape2D_runxa")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="damge"]
+position = Vector2(1610, -552)
+rotation = 1.56565
+shape = SubResource("RectangleShape2D_runxa")
+
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
 [connection signal="body_entered" from="numarea2" to="numarea2" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea2" to="numarea2" method="_on_body_exited"]
-[connection signal="body_entered" from="damge" to="player1" method="_on_damge_body_entered"]
-[connection signal="body_entered" from="damge" to="damge" method="_on_body_entered"]
-[connection signal="body_exited" from="damge" to="damge" method="_on_body_exited"]
 [connection signal="body_entered" from="damge2" to="damge2" method="_on_body_entered"]
 [connection signal="body_exited" from="damge2" to="damge2" method="_on_body_exited"]

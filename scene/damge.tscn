@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx82bhoewmttr"]
+
+[ext_resource type="Script" path="res://gd/dam.gd" id="1_v6bk4"]
+
+[node name="damge" type="Area2D"]
+position = Vector2(-19, 1615)
+script = ExtResource("1_v6bk4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
