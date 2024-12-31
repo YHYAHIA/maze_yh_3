@@ -317,8 +317,9 @@ shadow_filter_smooth = 2.6
 texture = ExtResource("2_kvs31")
 texture_scale = 2.9
 
-[node name="interaction_area2d" type="Area2D" parent="."]
+[node name="interaction_area2d" type="Area2D" parent="." node_paths=PackedStringArray("interactor")]
 script = ExtResource("3_d40v0")
+interactor = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area2d"]
 position = Vector2(0, 3)

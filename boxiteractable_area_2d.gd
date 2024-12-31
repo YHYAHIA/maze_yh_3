@@ -33,7 +33,7 @@ func _update_animations():
 	if anim != null:
 		if is_open:
 			anim.play(open_anim)
-			GlobalInteract.is_pox_open += 1
+			GlobalInteract.is_pox_open = true
 			# Optionally disable collision when open
 			#collision.set_disabled(true)
 			# Show the key when the box is open
@@ -41,7 +41,7 @@ func _update_animations():
 				#key.set_v()
 		else:
 			anim.play(closed_anim)
-			GlobalInteract.is_pox_open -= 1
+			GlobalInteract.is_pox_open = false
 			# Re-enable collision when closed
 			#collision.set_deferred("disabled",false)
 			# Hide the key when the box is closed
@@ -49,6 +49,7 @@ func _update_animations():
 				#key.hide()
 
 func stop_interaction(_user: Node2D):
+	
 	pass
 	# Reset the box to the closed state
 	#is_open = false

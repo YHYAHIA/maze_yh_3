@@ -6,7 +6,7 @@ var player = null
 		#.x > 0 :$"../CharacterBody2D".velocity.y +=speed/1.3
 		#.x < 0 :$"../CharacterBody2D".velocity.y -=speed/1.3
 func _ready() -> void:
-	player = $"../player_1"
+	player =$"../../player1"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
