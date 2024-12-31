@@ -15,7 +15,7 @@ func _ready() -> void:
 	self.connect("area_entered", _on_area_entered)
 	self.connect("area_exited", _on_area_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Continuously update the closest interactable
 	_set_selected_interactable_to_closest()
 

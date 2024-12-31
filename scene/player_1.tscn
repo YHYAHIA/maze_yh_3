@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cn1di4x7xyr38"]
+[gd_scene load_steps=46 format=3 uid="uid://cn1di4x7xyr38"]
 
 [ext_resource type="Texture2D" uid="uid://bywefuqvdkagu" path="res://Texture/Thief.png" id="1_n2xn7"]
 [ext_resource type="Script" path="res://gd/player_1.gd" id="1_yyot2"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn2hl"]
 radius = 27.0185
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wveg"]
+radius = 15.5012
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_laghy"]
 shader = ExtResource("4_wnj6c")
@@ -322,13 +325,15 @@ script = ExtResource("3_d40v0")
 interactor = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area2d"]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_hn2hl")
 
-[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, 15.4545)
 scale = Vector2(0.46917, 0.359025)
-polygon = PackedVector2Array(-14.92, 31.9768, -12.7885, 45.9034, -8.5257, 51.4741, -4.26285, 48.6888, -4.26285, 45.9034, 2.13142, 43.1181, 2.13142, 45.9034, 4.26285, 48.6888, 4.26285, 51.4741, 10.6571, 48.6888, 12.7885, 45.9034, 12.7885, 34.7622, 12.7885, 31.9768)
+shape = SubResource("CircleShape2D_7wveg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_laghy")
