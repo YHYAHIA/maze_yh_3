@@ -465,4 +465,6 @@ texture = ExtResource("4_nw8mo")
 [connection signal="pressed" from="CanvasLayer/GridContainer/level5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/level9" to="." method="_on_level_9_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]

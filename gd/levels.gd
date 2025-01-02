@@ -41,3 +41,13 @@ func _on_texture_button_pressed() -> void:
 func _on_level_7_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/level_7.tscn")
 	pass # Replace with function body.
+
+
+func _on_level_8_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/level_8.tscn")
+	pass # Replace with function body.
+
+
+func _on_level_9_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/level_9.tscn")
+	pass # Replace with function body.

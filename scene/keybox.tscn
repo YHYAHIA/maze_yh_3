@@ -3,27 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="1_5xv3o"]
 [ext_resource type="Script" path="res://boxiteractable_area_2d.gd" id="2_l017d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kwkk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1s3w"]
 atlas = ExtResource("1_5xv3o")
 region = Rect2(73, 0, 73, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sc7n7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkvg8"]
 atlas = ExtResource("1_5xv3o")
 region = Rect2(73, 73, 73, 73)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_adswf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2nwj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6kwkk")
+"texture": SubResource("AtlasTexture_x1s3w")
 }],
 "loop": true,
 "name": &"closed",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sc7n7")
+"texture": SubResource("AtlasTexture_nkvg8")
 }],
 "loop": true,
 "name": &"open",
@@ -41,9 +41,8 @@ radius = 51.0098
 [node name="Camera2D" type="StaticBody2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
-sprite_frames = SubResource("SpriteFrames_adswf")
+sprite_frames = SubResource("SpriteFrames_c2nwj")
 animation = &"closed"
-frame_progress = 0.592623
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Camera2D"]
 light_mask = 16
