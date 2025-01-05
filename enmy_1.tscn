@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cq25288d0mj6n"]
+[gd_scene load_steps=26 format=3 uid="uid://cq25288d0mj6n"]
 
 [ext_resource type="Script" path="res://enmy_1.gd" id="1_hscb6"]
 [ext_resource type="Texture2D" uid="uid://bhwuxxb3pwb1f" path="res://char/TNT_Purple.png" id="1_i1yay"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="3_fpmdb"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="4_4fjs3"]
 [ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="5_68tix"]
-[ext_resource type="Script" path="res://dameg_area.gd" id="5_tv2ya"]
 [ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="6_4y26y"]
 
 [sub_resource type="Animation" id="Animation_snfmn"]
@@ -1691,6 +1690,7 @@ radius = 161.003
 y_sort_enabled = true
 collision_mask = 15
 script = ExtResource("1_hscb6")
+dameg = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i1yay")
@@ -1718,7 +1718,6 @@ libraries = {
 speed_scale = 1.554
 
 [node name="dameg_area" type="Area2D" parent="."]
-script = ExtResource("5_tv2ya")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dameg_area"]
 position = Vector2(1, 10)
@@ -1737,6 +1736,7 @@ stream = ExtResource("5_68tix")
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_4y26y")
+stream_paused = true
 
 [node name="path" type="Area2D" parent="."]
 
@@ -1756,7 +1756,7 @@ debug_color = Color(0.7, 0.395529, 0.141606, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="dameg_area" to="dameg_area" method="_on_body_entered"]
+[connection signal="body_entered" from="dameg_area" to="." method="_on_dameg_area_body_entered"]
 [connection signal="body_entered" from="path" to="." method="_on_path_body_entered"]
 [connection signal="body_exited" from="path" to="." method="_on_path_body_exited"]
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]

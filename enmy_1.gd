@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 150
+@export var SPEED = 150
+@export var dameg=0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var timer: Timer = $Timer
@@ -138,3 +139,9 @@ func _on_attack_finished(animation_name: String) -> void:
 			else:
 				velocity = Vector2.ZERO
 				update_anim()
+
+
+
+func _on_dameg_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.health -=dameg

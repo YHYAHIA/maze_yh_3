@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvbwxxqijyjm1"]
+[gd_scene load_steps=5 format=3 uid="uid://dvbwxxqijyjm1"]
 
-[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="1_7e11r"]
 [ext_resource type="Script" path="res://scene/control.gd" id="1_hbco1"]
-[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="2_cpddd"]
-[ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="3_6aahh"]
+[ext_resource type="Texture2D" uid="uid://bwt0n66y68a0m" path="res://ui/Icon/Pause@2x.png" id="3_632na"]
 [ext_resource type="Texture2D" uid="uid://wdmpif8acq0m" path="res://Texture/LargeHandleFilled.png" id="4_p84j5"]
 [ext_resource type="Texture2D" uid="uid://cvwrhq35nhnhq" path="res://ui/Icon/ArrowRight@2x.png" id="6_e37e8"]
-
-[sub_resource type="Theme" id="Theme_4e64q"]
 
 [node name="Controls_on_screen" type="Control"]
 layout_mode = 3
@@ -24,38 +20,6 @@ metadata/_edit_use_anchors_ = true
 offset = Vector2(20, 20)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
-
-[node name="homeButton" type="TextureButton" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.592157)
-self_modulate = Color(1, 1, 1, 0.537255)
-y_sort_enabled = true
-offset_left = 8.0
-offset_top = 16.0
-offset_right = 170.0
-offset_bottom = 180.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture_normal = ExtResource("1_7e11r")
-texture_pressed = ExtResource("1_7e11r")
-texture_hover = ExtResource("2_cpddd")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/homeButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.084
-anchor_top = 0.175
-anchor_right = 0.084
-anchor_bottom = 0.175
-offset_left = 9.392
-offset_top = -5.7
-offset_right = 121.392
-offset_bottom = 106.3
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4e64q")
-texture = ExtResource("3_6aahh")
-metadata/_edit_use_anchors_ = true
 
 [node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer"]
 offset_left = 1830.0
@@ -76,6 +40,13 @@ offset_right = 125.0
 offset_bottom = 129.0
 theme_override_font_sizes/font_size = 50
 text = "E"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(-4.99999, -27.5)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_632na")
+action = "pause"
 
 [node name="up" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.560784)
@@ -108,5 +79,3 @@ position = Vector2(97.5961, 786)
 rotation = 3.13177
 texture_normal = ExtResource("6_e37e8")
 action = "left"
-
-[connection signal="pressed" from="CanvasLayer/homeButton" to="." method="_on_home_button_pressed"]
