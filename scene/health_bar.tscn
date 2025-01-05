@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqom71yx03xt8"]
+
+[ext_resource type="Script" path="res://health_bar.gd" id="1_n5iso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtvwa"]
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(0.108209, 0.108209, 0.108209, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi6ks"]
+bg_color = Color(0.972549, 0.0235294, 0.0823529, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doqcv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.108209, 0.108209, 0.108209, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pbek"]
+bg_color = Color(0.0842968, 0.548507, 0.142139, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+border_blend = true
+
+[node name="health_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n5iso")
+
+[node name="ProgressBar1" type="ProgressBar" parent="."]
+offset_left = 694.0
+offset_top = 17.0
+offset_right = 701.0
+offset_bottom = 46.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vtvwa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yi6ks")
+step = 1.0
+value = 60.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+offset_left = 694.0
+offset_top = 17.0
+offset_right = 837.0
+offset_bottom = 46.0
+theme_override_styles/background = SubResource("StyleBoxFlat_doqcv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2pbek")
+step = 1.0
+value = 60.0

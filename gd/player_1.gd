@@ -5,7 +5,11 @@ extends CharacterBody2D
 
 # Player stats
 @export var health: int = 100
+@export var max_health: int = 100
 @export var speed: float = 255
+
+# Reference to the health bar (drag and drop in the editor)
+@export var health_bar: Node
 
 # Handles input and updates velocity
 func handle_input() -> void:
@@ -24,20 +28,20 @@ func handle_input() -> void:
 # Updates animations based on movement direction
 func update_animation() -> void:
 	if velocity.length() == 0:
-		$AnimatedSprite2D.stop()
+		animated_sprite_2d.stop()
 	else:
+		var anim = ""
 		if velocity.x < 0:
-			if $AnimatedSprite2D.animation != "move_left":
-				$AnimatedSprite2D.play("move_left")
+			anim = "move_left"
 		elif velocity.x > 0:
-			if $AnimatedSprite2D.animation != "move_right":
-				$AnimatedSprite2D.play("move_right")
+			anim = "move_right"
 		elif velocity.y < 0:
-			if $AnimatedSprite2D.animation != "move_up":
-				$AnimatedSprite2D.play("move_up")
+			anim = "move_up"
 		elif velocity.y > 0:
-			if $AnimatedSprite2D.animation != "move_down":
-				$AnimatedSprite2D.play("move_down")
+			anim = "move_down"
+
+		if animated_sprite_2d.animation != anim:
+			animated_sprite_2d.play(anim)
 
 # Handles physics and movement
 func _physics_process(_delta: float) -> void:
@@ -47,39 +51,37 @@ func _physics_process(_delta: float) -> void:
 
 # Updates health and UI elements
 func _process(_delta: float) -> void:
-	var currnt_scene_file=get_tree().current_scene.scene_file_path
-	$ProgressBar.max_value =100
-	$ProgressBar.value = health
+	var current_scene_file = get_tree().current_scene.scene_file_path
+
 	if health <= 0:
-		#$AudioStreamPlayer2D.play()
 		GlobalInteract.collectedKeys = 0
 		queue_free()
 		TransitionScene.transition()
-		
-		#await TransitionScene.on_transition_finished
-		get_tree().change_scene_to_file(currnt_scene_file)
-		
-	if GlobalInteract.plyer_geting_damge ==true:
-		$AnimatedSprite2D/flash_hit.play()
-		
-		
-	
-	print(speed)
+		get_tree().change_scene_to_file(current_scene_file)
 
+	if GlobalInteract.plyer_geting_damge:
+		flash_hit.play()
+
+# Handles damage area entry
 func _on_damge_body_entered(body: Node2D) -> void:
-	print("da5al");
-	if(body == self):
-		#apply_dameg_effect()
-		print("player da5al")
-	pass # Replace with function body.
-#func apply_damge_effect():
-	#var tween = get_tree().create_tween()
-	#tween.tween_method(self,"setshader_blinkintensity", 1.0, 0.0, 0.5)
-	#tween.start()  # Ensure the tween starts
-	
-func set_speed(new_speed:float)->void:
-	speed=new_speed
+	if body == self:
+		apply_damage_effect(10)  # Example: Apply 10 damage
 
-#func setshader_blinkintensity(new_value:float):
-	#if animated_sprite_2d.material and animated_sprite_2d.material.has_shader_param("blink_intensity"):
-		#animated_sprite_2d.material.set_shader_parameter("blink_intensity",new_value)
+# Applies damage and updates the health bar
+func apply_damage_effect(damage: int) -> void:
+	set_health(health - damage)
+	flash_hit.play()
+
+# Updates player speed
+func set_speed(new_speed: float) -> void:
+	speed = new_speed
+
+# Gets the player's health
+func get_health() -> int:
+	return health
+
+# Sets the player's health and updates the health bar
+func set_health(new_health: int) -> void:
+	health = clamp(new_health, 0, max_health)  # Ensure health stays within valid range
+	if health_bar:
+		health_bar.value = health
