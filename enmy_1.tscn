@@ -1736,7 +1736,6 @@ stream = ExtResource("5_68tix")
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_4y26y")
-stream_paused = true
 
 [node name="path" type="Area2D" parent="."]
 
