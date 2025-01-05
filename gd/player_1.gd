@@ -4,8 +4,8 @@ extends CharacterBody2D
 @onready var flash_hit: AnimationPlayer = $AnimatedSprite2D/flash_hit
 
 # Player stats
-var health: int = 100
-var speed: float = 255
+@export var health: int = 100
+@export var speed: float = 255
 
 # Handles input and updates velocity
 func handle_input() -> void:
@@ -64,7 +64,7 @@ func _process(_delta: float) -> void:
 		
 		
 	
-
+	print(speed)
 
 func _on_damge_body_entered(body: Node2D) -> void:
 	print("da5al");
@@ -77,7 +77,8 @@ func _on_damge_body_entered(body: Node2D) -> void:
 	#tween.tween_method(self,"setshader_blinkintensity", 1.0, 0.0, 0.5)
 	#tween.start()  # Ensure the tween starts
 	
-
+func set_speed(new_speed:float)->void:
+	speed=new_speed
 
 #func setshader_blinkintensity(new_value:float):
 	#if animated_sprite_2d.material and animated_sprite_2d.material.has_shader_param("blink_intensity"):

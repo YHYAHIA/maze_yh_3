@@ -1,20 +1,16 @@
 extends Area2D
-#var direction = get_tree()
-var player = null
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if body: is_in_group("player")
-		#.x > 0 :$"../CharacterBody2D".velocity.y +=speed/1.3
-		#.x < 0 :$"../CharacterBody2D".velocity.y -=speed/1.3
-func _ready() -> void:
-	player =$"../../player1"
+
+@export var speed_modifier: float = 0.5  # Speed adjustment percentage (e.g., 0.1 for 10%)
+@onready var player: Node2D = $"../../player1"
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
-		body.speed = 150  # Set a new speed
-	 # Replace with function body.
-
+		# Reduce the player's speed by the percentage
+		if body.has_method("set_speed"):
+			body.set_speed(body.speed * (1 - speed_modifier))
 
 func _on_body_exited(body: Node2D) -> void:
 	if body == player:
-		body.speed = 300  # Reset to base speed
-	 # Replace with function body.
+		# Restore the player's speed by reversing the percentage reduction
+		if body.has_method("set_speed"):
+			body.set_speed(body.speed / (1 - speed_modifier))
