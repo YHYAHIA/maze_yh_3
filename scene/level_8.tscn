@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ctp7bqcudyypg"]
+[gd_scene load_steps=36 format=4 uid="uid://ctp7bqcudyypg"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_m8uo7"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_n4egs"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="24_mvs2p"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="25_7qci5"]
 [ext_resource type="PackedScene" uid="uid://bqom71yx03xt8" path="res://scene/health_bar.tscn" id="26_qho6t"]
+[ext_resource type="PackedScene" uid="uid://7mwedndq5dkf" path="res://scene/enmy_arrcher.tscn" id="27_4wy5f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mynwd"]
 texture = ExtResource("8_j5r2e")
@@ -440,16 +441,14 @@ scale = Vector2(0.4, 0.4)
 [node name="Control" parent="." instance=ExtResource("11_fh1j2")]
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("12_fdr1x")]
-position = Vector2(318, 254)
+position = Vector2(-544, 1472)
 collision_mask = 519
 health = 1000
-health_bar = NodePath("health_bar")
+health_bar = NodePath("CanvasLayer2/health_bar")
 
-[node name="health_bar" parent="player1" instance=ExtResource("26_qho6t")]
-offset_left = -466.364
-offset_top = -176.364
-offset_right = -466.364
-offset_bottom = -176.364
+[node name="CanvasLayer2" type="CanvasLayer" parent="player1"]
+
+[node name="health_bar" parent="player1/CanvasLayer2" instance=ExtResource("26_qho6t")]
 
 [node name="next_level4" type="Area2D" parent="."]
 position = Vector2(209, 606)
@@ -612,6 +611,9 @@ player = NodePath("../player1")
 
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("25_7qci5")]
 visible = false
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("27_4wy5f")]
+position = Vector2(20, 1495)
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 255
 
 # Reference to the health bar (drag and drop in the editor)
-@export var health_bar: Node
+@export var health_bar: Node = null  # Reference to the health bar scene
 
 # Handles input and updates velocity
 func handle_input() -> void:
@@ -84,4 +84,4 @@ func get_health() -> int:
 func set_health(new_health: int) -> void:
 	health = clamp(new_health, 0, max_health)  # Ensure health stays within valid range
 	if health_bar:
-		health_bar.value = health
+		health_bar.call("change_health", health - health_bar.get("healthbar1").value)  # Adjusts the bar

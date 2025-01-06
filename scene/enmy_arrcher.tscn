@@ -1,14 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://gov5woaoepxg"]
+[gd_scene load_steps=28 format=3 uid="uid://7mwedndq5dkf"]
 
-[ext_resource type="Texture2D" uid="uid://bgayrx1ehjdb8" path="res://char/Archer_Blue.png" id="1_8ajg5"]
-[ext_resource type="Script" path="res://enmy_2.gd" id="1_ypp7u"]
-[ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="2_a0b5n"]
-[ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="3_52mw2"]
-[ext_resource type="Script" path="res://sprite_2d_2.gd" id="3_ttc5u"]
-[ext_resource type="Script" path="res://dameg_area.gd" id="4_yy0lq"]
-[ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="5_y8dug"]
-[ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="6_m3dsk"]
-[ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="7_l76fa"]
+[ext_resource type="Script" path="res://enmy_arrcher.gd" id="1_0tvyu"]
+[ext_resource type="PackedScene" uid="uid://baut5hxggjjs6" path="res://scene/arow.tscn" id="2_8jo4w"]
+[ext_resource type="Texture2D" uid="uid://bgayrx1ehjdb8" path="res://char/Archer_Blue.png" id="2_42s8p"]
+[ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="3_lyqdn"]
+[ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="5_i8gyf"]
+[ext_resource type="Script" path="res://dameg_area.gd" id="6_i4gd4"]
+[ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="7_jqxay"]
+[ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="8_eoi75"]
+[ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="9_x1433"]
 
 [sub_resource type="Animation" id="Animation_snfmn"]
 length = 0.001
@@ -776,23 +776,24 @@ _data = {
 "run_right": SubResource("Animation_kls0b")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a5ixd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqpa8"]
 radius = 28.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ape3h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_os2hd"]
 radius = 13.0384
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7dito"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4x3y4"]
 radius = 490.474
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bh538"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0e82"]
 radius = 214.037
 
-[node name="enmy_2" type="CharacterBody2D"]
-script = ExtResource("1_ypp7u")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_0tvyu")
+arrow_scene = ExtResource("2_8jo4w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8ajg5")
+texture = ExtResource("2_42s8p")
 flip_h = true
 hframes = 8
 vframes = 7
@@ -801,16 +802,15 @@ vframes = 7
 visible = false
 position = Vector2(4, -16)
 rotation = -0.420534
-texture = ExtResource("2_a0b5n")
+texture = ExtResource("3_lyqdn")
 flip_h = true
 vframes = 2
 frame = 1
-script = ExtResource("3_ttc5u")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(150, -126)
-texture = ExtResource("3_52mw2")
+texture = ExtResource("5_i8gyf")
 hframes = 9
 frame = 7
 
@@ -818,52 +818,52 @@ frame = 7
 libraries = {
 "": SubResource("AnimationLibrary_x7lqi")
 }
-speed_scale = 2.062
+speed_scale = 1.427
 
 [node name="dameg_area" type="Area2D" parent="."]
-position = Vector2(4, -7)
-script = ExtResource("4_yy0lq")
+position = Vector2(4, -200)
+script = ExtResource("6_i4gd4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dameg_area"]
 position = Vector2(3, 4)
-shape = SubResource("CircleShape2D_a5ixd")
+shape = SubResource("CircleShape2D_mqpa8")
 disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_y8dug")
+stream = ExtResource("7_jqxay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 27)
-shape = SubResource("CircleShape2D_ape3h")
+shape = SubResource("CircleShape2D_os2hd")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_m3dsk")
+stream = ExtResource("8_eoi75")
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_l76fa")
+stream = ExtResource("9_x1433")
 
 [node name="path" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="path"]
 z_index = -1
-shape = SubResource("CircleShape2D_7dito")
+shape = SubResource("CircleShape2D_4x3y4")
 debug_color = Color(0.175007, 0.7, 0.18515, 0.42)
 
 [node name="attack" type="Area2D" parent="."]
+position = Vector2(6, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
 z_index = -1
 position = Vector2(-7, -5)
 rotation = -0.799966
-shape = SubResource("CircleShape2D_bh538")
+shape = SubResource("CircleShape2D_r0e82")
 debug_color = Color(0.7, 0.395529, 0.141606, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="dameg_area" to="." method="_on_dameg_area_body_entered"]
-[connection signal="body_entered" from="path" to="." method="_on_path_body_entered"]
-[connection signal="body_exited" from="path" to="." method="_on_path_body_exited"]
-[connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
-[connection signal="body_exited" from="attack" to="." method="_on_attack_body_exited"]
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1, 23)
