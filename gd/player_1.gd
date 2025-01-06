@@ -85,3 +85,8 @@ func set_health(new_health: int) -> void:
 	health = clamp(new_health, 0, max_health)  # Ensure health stays within valid range
 	if health_bar:
 		health_bar.call("change_health", health - health_bar.get("healthbar1").value)  # Adjusts the bar
+	if health <= 0:
+		die()
+func die() -> void:
+	print("Player has died")
+	queue_free()  # Or handle game over logic

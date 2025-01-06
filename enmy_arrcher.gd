@@ -2,10 +2,11 @@ extends CharacterBody2D
 @export var player: Node2D  # Reference to the player
 @onready var fire_timer: Timer =  $Timer2 # Timer for firing arrows
 @export var arrow_scene: PackedScene  # Drag your arrow scene here
-@export var fire_interval: float = 2.0  # Time between shots
+@export var fire_interval: float = 5.0  # Time between shots
 @export var SPEED = 150
 @export var dameg=0
-
+@onready var arrow_start: Marker2D = $Marker2D  # Reference to the Marker2D node
+var current_arrow: Node = null  # Tracks the currently active arrow
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var timer: Timer = $Timer
 @onready var anim: AnimationPlayer = $AnimationPlayer
@@ -70,6 +71,10 @@ func play_attack_animation() -> void:
 		anim.play("attack_left_up")
 	elif dir.x < 0 and dir.y > 0:
 		anim.play("attack_left_down")
+
+	# Fire arrow when the animation reaches a certain point
+	anim.animation_finished.connect(_on_attack_finished)
+	fire_arrow()
 
 func makepath() -> void:
 	# Update the navigation target position
@@ -154,8 +159,30 @@ func _on_fire_timer_timeout() -> void:
 		fire_arrow()
 
 func fire_arrow() -> void:
+	# Only fire if no active arrow exists
+	if current_arrow != null:
+		return
+
+	# Instantiate the arrow
 	var arrow = arrow_scene.instantiate() as RigidBody2D
-	arrow.global_position = global_position  # Start at the archer's position
-	var direction = (player.global_position - global_position).normalized()
+	arrow.global_position = arrow_start.global_position  # Start at the Marker2D position
+
+	# Calculate direction and apply it to the arrow
+	var direction = (player.global_position - arrow.global_position).normalized()
 	arrow.direction = direction
+
+	# Set the arrow's rotation to face the direction
+	arrow.rotation = direction.angle()
+
+	# Track the active arrow
+	current_arrow = arrow
+
+	# Add the arrow to the scene
 	get_parent().add_child(arrow)
+
+	# Connect a signal to detect when the arrow is disabled
+	arrow.cal("tree_exited", self, "_on_arrow_disabled")
+
+func _on_arrow_disabled() -> void:
+	# Reset the current arrow reference when it leaves the scene
+	current_arrow = null

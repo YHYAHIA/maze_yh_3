@@ -1,7 +1,7 @@
 extends Control
 
-@onready var healthbar1 = $CanvasLayer/ProgressBar1
-@onready var healthbar2 = $CanvasLayer/ProgressBar2
+@onready var healthbar1 = $ProgressBar1
+@onready var healthbar2 = $ProgressBar2
 
 # Changes the health bar value
 func change_health(newvalue: int):

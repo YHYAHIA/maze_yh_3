@@ -7,7 +7,9 @@
 length = 58.0076
 
 [node name="arow" type="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_0fihq")
+lifespan = 1.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_va4mv")

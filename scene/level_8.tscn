@@ -612,8 +612,11 @@ player = NodePath("../player1")
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("25_7qci5")]
 visible = false
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("27_4wy5f")]
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("27_4wy5f")]
 position = Vector2(20, 1495)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../player1")
+dameg = 10
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
