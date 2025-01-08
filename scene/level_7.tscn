@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cuokh3s0h3ke7"]
+[gd_scene load_steps=29 format=4 uid="uid://cuokh3s0h3ke7"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_un032"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_nyups"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="10_ey80v"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="11_bnitt"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="12_s4u43"]
+[ext_resource type="PackedScene" uid="uid://bqom71yx03xt8" path="res://scene/health_bar.tscn" id="13_vfidj"]
 [ext_resource type="Script" path="res://gd/next_level_3.gd" id="14_but7m"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="15_kwfar"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="16_4wnob"]
@@ -412,9 +413,14 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Control" parent="." instance=ExtResource("11_bnitt")]
 
-[node name="player1" parent="." instance=ExtResource("12_s4u43")]
+[node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("12_s4u43")]
 position = Vector2(-513, 1538)
 collision_mask = 519
+health_bar = NodePath("CanvasLayer/health_bar")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player1"]
+
+[node name="health_bar" parent="player1/CanvasLayer" instance=ExtResource("13_vfidj")]
 
 [node name="next_level4" type="Area2D" parent="."]
 position = Vector2(209, 606)

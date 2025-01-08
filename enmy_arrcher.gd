@@ -4,22 +4,28 @@ extends CharacterBody2D
 @onready var fire_timer: Timer = $Timer2  # Timer for firing arrows
 @export var arrow_scene: PackedScene  # Drag your arrow scene here
 @export var fire_interval: float = 5.0  # Time between shots
-@export var SPEED = 150
-@export var damage = 0
-@onready var arrow_start: Marker2D = $Marker2D  # Reference to the Marker2D node
+@export var SPEED: float = 150.0  # Movement speed
+@export var damage: int = 0  # Damage dealt by the archer
+#@onready var arrow_start: Marker2D = $Marker2D  # Reference to the Marker2D node
 var current_arrow: Node = null  # Tracks the currently active arrow
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var timer: Timer = $Timer
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var timer: Timer = $Timer  # Timer for recalculating paths
+@onready var anim: AnimationPlayer = $AnimationPlayer  # Animation player
 var is_attacking: bool = false  # Tracks if the enemy is attacking
 var is_player_in_path_area: bool = false  # Tracks if the player is in the path area
 var is_player_in_attack_area: bool = false  # Tracks if the player is in the attack area
 var attack_finished: bool = true  # Ensures attack animation finishes before switching
 var facing_left: bool = true  # Tracks the facing direction
+var fire_arrow_time: float = 0.5  # Time during the animation to fire the arrow (in seconds)
 
 func _ready() -> void:
+	if fire_interval <= 0:
+		fire_interval = 1.0  # Default value to prevent errors
 	fire_timer.wait_time = fire_interval
 	fire_timer.start()
+
+	# Connect the animation finished signal
+	anim.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(_delta: float) -> void:
 	# Handle movement only if not attacking
@@ -78,20 +84,22 @@ func play_attack_animation() -> void:
 	elif dir.x < 0 and dir.y > 0:
 		anim.play("attack_left_down")
 
-	# Fire arrow when the animation reaches a certain point
-	anim.connect("animation_finished", Callable(self, "_on_attack_finished"))
-	fire_arrow()
+	# Fire arrow only when the animation reaches the specific time
+	if anim.current_animation_position >= fire_arrow_time:
+		fire_arrow()
 
 func fire_arrow() -> void:
 	# Only fire if no active arrow exists
 	if current_arrow != null:
 		return
-# Defer the arrow instantiation to avoid flushing queries
+
+	# Defer the arrow instantiation to avoid flushing queries
 	call_deferred("_spawn_arrow")
+
 func _spawn_arrow() -> void:
 	# Instantiate the arrow
 	var arrow = arrow_scene.instantiate() as RigidBody2D
-	arrow.global_position = arrow_start.global_position  # Start at the Marker2D position
+	arrow.global_position = self.global_position  # Start at the Marker2D position
 
 	# Calculate direction and apply it to the arrow
 	var direction = (player.global_position - arrow.global_position).normalized()
@@ -107,7 +115,6 @@ func _spawn_arrow() -> void:
 	get_parent().add_child(arrow)
 
 	arrow.connect("tree_exiting", Callable(self, "_on_arrow_disabled"))
-
 
 func _on_arrow_disabled() -> void:
 	# Reset the current arrow reference when it leaves the scene
@@ -152,12 +159,8 @@ func _on_attack_body_entered(body: Node2D) -> void:
 		attack_finished = false
 		velocity = Vector2.ZERO
 
-		# Play attack animation based on direction
+		# Play attack animation
 		play_attack_animation()
-
-		# Connect the signal only if it's not already connected
-		#if not anim.is_connected("animation_finished",self,"_on_attack_finished"):
-			#anim.connect("animation_finished",self,"_on_attack_finished")
 
 func _on_attack_body_exited(body: Node2D) -> void:
 	# Resume movement after the player exits the attack area
@@ -173,7 +176,7 @@ func _on_attack_body_exited(body: Node2D) -> void:
 			velocity = Vector2.ZERO
 			update_anim()
 
-func _on_attack_finished(animation_name: String) -> void:
+func _on_animation_finished(animation_name: String) -> void:
 	# Ensure the attack animation is finished before transitioning
 	if animation_name.begins_with("attack_"):
 		attack_finished = true
@@ -183,7 +186,3 @@ func _on_attack_finished(animation_name: String) -> void:
 			else:
 				velocity = Vector2.ZERO
 				update_anim()
-
-
-func _on_arow_tree_exited() -> void:
-	pass # Replace with function body.
