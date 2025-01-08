@@ -14,7 +14,7 @@ var is_player_in_attack_area: bool = false  # Tracks if the player is in the att
 var attack_finished: bool = true  # Ensures attack animation finishes before switching
 var facing_left: bool = true  # Tracks the facing direction
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Handle movement only if not attacking
 	if is_player_in_path_area and not is_attacking:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()

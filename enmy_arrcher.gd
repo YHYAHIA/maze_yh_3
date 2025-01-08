@@ -1,10 +1,11 @@
 extends CharacterBody2D
+
 @export var player: Node2D  # Reference to the player
-@onready var fire_timer: Timer =  $Timer2 # Timer for firing arrows
+@onready var fire_timer: Timer = $Timer2  # Timer for firing arrows
 @export var arrow_scene: PackedScene  # Drag your arrow scene here
 @export var fire_interval: float = 5.0  # Time between shots
 @export var SPEED = 150
-@export var dameg=0
+@export var damage = 0
 @onready var arrow_start: Marker2D = $Marker2D  # Reference to the Marker2D node
 var current_arrow: Node = null  # Tracks the currently active arrow
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
@@ -15,7 +16,12 @@ var is_player_in_path_area: bool = false  # Tracks if the player is in the path 
 var is_player_in_attack_area: bool = false  # Tracks if the player is in the attack area
 var attack_finished: bool = true  # Ensures attack animation finishes before switching
 var facing_left: bool = true  # Tracks the facing direction
-func _physics_process(delta: float) -> void:
+
+func _ready() -> void:
+	fire_timer.wait_time = fire_interval
+	fire_timer.start()
+
+func _physics_process(_delta: float) -> void:
 	# Handle movement only if not attacking
 	if is_player_in_path_area and not is_attacking:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -73,8 +79,39 @@ func play_attack_animation() -> void:
 		anim.play("attack_left_down")
 
 	# Fire arrow when the animation reaches a certain point
-	anim.animation_finished.connect(_on_attack_finished)
+	anim.connect("animation_finished", Callable(self, "_on_attack_finished"))
 	fire_arrow()
+
+func fire_arrow() -> void:
+	# Only fire if no active arrow exists
+	if current_arrow != null:
+		return
+# Defer the arrow instantiation to avoid flushing queries
+	call_deferred("_spawn_arrow")
+func _spawn_arrow() -> void:
+	# Instantiate the arrow
+	var arrow = arrow_scene.instantiate() as RigidBody2D
+	arrow.global_position = arrow_start.global_position  # Start at the Marker2D position
+
+	# Calculate direction and apply it to the arrow
+	var direction = (player.global_position - arrow.global_position).normalized()
+	arrow.direction = direction
+
+	# Set the arrow's rotation to face the direction
+	arrow.rotation = direction.angle()
+
+	# Track the active arrow
+	current_arrow = arrow
+
+	# Add the arrow to the scene
+	get_parent().add_child(arrow)
+
+	arrow.connect("tree_exiting", Callable(self, "_on_arrow_disabled"))
+
+
+func _on_arrow_disabled() -> void:
+	# Reset the current arrow reference when it leaves the scene
+	current_arrow = null
 
 func makepath() -> void:
 	# Update the navigation target position
@@ -118,7 +155,9 @@ func _on_attack_body_entered(body: Node2D) -> void:
 		# Play attack animation based on direction
 		play_attack_animation()
 
-		anim.animation_finished.connect(_on_attack_finished)
+		# Connect the signal only if it's not already connected
+		#if not anim.is_connected("animation_finished",self,"_on_attack_finished"):
+			#anim.connect("animation_finished",self,"_on_attack_finished")
 
 func _on_attack_body_exited(body: Node2D) -> void:
 	# Resume movement after the player exits the attack area
@@ -146,43 +185,5 @@ func _on_attack_finished(animation_name: String) -> void:
 				update_anim()
 
 
-
-func _on_dameg_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		body.health -=dameg
-func _ready() -> void:
-	fire_timer.wait_time = fire_interval
-	fire_timer.start()
-
-func _on_fire_timer_timeout() -> void:
-	if player and player.is_inside_tree():
-		fire_arrow()
-
-func fire_arrow() -> void:
-	# Only fire if no active arrow exists
-	if current_arrow != null:
-		return
-
-	# Instantiate the arrow
-	var arrow = arrow_scene.instantiate() as RigidBody2D
-	arrow.global_position = arrow_start.global_position  # Start at the Marker2D position
-
-	# Calculate direction and apply it to the arrow
-	var direction = (player.global_position - arrow.global_position).normalized()
-	arrow.direction = direction
-
-	# Set the arrow's rotation to face the direction
-	arrow.rotation = direction.angle()
-
-	# Track the active arrow
-	current_arrow = arrow
-
-	# Add the arrow to the scene
-	get_parent().add_child(arrow)
-
-	# Connect a signal to detect when the arrow is disabled
-	arrow.cal("tree_exited", self, "_on_arrow_disabled")
-
-func _on_arrow_disabled() -> void:
-	# Reset the current arrow reference when it leaves the scene
-	current_arrow = null
+func _on_arow_tree_exited() -> void:
+	pass # Replace with function body.

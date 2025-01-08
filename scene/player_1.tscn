@@ -310,9 +310,9 @@ collision_mask = 7
 script = ExtResource("1_yyot2")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(-1.81821, 10)
+position = Vector2(-4.76837e-07, 0)
 scale = Vector2(0.3, 0.3)
-energy = 0.77
+energy = 0.66
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 1
@@ -331,7 +331,7 @@ shape = SubResource("CircleShape2D_hn2hl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 15.4545)
+position = Vector2(0, -3.8147e-06)
 scale = Vector2(0.46917, 0.359025)
 shape = SubResource("CircleShape2D_7wveg")
 
@@ -340,6 +340,7 @@ material = SubResource("ShaderMaterial_laghy")
 scale = Vector2(0.515625, 0.498992)
 sprite_frames = SubResource("SpriteFrames_clor0")
 animation = &"move_down"
+offset = Vector2(0, -30)
 
 [node name="flash_hit" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")

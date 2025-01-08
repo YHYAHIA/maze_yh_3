@@ -10,6 +10,7 @@ length = 58.0076
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_0fihq")
 lifespan = 1.2
+arrow_damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_va4mv")
@@ -19,3 +20,6 @@ vframes = 2
 position = Vector2(-28, 3)
 rotation = -1.58215
 shape = SubResource("SeparationRayShape2D_xesin")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
