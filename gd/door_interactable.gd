@@ -1,80 +1,86 @@
 extends "res://gd/interactable.gd"
 
-
 var collected_key = 0
 
-
-@export var is_open = true :
+@export var is_open = true:
 	set(value):
-		if (is_open==value):
+		if is_open == value:
 			return
-		is_open=value
+		is_open = value
 		_update_animations()
-		
+		_update_label()
 
-			
-
-@export var anim : AnimatedSprite2D:
+@export var anim: AnimatedSprite2D:
 	set(value):
-		anim =value
+		anim = value
 		_update_animations()
 
 @export_group("animation names")
-@export var open_anim : StringName = "open"
-@export var closed_anim :StringName = "closed"
-var door_open:bool
+@export var open_anim: StringName = "open"
+@export var closed_anim: StringName = "closed"
+
+var door_open: bool
+var locked = true
 
 @onready var collision_polygon_2d: CollisionShape2D = $"../Camera2D/CollisionPolygon2D"
-
-
-@onready var collision=$CollisionShape2D
-var locked = true;
-
+@onready var collision = $CollisionShape2D
+@onready var status_label: Label = $"../Label"
+@onready var fade_timer: Timer = $"../fade_Timer"
 
 func interact(_user: Node2D):
-	# Check if the door is already unlocked
 	if not locked:
-		is_open=not is_open
-		print("The door is already open.")
-		return  # Do nothing further if the door is already open
+		is_open = not is_open
+		_update_label()
+		return
 	
-	# Check if the player has keys to unlock the door
 	if GlobalInteract.collectedKeys > 0:
-		GlobalInteract.collectedKeys -= 1  # Use a key to unlock the door
-		locked = false  # Unlock the door
-		is_open = true  # Open the door
+		GlobalInteract.collectedKeys -= 1
+		locked = false
+		is_open = true
 		print("Door unlocked!")
 	else:
 		print("The door is locked. You need a key!")
-	
+		_update_label()
 
-			
-		#if (is_open)=(is_open):
-		#	collision_polygon_2d.set_disabled(true)
-		#door_open=true
-		#$collision.set_deferred("disable",true)
-		#$"../Camera2D/CollisionPolygon2D".disabled
-	
-
-	
 func _update_animations():
-	if (anim!=null):
-		if(is_open):
-			
+	if anim != null:
+		if is_open:
 			anim.play(open_anim)
-			#set_collision_layer_value(1,false)
-			collision_polygon_2d.set_disabled(true)
-		else :
+			if collision_polygon_2d != null:
+				collision_polygon_2d.set_disabled(true)
+			else:
+				print("CollisionPolygon2D is null. Check the node path or scene setup.")
+		else:
 			anim.play(closed_anim)
-			
-func stop_interaction(_user : Node2D):
-	#collision_polygon_2d.set_disabled(false)
-	collision_polygon_2d.set_deferred("disabled",false)
+			if collision_polygon_2d != null:
+				collision_polygon_2d.set_disabled(false)
+			else:
+				print("CollisionPolygon2D is null. Check the node path or scene setup.")
+
+func _update_label():
+	if status_label != null:
+		if locked:
+			status_label.text = "The door is locked. You need a key!"
+		elif is_open:
+			status_label.text = "The door is open."
+		else:
+			status_label.text = "The door is closed."
+		status_label.show()
+		fade_timer.start()
+
+
+
+func stop_interaction(_user: Node2D):
+	if collision_polygon_2d != null:
+		collision_polygon_2d.set_deferred("disabled", false)
+	else:
+		print("CollisionPolygon2D is null. Check the node path or scene setup.")
 	anim.play(closed_anim)
-	is_open = false;
-#func _process(_delta):
-	#if (is_open):
-		#collision.set_deferred("disable",true)
-		#print("d")
-	#else :
-		
+	is_open = false
+	_update_label()
+
+
+func _on_fade_timer_timeout() -> void:
+	if status_label != null:
+		status_label.hide()
+	 # Replace with function body.

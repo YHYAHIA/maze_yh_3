@@ -60,3 +60,20 @@ anim = NodePath("../Camera2D/AnimatedSprite2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dooriteractableArea2D"]
 position = Vector2(8, 11)
 shape = SubResource("CircleShape2D_cuhg4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 21.0
+offset_top = -34.0
+offset_right = 61.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(0.37007, 0.825872, 0.925373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+
+[node name="fade_Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="fade_Timer" to="dooriteractableArea2D" method="_on_fade_timer_timeout"]
