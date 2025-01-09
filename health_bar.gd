@@ -7,7 +7,6 @@ extends Control
 func change_health(change_value: int) -> void:
 	var old_value = healthbar1.value
 	var new_value = clamp(old_value + change_value, 0, healthbar1.max_value)
-
 	# Update the primary health bar value
 	healthbar1.value = new_value
 

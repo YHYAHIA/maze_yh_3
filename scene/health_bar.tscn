@@ -1,22 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqom71yx03xt8"]
+[gd_scene load_steps=6 format=3 uid="uid://c5kflm8bbt3sk"]
 
 [ext_resource type="Script" path="res://health_bar.gd" id="1_n5iso"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtvwa"]
-skew = Vector2(1, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.108209, 0.108209, 0.108209, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi6ks"]
-bg_color = Color(0.972549, 0, 0.0829473, 1)
-skew = Vector2(1, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color(0.0705882, 0.0705882, 0.0705882, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doqcv"]
 bg_color = Color(0.670588, 0.670588, 0.670588, 0)
@@ -36,6 +20,23 @@ border_width_bottom = 3
 border_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtvwa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.108209, 0.108209, 0.108209, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi6ks"]
+bg_color = Color(0.972549, 0, 0.0829473, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0)
+
 [node name="health_bar" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -45,17 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n5iso")
 
-[node name="ProgressBar1" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_left = 694.0
-offset_top = 17.0
-offset_right = 834.0
-offset_bottom = 46.0
-theme_override_styles/background = SubResource("StyleBoxFlat_vtvwa")
-theme_override_styles/fill = SubResource("StyleBoxFlat_yi6ks")
-step = 1.0
-value = 100.0
-
 [node name="ProgressBar2" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 694.0
@@ -64,5 +54,16 @@ offset_right = 835.0
 offset_bottom = 46.0
 theme_override_styles/background = SubResource("StyleBoxFlat_doqcv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2pbek")
+step = 1.0
+value = 100.0
+
+[node name="ProgressBar1" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 17.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vtvwa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yi6ks")
 step = 1.0
 value = 100.0

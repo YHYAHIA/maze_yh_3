@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c80u63dkfsetm"]
+[gd_scene load_steps=20 format=4 uid="uid://c80u63dkfsetm"]
 
 [ext_resource type="Script" path="res://gd/level_1.gd" id="1_nmasa"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_skk8k"]
@@ -11,10 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://rq7e2to3rm14" path="res://scene/flor_dc.tscn" id="6_xy0e7"]
 [ext_resource type="PackedScene" uid="uid://ctklm73civu0o" path="res://scene/next_level.tscn" id="7_ys3eg"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="9_x7jx0"]
+[ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="10_vsvw6"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="11_f3qe0"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="11_r4osj"]
 [ext_resource type="AudioStream" uid="uid://bwqj6sn7auigc" path="res://sfx/game-music-loop-1-143979.mp3" id="12_sp5pj"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="18_akdx7"]
+[ext_resource type="PackedScene" uid="uid://fs7a0dp6iw5e" path="res://scene/enmy_arrcher.tscn" id="18_pafss"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_2cium"]
 [ext_resource type="PackedScene" uid="uid://c6mxk03pqvyep" path="res://scene/stirs_2.tscn" id="19_3810j"]
 
@@ -50,8 +52,13 @@ tile_map_data = PackedByteArray("AADGAgX+AAAUABEAAADeAvj9AAAVABEAAACyAvP9AAAUABA
 [node name="dec" parent="." instance=ExtResource("4_vgynf")]
 tile_map_data = PackedByteArray("AABcAND/BAAWAAoAAABTAF4AAQAGAA4AABBSAF4AAQAHAA4AABBTAF8AAQAGAA8AABBSAF8AAQAHAA8AABDT/1EABAAbAAEAAABOAND/BAAWAAoAAABdAB4ABAAWAAoAAABLAB8ABAAWAAoAAABfAFgABAAWAAoAAABJAE8ABAAWAAoAAAAkAFsABAAWAAoAAAAgAFAABAAWAAoAAAD2/1EABAAWAAoAAAD2/1sABAAWAAoAAAAJAFUABAAGAAoAAABgAE4ABAAGAA4AAFBdAPH/BAAGAA4AAFBcALX/BAAbAAEAAAA=")
 
-[node name="player1" parent="." instance=ExtResource("5_y5kpi")]
+[node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("5_y5kpi")]
 position = Vector2(-499, 1534)
+health_bar = NodePath("CanvasLayer/health_bar")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player1"]
+
+[node name="health_bar" parent="player1/CanvasLayer" instance=ExtResource("10_vsvw6")]
 
 [node name="next_level" parent="." instance=ExtResource("7_ys3eg")]
 
@@ -81,6 +88,11 @@ position = Vector2(1447, -892)
 
 [node name="numarea" parent="." instance=ExtResource("19_2cium")]
 position = Vector2(1424, -1041)
+
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_pafss")]
+position = Vector2(490, 1528)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../player1")
 
 [connection signal="tree_entered" from="flor dc" to="player1" method="_on_flor_dc_tree_entered"]
 [connection signal="body_entered" from="next_level" to="next_level" method="_on_body_entered"]

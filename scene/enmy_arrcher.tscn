@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://7mwedndq5dkf"]
+[gd_scene load_steps=27 format=3 uid="uid://fs7a0dp6iw5e"]
 
 [ext_resource type="Script" path="res://enmy_arrcher.gd" id="1_0tvyu"]
-[ext_resource type="PackedScene" uid="uid://baut5hxggjjs6" path="res://scene/arow.tscn" id="2_8jo4w"]
+[ext_resource type="PackedScene" path="res://scene/arow.tscn" id="2_8jo4w"]
 [ext_resource type="Texture2D" uid="uid://bgayrx1ehjdb8" path="res://char/Archer_Blue.png" id="2_42s8p"]
 [ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="3_lyqdn"]
 [ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="5_i8gyf"]
-[ext_resource type="Script" path="res://dameg_area.gd" id="6_i4gd4"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="7_jqxay"]
 [ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="8_eoi75"]
 [ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="9_x1433"]
@@ -63,19 +62,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/path = NodePath("AudioStreamPlayer2D2:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -83,30 +82,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AudioStreamPlayer2D2:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Marker2D:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 23)]
 }
 
 [sub_resource type="Animation" id="Animation_uj7yx"]
@@ -161,25 +136,13 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Marker2D:position")
+tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(10, 37)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -207,58 +170,22 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AudioStreamPlayer2D2:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2.14286),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.428571, 0.571428),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("dameg_area/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2.14286),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Marker2D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-28, 10)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -307,25 +234,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Marker2D:position")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.714285),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-15, 31)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -374,25 +289,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Marker2D:position")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-18, -17)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -432,34 +335,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Marker2D:position")
+tracks/2/path = NodePath("Sprite2D:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(28, 8)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -508,25 +399,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Marker2D:position")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(14, 31)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -575,25 +454,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Marker2D:position")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(21, -21)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -654,25 +521,13 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Marker2D:position")
+tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(13, -45)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.857143),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -888,17 +743,17 @@ _data = {
 "run_right": SubResource("Animation_kls0b")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mqpa8"]
-radius = 28.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_os2hd"]
 radius = 13.0384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4x3y4"]
-radius = 490.474
+radius = 483.125
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0e82"]
 radius = 214.037
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j52c6"]
+radius = 408.001
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enmy"]]
 script = ExtResource("1_0tvyu")
@@ -933,15 +788,6 @@ libraries = {
 "": SubResource("AnimationLibrary_x7lqi")
 }
 speed_scale = 1.427
-
-[node name="dameg_area" type="Area2D" parent="."]
-position = Vector2(4, -200)
-script = ExtResource("6_i4gd4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dameg_area"]
-position = Vector2(3, 4)
-shape = SubResource("CircleShape2D_mqpa8")
-disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_jqxay")
@@ -979,11 +825,14 @@ debug_color = Color(0.7, 0.395529, 0.141606, 0.42)
 
 [node name="Timer2" type="Timer" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1, 23)
-
 [node name="arow" parent="." instance=ExtResource("2_8jo4w")]
 scale = Vector2(0.1, 0.1)
+
+[node name="path2" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="path2"]
+shape = SubResource("CircleShape2D_j52c6")
 
 [connection signal="body_entered" from="path" to="." method="_on_path_body_entered"]
 [connection signal="body_exited" from="path" to="." method="_on_path_body_exited"]

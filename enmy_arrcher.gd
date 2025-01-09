@@ -40,7 +40,6 @@ func _physics_process(_delta: float) -> void:
 			facing_left = true
 	else:
 		velocity = Vector2.ZERO
-
 	move_and_slide()
 
 	# Update animations
@@ -83,10 +82,11 @@ func play_attack_animation() -> void:
 		anim.play("attack_left_up")
 	elif dir.x < 0 and dir.y > 0:
 		anim.play("attack_left_down")
+		
 
 	# Fire arrow only when the animation reaches the specific time
-	if anim.current_animation_position >= fire_arrow_time:
-		fire_arrow()
+	#if anim.current_animation_position >= fire_arrow_time:
+		#fire_arrow()
 
 func fire_arrow() -> void:
 	# Only fire if no active arrow exists
@@ -186,3 +186,7 @@ func _on_animation_finished(animation_name: String) -> void:
 			else:
 				velocity = Vector2.ZERO
 				update_anim()
+
+
+
+	# Replace with function body.
