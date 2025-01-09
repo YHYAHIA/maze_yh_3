@@ -485,7 +485,7 @@ max_distance = 9992.0
 visible = false
 color = Color(0.129412, 0.0509804, 0.0470588, 0.54902)
 
-[node name="damge2" type="Area2D" parent="."]
+[node name="damge2" type="Area2D" parent="." groups=["enmy"]]
 position = Vector2(-636, 471)
 script = ExtResource("21_rusum")
 

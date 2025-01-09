@@ -6,12 +6,12 @@
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
-border_width_right = 2
+border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.108209, 0.108209, 0.108209, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi6ks"]
-bg_color = Color(0.972549, 0.0235294, 0.0823529, 1)
+bg_color = Color(0.972549, 0, 0.0829473, 1)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -19,7 +19,7 @@ border_width_bottom = 3
 border_color = Color(0.0705882, 0.0705882, 0.0705882, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doqcv"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.670588, 0.670588, 0.670588, 0)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -28,7 +28,7 @@ border_width_bottom = 3
 border_color = Color(0.108209, 0.108209, 0.108209, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pbek"]
-bg_color = Color(0.0842968, 0.548507, 0.142139, 1)
+bg_color = Color(0.0964571, 0.791045, 0.117282, 1)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3

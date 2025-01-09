@@ -26,6 +26,10 @@ window/size/viewport_width=854
 window/size/viewport_height=385
 window/stretch/mode="viewport"
 
+[global_group]
+
+enmy="enmy"
+
 [input]
 
 left={

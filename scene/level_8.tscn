@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://ctp7bqcudyypg"]
+[gd_scene load_steps=35 format=4 uid="uid://ctp7bqcudyypg"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_m8uo7"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_n4egs"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="24_mvs2p"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="25_7qci5"]
 [ext_resource type="PackedScene" uid="uid://bqom71yx03xt8" path="res://scene/health_bar.tscn" id="26_qho6t"]
-[ext_resource type="PackedScene" uid="uid://7mwedndq5dkf" path="res://scene/enmy_arrcher.tscn" id="27_4wy5f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mynwd"]
 texture = ExtResource("8_j5r2e")
@@ -516,6 +515,7 @@ color = Color(0.129412, 0.0509804, 0.0470588, 0.54902)
 [node name="damge2" type="Area2D" parent="."]
 position = Vector2(-636, 471)
 script = ExtResource("20_k7m8w")
+erea_damage = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damge2"]
 position = Vector2(1326, -417)
@@ -602,21 +602,15 @@ position = Vector2(-0.00012207, 3.05176e-05)
 scale = Vector2(1, 1.2)
 tile_map_data = PackedByteArray("AAAEAAAAAAAGAAAAAVABAAEAAgACAA4AAlABAAAAAgACAA4AAlAAAAAAAgACAA4AAlD//wAAAgACAA4AAlD+/wAAAgAJAA8AAVAAAAEAAgACAA4AAlD//wEAAgACAA4AAlD+/wEAAgAJAA8AAVA=")
 
-[node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_mvs2p")]
-position = Vector2(869, 469)
-player = NodePath("../player1")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("25_7qci5")]
 visible = false
 
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("27_4wy5f")]
-position = Vector2(20, 1495)
-scale = Vector2(0.5, 0.5)
+[node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_mvs2p")]
+position = Vector2(713, 365)
+damage = 20
 player = NodePath("../player1")
-fire_interval = 0.0
-SPEED = 100.0
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

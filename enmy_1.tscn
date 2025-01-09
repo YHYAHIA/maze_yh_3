@@ -1686,11 +1686,10 @@ radius = 378.021
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2d1x"]
 radius = 161.003
 
-[node name="enmy_1" type="CharacterBody2D"]
+[node name="enmy_1" type="CharacterBody2D" groups=["enmy"]]
 y_sort_enabled = true
 collision_mask = 15
 script = ExtResource("1_hscb6")
-dameg = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i1yay")

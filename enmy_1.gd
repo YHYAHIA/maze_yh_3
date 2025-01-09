@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name bomber
 
 @export var SPEED = 150
-@export var dameg=0
+@export var damage=0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var timer: Timer = $Timer
@@ -144,4 +145,6 @@ func _on_attack_finished(animation_name: String) -> void:
 
 func _on_dameg_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.health -=dameg
+		if body.has_method("set_health"):  # Ensure the player has a health setter
+			body.set_health(body.get_health() - damage)  # Apply damage
+			print("Player hit! Damage:", damage)

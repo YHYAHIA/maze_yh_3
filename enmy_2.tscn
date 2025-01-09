@@ -788,7 +788,7 @@ radius = 490.474
 [sub_resource type="CircleShape2D" id="CircleShape2D_bh538"]
 radius = 214.037
 
-[node name="enmy_2" type="CharacterBody2D"]
+[node name="enmy_2" type="CharacterBody2D" groups=["enmy"]]
 script = ExtResource("1_ypp7u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

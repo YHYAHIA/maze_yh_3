@@ -13,7 +13,7 @@ extends CharacterBody2D
 
 # Handles input and updates velocity
 func handle_input() -> void:
-	velocity = Vector2.ZERO  # Reset velocity to prevent diagonal movement
+	velocity = Vector2.ZERO  # Reset velocity
 	if Input.is_action_pressed("up"):
 		velocity.y = -1
 	elif Input.is_action_pressed("down"):
@@ -49,23 +49,24 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	update_animation()
 
-# Updates health and UI elements
+# Updates health and checks for death
 func _process(_delta: float) -> void:
-	var current_scene_file = get_tree().current_scene.scene_file_path
-
 	if health <= 0:
-		GlobalInteract.collectedKeys = 0
-		queue_free()
-		TransitionScene.transition()
-		get_tree().change_scene_to_file(current_scene_file)
+		die()
 
 	if GlobalInteract.plyer_geting_damge:
 		flash_hit.play()
 
-# Handles damage area entry
-func _on_damge_body_entered(body: Node2D) -> void:
-	if body == self:
-		apply_damage_effect(10)  # Example: Apply 10 damage
+# Handles collision with damage areas
+#func _on_damge_body_entered(body: Node2D) -> void:
+	#if body.is_in_group("enemy"):  # Check if the body is an enemy
+	#	apply_damage_effect(10)  # Example: Apply 10 damage
+		#GlobalInteract.plyer_geting_damge = true
+
+# Handles exiting a damage area
+#func _on_damge_body_exited(body: Node2D) -> void:
+	#if body.is_in_group("enemy"):  # Ensure the exited body is an enemy
+		#GlobalInteract.plyer_geting_damge = false
 
 # Applies damage and updates the health bar
 func apply_damage_effect(damage: int) -> void:
@@ -84,9 +85,16 @@ func get_health() -> int:
 func set_health(new_health: int) -> void:
 	health = clamp(new_health, 0, max_health)  # Ensure health stays within valid range
 	if health_bar:
-		health_bar.call("change_health", health - health_bar.get("healthbar1").value)  # Adjusts the bar
+		var current_value = health_bar.get("healthbar1").value
+		health_bar.call("change_health", health - current_value)  # Adjusts the bar
 	if health <= 0:
 		die()
+
+# Handles player death
 func die() -> void:
 	print("Player has died")
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	GlobalInteract.collectedKeys = 0
+	TransitionScene.transition()
+	get_tree().change_scene_to_file(current_scene_file)
 	queue_free()  # Or handle game over logic

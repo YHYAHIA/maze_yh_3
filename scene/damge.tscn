@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gd/dam.gd" id="1_v6bk4"]
 
-[node name="damge" type="Area2D"]
+[node name="damge" type="Area2D" groups=["enmy"]]
 position = Vector2(-19, 1615)
 script = ExtResource("1_v6bk4")
 
