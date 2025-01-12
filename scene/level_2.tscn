@@ -94,6 +94,7 @@ rotation = 1.54164
 [node name="sowred_knite" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_qwmxl")]
 position = Vector2(1225, -1223)
 scale = Vector2(0.5, 0.5)
+damage = 30
 player = NodePath("../player1")
 
 [connection signal="body_entered" from="next_level2" to="next_level2" method="_on_body_entered"]
