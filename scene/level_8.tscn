@@ -24,9 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://bx82bhoewmttr" path="res://scene/damge.tscn" id="22_vdiff"]
 [ext_resource type="Script" path="res://scene/path_follow_2d.gd" id="23_6msuk"]
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="24_mvs2p"]
-[ext_resource type="PackedScene" path="res://scene/pause_mniu.tscn" id="25_7qci5"]
+[ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="25_7qci5"]
 [ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="26_qho6t"]
-[ext_resource type="PackedScene" path="res://scene/barel.tscn" id="27_dtqnn"]
+[ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="27_dtqnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mynwd"]
 texture = ExtResource("8_j5r2e")

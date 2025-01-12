@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="10_ey80v"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="11_bnitt"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="12_s4u43"]
-[ext_resource type="PackedScene" uid="uid://bqom71yx03xt8" path="res://scene/health_bar.tscn" id="13_vfidj"]
+[ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="13_vfidj"]
 [ext_resource type="Script" path="res://gd/next_level_3.gd" id="14_but7m"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="15_kwfar"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="16_4wnob"]

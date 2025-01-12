@@ -19,7 +19,7 @@ func _on_resume_pressed() -> void:
 
 
 func _on_setting_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scene/volume_stting.tscn")
 
 
 func _on_quit_pressed() -> void:
