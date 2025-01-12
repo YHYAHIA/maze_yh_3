@@ -15,7 +15,7 @@ func change_health(change_value: int) -> void:
 	if change_value > 0:
 		stylebox.bg_color = Color("1a340b")  # Green for healing
 	elif change_value < 0:
-		stylebox.bg_color = Color("ca0020")  # Red for damage
+		stylebox.bg_color = Color("1a340b")  # Red for damage
 	healthbar1.add_theme_stylebox_override("fill", stylebox)
 
 	# Smoothly adjust the secondary health bar

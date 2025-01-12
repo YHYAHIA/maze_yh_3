@@ -1,38 +1,82 @@
 extends Control
 
-# Tracks whether the game is paused
-var is_paused: bool = false:
-	set = set_paused
+# Signals for better communication
+signal game_paused(paused)
 
-# Tracks if the volume settings should be shown
-var control_node_hide: bool = false
+# Use an enum for state management
+enum MenuState {PAUSE_MENU, VOLUME_SETTINGS, HIDDEN}
+@onready var control_1: Control = $Control
+@onready var volume_setting: Control = $volume_setting
 
-func _ready() -> void:
-	$volume_setting.hide()  # Initially hide the volume settings
+# Current menu state
+var current_state = MenuState.HIDDEN
+var previous_volume: float = 0
+
+func _ready():
+	hide_all_menus()  # Ensure the entire menu is hidden initially
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		is_paused = !is_paused  # Toggle the paused state
+		toggle_pause()
 
-func _process(delta: float) -> void:
-	if control_node_hide:
-		$volume_setting.show()
+func toggle_pause():
+	if current_state == MenuState.HIDDEN:
+		show_pause_menu()
+	else:
+		hide_all_menus()
 
-# Sets the paused state and updates the game tree
-func set_paused(value: bool) -> void:
-	is_paused = value
-	get_tree().paused = is_paused
-	visible = is_paused  # Show/hide this control based on pause state
+func show_pause_menu():
+	# Show the pause menu with the control node visible
+	show()
+	control_1.show()
+	volume_setting.hide()
+	current_state = MenuState.PAUSE_MENU
+	get_tree().paused = true
+	emit_signal("game_paused", true)
 
-# Resumes the game
-func _on_resume_pressed() -> void:
-	is_paused = false
+func show_volume_settings():
+	# Show the volume settings menu
+	control_1.hide()
+	volume_setting.show()
+	current_state = MenuState.VOLUME_SETTINGS
 
-# Shows the settings menu
-func _on_setting_pressed() -> void:
-	$Control.hide()  # Hide the pause menu
-	control_node_hide = true
+func hide_all_menus():
+	# Hide all menus and unpause the game
+	hide()
+	control_1.hide()
+	volume_setting.hide()
+	current_state = MenuState.HIDDEN
+	get_tree().paused = false
+	emit_signal("game_paused", false)
 
-# Quits the game
-func _on_quit_pressed() -> void:
+func _on_resume_pressed():
+	# Unpause and hide the menu
+	hide_all_menus()
+
+func _on_setting_pressed():
+	# Show the volume settings menu
+	show_volume_settings()
+
+func _on_quit_pressed():
+	# Quit the game
 	get_tree().quit()
+
+func _on_volume_value_changed(value: float):
+	# Update the volume within a valid range
+	
+	AudioServer.set_bus_volume_db(0, value)
+
+func _on_mute_toggled(toggled_on: bool):
+	# Mute or unmute the audio
+	if toggled_on:
+		previous_volume = AudioServer.get_bus_volume_db(0)
+		AudioServer.set_bus_volume_db(0, -80)  # Mute
+	else:
+		AudioServer.set_bus_volume_db(0, previous_volume)  # Restore previous volume
+
+
+
+
+func _on_voluem_setting_back_pressed() -> void:
+	hide_all_menus()
+	# Replace with function body.

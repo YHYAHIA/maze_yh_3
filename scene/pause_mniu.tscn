@@ -121,7 +121,7 @@ layout_mode = 2
 layout_mode = 2
 text = "volume"
 
-[node name="resume" type="HSlider" parent="volume_setting/GridContainer/VBoxContainer"]
+[node name="volume" type="HSlider" parent="volume_setting/GridContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="HSeparator2" type="HSeparator" parent="volume_setting/GridContainer/VBoxContainer"]
@@ -136,11 +136,13 @@ text = "mute"
 custom_minimum_size = Vector2(195, 30)
 layout_mode = 2
 
-[node name="resume2" type="Button" parent="volume_setting/GridContainer"]
+[node name="volume_setting -back" type="Button" parent="volume_setting/GridContainer"]
 layout_mode = 2
 text = "resume"
 
 [connection signal="pressed" from="Control/GridContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/GridContainer/setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="Control/GridContainer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="volume_setting/GridContainer/resume2" to="." method="_on_resume_pressed"]
+[connection signal="value_changed" from="volume_setting/GridContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="volume_setting/GridContainer/mute" to="." method="_on_mute_toggled"]
+[connection signal="pressed" from="volume_setting/GridContainer/volume_setting -back" to="." method="_on_voluem_setting_back_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://health_bar.gd" id="1_n5iso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doqcv"]
-bg_color = Color(0.670588, 0.670588, 0.670588, 0)
+bg_color = Color(0.670588, 0.670588, 0.670588, 1)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -12,7 +12,7 @@ border_width_bottom = 3
 border_color = Color(0.108209, 0.108209, 0.108209, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pbek"]
-bg_color = Color(0.0964571, 0.791045, 0.117282, 1)
+bg_color = Color(0.791045, 0.0217763, 0.0725521, 1)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -30,7 +30,7 @@ border_width_bottom = 3
 border_color = Color(0.108209, 0.108209, 0.108209, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi6ks"]
-bg_color = Color(0.972549, 0, 0.0829473, 1)
+bg_color = Color(0, 0.972549, 0.0156216, 1)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
