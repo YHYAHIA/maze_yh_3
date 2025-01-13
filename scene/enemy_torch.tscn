@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://us1b5uvgirqt"]
+[gd_scene load_steps=22 format=3 uid="uid://us1b5uvgirqt"]
 
 [ext_resource type="Texture2D" uid="uid://i5610puwgawh" path="res://char/Torch_Blue.png" id="1_f4wh3"]
+[ext_resource type="Script" path="res://scene/enemy_torch.gd" id="1_nxv1u"]
 [ext_resource type="PackedScene" uid="uid://docq1u1tvem8" path="res://scene/fire.tscn" id="2_pmebl"]
 [ext_resource type="Script" path="res://dameg_area.gd" id="3_wgnvd"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="4_xu24t"]
@@ -97,6 +98,42 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("dameg_area/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19.0755, -30.9604)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("dameg_area/CollisionShape2D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.626561]
 }
 
 [sub_resource type="Animation" id="Animation_u48l6"]
@@ -262,6 +299,42 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dameg_area/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30.7664, -22.3031)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dameg_area/CollisionShape2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.19598]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_criyc"]
 resource_name = "attack_left"
@@ -315,6 +388,42 @@ tracks/3/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dameg_area/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35.4828, 29.4274)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dameg_area/CollisionShape2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.19598]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_y5hwy"]
 resource_name = "attack_up"
@@ -355,6 +464,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dameg_area/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21.1292, 29.1472)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dameg_area/CollisionShape2D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.76888]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_gq083"]
@@ -397,6 +542,42 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dameg_area/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("dameg_area/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19.0755, -30.9604)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dameg_area/CollisionShape2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.626561]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6lhsn"]
 _data = {
@@ -411,6 +592,9 @@ _data = {
 "run_right": SubResource("Animation_o5wjx")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihnbe"]
+size = Vector2(194.161, 136.296)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6fdd"]
 radius = 19.105
 
@@ -421,6 +605,7 @@ radius = 490.474
 radius = 84.9588
 
 [node name="enemy_torch" type="CharacterBody2D" groups=["enmy"]]
+script = ExtResource("1_nxv1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_f4wh3")
@@ -441,10 +626,12 @@ speed_scale = 0.3
 rotation = 2.51434
 script = ExtResource("3_wgnvd")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="dameg_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dameg_area"]
+position = Vector2(19.0755, -30.9604)
+rotation = 0.626561
 scale = Vector2(0.6, 0.6)
-polygon = PackedVector2Array(0, -1, 143.5, 105.879, 166.832, 63.0286, 177.807, 17.2746, 176.778, -29.0521, 162.402, -76.941, 137.78, -113.749, 105.528, -145.831, 63.0286, -166.832, 17.2746, -177.807, -29.0521, -176.778, -74.6104, -162.754, -113.749, -137.78, -144.841, -106.869)
-disabled = true
+shape = SubResource("RectangleShape2D_ihnbe")
+one_way_collision_margin = 0.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xu24t")

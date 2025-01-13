@@ -617,7 +617,7 @@ player = NodePath("../player1")
 position = Vector2(-753, 1364)
 scale = Vector2(0.4, 0.4)
 player = NodePath("../player1")
-explosion_damage = 0
+explosion_damage = 20
 explosion_radius = 120.0
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]

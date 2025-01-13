@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://lmltn8cmw3ip"]
+[gd_scene load_steps=20 format=4 uid="uid://lmltn8cmw3ip"]
 
 [ext_resource type="Script" path="res://gd/level_2.gd" id="1_nk5c7"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_y2d8c"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="12_bd32k"]
 [ext_resource type="PackedScene" uid="uid://dee6nj2wamyuf" path="res://scene/sowred_knite.tscn" id="17_qwmxl"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="18_0ad7x"]
+[ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="18_ihh7o"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="20_hocl8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gxkb"]
@@ -96,6 +97,8 @@ position = Vector2(1225, -1223)
 scale = Vector2(0.5, 0.5)
 damage = 30
 player = NodePath("../player1")
+
+[node name="pause_mniu1" parent="." instance=ExtResource("18_ihh7o")]
 
 [connection signal="body_entered" from="next_level2" to="next_level2" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

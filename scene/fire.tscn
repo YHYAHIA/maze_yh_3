@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://docq1u1tvem8"]
+[gd_scene load_steps=10 format=3 uid="uid://docq1u1tvem8"]
 
+[ext_resource type="Script" path="res://scene/fire.gd" id="1_qm0mf"]
 [ext_resource type="Texture2D" uid="uid://4hunnhrhxwa2" path="res://scene/Fire.png" id="1_u3mdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhdsr"]
@@ -1234,6 +1235,7 @@ _data = {
 }
 
 [node name="fire" type="Area2D"]
+script = ExtResource("1_qm0mf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hhdsr")
