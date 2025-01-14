@@ -13,7 +13,7 @@ extends CharacterBody2D
 	"right": $spawenpoits/right
 }
 @onready var attack_timer: Timer = $attack_timer
-@onready var fire_timer: Timer = $fire_line_timer
+@onready var fire_timer: Timer = $fire_timer
 @onready var nav_timer: Timer = $nav_timer
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -26,6 +26,14 @@ var is_player_in_attack_area: bool = false
 var active_line_of_fire: Node = null  # To track the active line of fire
 
 func _ready() -> void:
+	# Ensure the timers are properly initialized
+	if attack_timer == null:
+		print("Error: attack_timer is null!")
+		return
+	if fire_timer == null:
+		print("Error: fire_timer is null!")
+		return
+
 	if player == null:
 		print("Player not assigned. Freeing the enemy.")
 		queue_free()
@@ -86,12 +94,11 @@ func attack_player() -> void:
 	if not anim.is_connected("animation_finished", Callable(self, "_on_attack_animation_finished")):
 		anim.connect("animation_finished", Callable(self, "_on_attack_animation_finished"))
 
-	# Attack Type 1: Regular Attack
+	# Attack Type 1: Regular Attack (Damage to player)
 	attack_damage_to_player()
 
-	# Attack Type 2: Line of Fire (triggered during the attack animation)
-	# You can trigger this using an animation keyframe (explained below)
-	# Alternatively, you can directly call spawn_line_of_fire() at a specific time during the animation
+	# Attack Type 2: Line of Fire (Triggered during the attack animation)
+	# We will trigger the line of fire in a keyframe event in the animation
 
 func attack_damage_to_player() -> void:
 	if player.global_position.distance_to(global_position) <= 100:
@@ -99,8 +106,19 @@ func attack_damage_to_player() -> void:
 			player.set_health(player.get_health() - attack_damage)
 
 func spawn_line_of_fire() -> void:
-	if not line_of_fire_scene or !fire_timer.is_stopped():
+	if not line_of_fire_scene or fire_timer == null:
+		print("Fire timer is not initialized!")
 		return
+
+	# Check the current status of the fire timer
+	print("Fire Timer is running: ", fire_timer.is_stopped())
+
+	# Stop the timer if it's already running
+	if fire_timer.is_stopped() == false:
+		print("Stopping the fire timer")
+		fire_timer.stop()
+
+	# Spawn the line of fire
 	var line_of_fire = line_of_fire_scene.instantiate()
 	var spawn_point = fire_spawn_points.get(facing_direction, null)
 	if spawn_point:
@@ -118,18 +136,18 @@ func spawn_line_of_fire() -> void:
 		else:
 			print("Line of Fire does not have an AnimationPlayer node!")
 
+	# Start the fire timer after spawning the line of fire
+	print("Starting the fire timer")
 	fire_timer.start()
 
 func _on_fire_animation_finished(anim_name: String) -> void:
-	# Remove the line of fire when the fire animation is finished, but don't queue it yet.
-	# The line of fire will be queued for removal based on the cooldown timer.
+	# Remove the line of fire when the fire animation is finished
 	if active_line_of_fire:
 		active_line_of_fire.queue_free()
 		active_line_of_fire = null
 
 func _on_fire_timer_timeout() -> void:
 	# This function is triggered when the fire cooldown timer expires.
-	# If the line of fire exists, we remove it at this point.
 	if active_line_of_fire:
 		active_line_of_fire.queue_free()
 		active_line_of_fire = null
@@ -151,6 +169,14 @@ func _on_attack_animation_finished(anim_name: String) -> void:
 		is_attacking = false
 		anim.disconnect("animation_finished", Callable(self, "_on_attack_animation_finished"))
 		attack_timer.start()  # Restart the attack cooldown timer
+
+		# Trigger the line of fire after the animation finishes
+		# You can either trigger this manually or use an AnimationPlayer event (keyframe) to call spawn_line_of_fire
+		# Here, we trigger it manually for now
+		spawn_line_of_fire()
+
+	# Reset attack cooldown timer here as well
+	attack_timer.start()
 
 func _on_nav_timer_timeout() -> void:
 	if is_player_in_path_area:

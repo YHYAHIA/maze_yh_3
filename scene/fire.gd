@@ -1,14 +1,22 @@
 extends Area2D
 
 
-@export var duration: float = 1.0  # How long the fire lasts
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@export var erea_damage : int = 10
 
-func _ready() -> void:
-	#anim.play("fire_" + get_current_direction())
-	#await get_tree().create_timer(duration)
-	#queue_free()
-	pass
-func get_current_direction() -> String:
-	# This function can determine the direction based on the rotation or other logic
-	return "up"  # Example default, update as needed
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		if body.has_method("set_health"):  # Ensure the player has a health setter
+			body.set_health(body.get_health()-erea_damage)  # Apply damage
+			print("Player hit! Damage:", erea_damage)
+			pass
+				
+	 # Replace with function body.
+
+
+
+
+
+
+func _on_dameg_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
