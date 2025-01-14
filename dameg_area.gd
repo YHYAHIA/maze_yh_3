@@ -14,6 +14,9 @@ func _on_body_entered(body: Node2D) -> void:
 	 # Replace with function body.
 
 
-func _on_body_exited(_body: Node2D) -> void:
-	print("d")
+
+
+
+
+func _on_dameg_area_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.

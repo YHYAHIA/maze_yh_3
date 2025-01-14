@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed_modifier: float = 0.5  # Speed adjustment percentage (e.g., 0.1 for 10%)
-@onready var player: Node2D = $"../../player1"
+@export var player: Node2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:

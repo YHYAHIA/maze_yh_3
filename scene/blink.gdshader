@@ -9,4 +9,3 @@ void fragment() {
 	COLOR = mix(texture_color,flash_color,flash_value);
 	COLOR.a = texture_color.a;
 }
-

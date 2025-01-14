@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://lmltn8cmw3ip"]
+[gd_scene load_steps=24 format=4 uid="uid://lmltn8cmw3ip"]
 
 [ext_resource type="Script" path="res://gd/level_2.gd" id="1_nk5c7"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_y2d8c"]
@@ -12,12 +12,16 @@
 [ext_resource type="Script" path="res://gd/next_level_2.gd" id="7_jashd"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="9_1bwc0"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="10_lnfe6"]
+[ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="10_w34fi"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="11_3x10f"]
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="12_bd32k"]
 [ext_resource type="PackedScene" uid="uid://dee6nj2wamyuf" path="res://scene/sowred_knite.tscn" id="17_qwmxl"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="18_0ad7x"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="18_ihh7o"]
+[ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="19_sojsm"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="20_hocl8"]
+[ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="21_jluqy"]
+[ext_resource type="PackedScene" uid="uid://us1b5uvgirqt" path="res://scene/enemy_torch.tscn" id="22_nqndu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gxkb"]
 radius = 17.9662
@@ -55,8 +59,9 @@ tile_map_data = PackedByteArray("AADGAgX+AAAUABEAAADeAvj9AAAVABEAAACyAvP9AAAUABA
 [node name="dec" parent="." instance=ExtResource("6_jqj3j")]
 tile_map_data = PackedByteArray("AABcAND/BAAWAAoAAABTAF4AAQAGAA4AABBSAF4AAQAHAA4AABBTAF8AAQAGAA8AABBSAF8AAQAHAA8AABDT/1EABAAbAAEAAABOAND/BAAWAAoAAABdAB4ABAAWAAoAAABLAB8ABAAWAAoAAABfAFgABAAWAAoAAABJAE8ABAAWAAoAAAAkAFsABAAWAAoAAAAgAFAABAAWAAoAAAD2/1EABAAWAAoAAAD2/1sABAAWAAoAAAAJAFUABAAGAAoAAABgAE4ABAAGAA4AAFBdAPH/BAAGAA4AAFBcALX/BAAbAAEAAAA=")
 
-[node name="player1" parent="." instance=ExtResource("4_6fh4l")]
+[node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("4_6fh4l")]
 position = Vector2(1424, -1055)
+health_bar = NodePath("../CanvasLayer2/health_bar")
 
 [node name="Control" parent="." instance=ExtResource("10_lnfe6")]
 offset_left = -9.0
@@ -88,9 +93,10 @@ autoplay = true
 [node name="numarea" parent="." instance=ExtResource("18_0ad7x")]
 position = Vector2(-616, 1560)
 
-[node name="stirs" parent="." instance=ExtResource("20_hocl8")]
+[node name="stirs" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_hocl8")]
 position = Vector2(1446, -895)
 rotation = 1.54164
+player = NodePath("../player1")
 
 [node name="sowred_knite" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_qwmxl")]
 position = Vector2(1225, -1223)
@@ -98,7 +104,33 @@ scale = Vector2(0.5, 0.5)
 damage = 30
 player = NodePath("../player1")
 
-[node name="pause_mniu1" parent="." instance=ExtResource("18_ihh7o")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("18_ihh7o")]
+
+[node name="Barel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_sojsm")]
+position = Vector2(1566, 301)
+scale = Vector2(0.4, 0.4)
+player = NodePath("../player1")
+explosion_damage = 10
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="health_bar" parent="CanvasLayer2" instance=ExtResource("10_w34fi")]
+offset_top = 3.0
+offset_bottom = 3.0
+
+[node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_jluqy")]
+position = Vector2(941, 1459)
+scale = Vector2(0.4, 0.4)
+damage = 10
+player = NodePath("../player1")
+
+[node name="enemy_torch" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_nqndu")]
+position = Vector2(1577, 1342)
+scale = Vector2(0.4, 0.4)
+attack_damage = 0
+player = NodePath("../player1")
 
 [connection signal="body_entered" from="next_level2" to="next_level2" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

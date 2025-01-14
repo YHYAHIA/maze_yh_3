@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var timer: Timer = $Timer
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var anim: AnimationPlayer = $barel_animation
 
 var is_player_in_path_area: bool = false  # Tracks if the player is in the path area
 var facing_left: bool = true  # Tracks the facing direction
