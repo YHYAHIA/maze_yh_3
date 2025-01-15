@@ -650,7 +650,7 @@ radius = 16.0312
 radius = 625.013
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3e0pk"]
-radius = 325.346
+radius = 283.558
 
 [node name="enemy_torch" type="CharacterBody2D" groups=["enmy"]]
 script = ExtResource("1_nxv1u")
@@ -730,6 +730,7 @@ position = Vector2(-53, -13)
 position = Vector2(62, -14)
 
 [node name="attack_timer" type="Timer" parent="."]
+wait_time = 1.5
 
 [node name="fire_timer" type="Timer" parent="."]
 wait_time = 1.5

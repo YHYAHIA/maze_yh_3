@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dee6nj2wamyuf"]
+[gd_scene load_steps=21 format=3 uid="uid://dee6nj2wamyuf"]
 
 [ext_resource type="Texture2D" uid="uid://xre0njtei63q" path="res://char/Warrior_Blue.png" id="1_2eg8o"]
 [ext_resource type="Script" path="res://scene/sowred_knite.gd" id="1_2futk"]
@@ -142,7 +142,7 @@ tracks/3/path = NodePath("dameg_area/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.285714, 0.714285, 1.14286, 1.7),
+"times": PackedFloat32Array(0, 0.428571, 0.714285, 1.28571, 1.42857),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
@@ -208,7 +208,7 @@ tracks/4/path = NodePath("dameg_area/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.285714, 0.714285, 0.999999, 1.57143),
+"times": PackedFloat32Array(0, 0.428571, 0.714285, 1.28571, 1.42857),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
@@ -274,7 +274,7 @@ tracks/4/path = NodePath("dameg_area/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.285714, 0.714285, 0.999999, 1.57143),
+"times": PackedFloat32Array(0, 0.428571, 0.714285, 1.28571, 1.42857),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
@@ -328,7 +328,7 @@ tracks/3/path = NodePath("dameg_area/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.285714, 0.714285, 1.14286, 1.7),
+"times": PackedFloat32Array(0, 0.428571, 0.714285, 1.28571, 1.42857),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true]
@@ -490,6 +490,9 @@ _data = {
 "run_right": SubResource("Animation_kls0b")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to4ha"]
+size = Vector2(219.655, 139.772)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_88mwe"]
 radius = 19.105
 
@@ -519,9 +522,11 @@ speed_scale = 1.2
 rotation = 2.51434
 script = ExtResource("4_njx5d")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="dameg_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dameg_area"]
+position = Vector2(23.7887, -32.1574)
+rotation = 0.640514
 scale = Vector2(0.6, 0.6)
-polygon = PackedVector2Array(0, -1, 143.5, 105.879, 166.832, 63.0286, 177.807, 17.2746, 176.778, -29.0521, 162.402, -76.941, 137.78, -113.749, 105.528, -145.831, 63.0286, -166.832, 17.2746, -177.807, -29.0521, -176.778, -74.6104, -162.754, -113.749, -137.78, -144.841, -106.869)
+shape = SubResource("RectangleShape2D_to4ha")
 disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

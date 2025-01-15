@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4hunnhrhxwa2" path="res://scene/Fire.png" id="1_u3mdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhdsr"]
-radius = 26.1725
+radius = 26.6667
 
 [sub_resource type="Animation" id="Animation_7uvmd"]
 length = 0.001
@@ -1288,3 +1288,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0eaml")
 }
 speed_scale = 0.4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
