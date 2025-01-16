@@ -1,7 +1,7 @@
 extends Control
 
 # Signals for better communication
-signal game_paused(paused)
+
 
 # Use an enum for state management
 enum MenuState {PAUSE_MENU, VOLUME_SETTINGS, HIDDEN}
@@ -32,7 +32,7 @@ func show_pause_menu():
 	volume_setting.hide()
 	current_state = MenuState.PAUSE_MENU
 	get_tree().paused = true
-	emit_signal("game_paused", true)
+	
 
 func show_volume_settings():
 	# Show the volume settings menu
@@ -47,7 +47,7 @@ func hide_all_menus():
 	volume_setting.hide()
 	current_state = MenuState.HIDDEN
 	get_tree().paused = false
-	emit_signal("game_paused", false)
+	
 
 func _on_resume_pressed():
 	# Unpause and hide the menu
