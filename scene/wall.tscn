@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dfrvqhfsjqr6s"]
+[gd_scene load_steps=54 format=4 uid="uid://dfrvqhfsjqr6s"]
 
 [ext_resource type="Texture2D" uid="uid://ofotwm4dk6n4" path="res://Texture/TX Tileset Stone Ground.png" id="1_ndmas"]
 [ext_resource type="Texture2D" uid="uid://eatuis6krg3" path="res://Texture/TX Struct.png" id="2_85yj3"]
@@ -6,8 +6,6 @@
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_shlb6"]
 tile_data = PackedInt32Array(0, 524290, 18, 4, 524290, 18, 8, 524290, 18, 12, 524290, 18, 16, 524290, 18, 20, 524290, 18, 24, 524290, 18, 28, 524290, 18, 32, 524290, 18, 36, 524290, 18, 40, 524290, 18, 44, 524290, 18, 48, 524290, 18, 52, 524290, 18, 56, 524290, 18, 60, 524290, 18)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_gp73d"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vdjau"]
 tile_data = PackedInt32Array(0, 524290, 65554, 4, 524290, 65554, 8, 524290, 65554, 12, 524290, 65554, 16, 524290, 65554, 20, 524290, 65554, 24, 524290, 65554, 28, 524290, 65554, 32, 524290, 65554, 36, 524290, 65554, 40, 524290, 65554, 44, 524290, 65554, 48, 524290, 65554, 52, 524290, 65554, 56, 524290, 65554, 60, 524290, 65554, 64, 524290, 65554, 68, 524290, 65554, 72, 524290, 65554, 76, 524290, 65554)
@@ -813,8 +811,7 @@ sources/1 = SubResource("TileSetAtlasSource_qmeqk")
 sources/2 = SubResource("TileSetAtlasSource_qkdwu")
 sources/0 = SubResource("TileSetAtlasSource_fecqj")
 pattern_0 = SubResource("TileMapPattern_shlb6")
-pattern_1 = SubResource("TileMapPattern_gp73d")
-pattern_2 = SubResource("TileMapPattern_vdjau")
+pattern_1 = SubResource("TileMapPattern_vdjau")
 
 [node name="wall" type="TileMapLayer"]
 y_sort_enabled = true

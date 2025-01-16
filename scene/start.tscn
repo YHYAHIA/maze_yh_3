@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://bplb0s8vxiw8v"]
+[gd_scene load_steps=14 format=3 uid="uid://bplb0s8vxiw8v"]
 
-[ext_resource type="Texture2D" uid="uid://dlql4clo2y5xr" path="res://ui/Default/Background.png" id="1_jmuvc"]
 [ext_resource type="Script" path="res://gd/start.gd" id="1_otg3n"]
 [ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_3u55e"]
-[ext_resource type="Texture2D" uid="uid://duop4cyqcgmgs" path="res://ui/Hover/Background.png" id="2_t06u1"]
-[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="3_03luc"]
+[ext_resource type="Texture2D" uid="uid://dkj7ptbr7wky4" path="res://ui/UI/Buttons/Button_Blue_3Slides.png" id="3_agvh3"]
 [ext_resource type="Texture2D" uid="uid://cbda2jbmqrbfp" path="res://ui/Icon/SoundOn@2x.png" id="4_qpt4w"]
-[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="5_q7o86"]
+[ext_resource type="Texture2D" uid="uid://cjfne25y30bh6" path="res://ui/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_tk37i"]
+[ext_resource type="Texture2D" uid="uid://bah5dcxt0x77c" path="res://ui/UI/Buttons/Button_Hover_3Slides.png" id="5_0jib1"]
+[ext_resource type="Texture2D" uid="uid://boucs5lmto1w8" path="res://ui/UI/Buttons/Button_Blue_9Slides.png" id="6_ba18e"]
 [ext_resource type="Texture2D" uid="uid://cbf47i86n3l0x" path="res://ui/Icon/Levels@2x.png" id="6_wg2qv"]
+[ext_resource type="Texture2D" uid="uid://dmg84kn3owu56" path="res://ui/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="7_hhhsq"]
+[ext_resource type="Texture2D" uid="uid://b6c1yhg6to5d0" path="res://ui/UI/Buttons/Button_Hover_9Slides.png" id="8_he0th"]
+[ext_resource type="Texture2D" uid="uid://chv6sha8ed6n3" path="res://ui/UI/Ribbons/Ribbon_Red_3Slides.png" id="10_dxhjd"]
+[ext_resource type="Texture2D" uid="uid://4po3reqij4ke" path="res://ui/UI/Ribbons/Ribbon_Blue_3Slides.png" id="10_o3syf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tbko"]
 
@@ -57,9 +61,9 @@ size_flags_stretch_ratio = 3.65
 [node name="start" type="TextureButton" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer"]
 z_index = 3
 layout_mode = 2
-texture_normal = ExtResource("1_jmuvc")
-texture_pressed = ExtResource("1_jmuvc")
-texture_hover = ExtResource("2_t06u1")
+texture_normal = ExtResource("3_agvh3")
+texture_pressed = ExtResource("4_tk37i")
+texture_hover = ExtResource("5_0jib1")
 
 [node name="Label" type="Label" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer/start"]
 layout_mode = 1
@@ -68,20 +72,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -42.0
+offset_top = -36.0
+offset_right = 45.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 35
 text = "start"
 
 [node name="exit" type="TextureButton" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_jmuvc")
-texture_pressed = ExtResource("1_jmuvc")
-texture_hover = ExtResource("2_t06u1")
+texture_normal = ExtResource("3_agvh3")
+texture_pressed = ExtResource("4_tk37i")
+texture_hover = ExtResource("5_0jib1")
 
 [node name="Label" type="Label" parent="Panel/CanvasLayer/HBoxContainer/VBoxContainer/exit"]
 layout_mode = 1
@@ -90,13 +94,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -27.5
-offset_right = 36.0
-offset_bottom = 27.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "exit"
 
 [node name="levels" type="TextureButton" parent="Panel/CanvasLayer"]
@@ -105,15 +109,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -162.0
-offset_top = -164.0
+offset_left = -192.0
+offset_top = -192.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(125, 150)
-texture_normal = ExtResource("3_03luc")
-texture_pressed = ExtResource("3_03luc")
-texture_hover = ExtResource("5_q7o86")
+texture_normal = ExtResource("6_ba18e")
+texture_pressed = ExtResource("7_hhhsq")
+texture_hover = ExtResource("8_he0th")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/CanvasLayer/levels"]
 layout_mode = 1
@@ -140,15 +144,35 @@ offset_right = 137.0
 offset_bottom = 149.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="Panel/CanvasLayer/BoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Panel/CanvasLayer/BoxContainer"]
+custom_minimum_size = Vector2(510, 130)
 layout_mode = 2
+texture = ExtResource("10_dxhjd")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CanvasLayer/BoxContainer/TextureRect2"]
+custom_minimum_size = Vector2(500, 120)
+layout_mode = 2
+offset_left = 3.5
+offset_top = -8.0
+offset_right = 503.5
+offset_bottom = 112.0
+texture = ExtResource("10_o3syf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/CanvasLayer/BoxContainer/TextureRect2/TextureRect"]
+layout_mode = 2
+offset_left = 110.5
+offset_top = -17.0
+offset_right = 395.5
+offset_bottom = 80.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 0.580392)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_constants/line_spacing = 6
-theme_override_constants/shadow_offset_x = -15
-theme_override_constants/shadow_offset_y = 11
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 7
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = -19
 theme_override_font_sizes/font_size = 71
@@ -162,11 +186,11 @@ anchor_bottom = 1.0
 offset_top = -164.0
 offset_right = 162.0
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(20, 150)
-texture_normal = ExtResource("3_03luc")
-texture_pressed = ExtResource("3_03luc")
-texture_hover = ExtResource("5_q7o86")
+texture_normal = ExtResource("6_ba18e")
+texture_pressed = ExtResource("7_hhhsq")
+texture_hover = ExtResource("8_he0th")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/CanvasLayer/v"]
 layout_mode = 1

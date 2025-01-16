@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c570uffcicj36"]
+[gd_scene load_steps=10 format=3 uid="uid://c570uffcicj36"]
 
 [ext_resource type="Script" path="res://gd/levels.gd" id="1_7wwe4"]
-[ext_resource type="Texture2D" uid="uid://c0r6vhnrhm6dm" path="res://ui/Hover/Square-Medium/Default/Background@2x.png" id="1_54i4o"]
-[ext_resource type="Texture2D" uid="uid://crpnf4y7roa2l" path="res://ui/Hover/Square-Medium/Hover/Background@2x.png" id="2_dgs3u"]
 [ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_nqkum"]
+[ext_resource type="Texture2D" uid="uid://boucs5lmto1w8" path="res://ui/UI/Buttons/Button_Blue_9Slides.png" id="3_2pdnc"]
 [ext_resource type="Texture2D" uid="uid://bpdf0ddqgwjrl" path="res://ui/Icon/ArrowLeft@2x.png" id="3_jslpx"]
 [ext_resource type="Texture2D" uid="uid://cvwrhq35nhnhq" path="res://ui/Icon/ArrowRight@2x.png" id="4_nw8mo"]
+[ext_resource type="Texture2D" uid="uid://dmg84kn3owu56" path="res://ui/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="4_tpnni"]
+[ext_resource type="Texture2D" uid="uid://b6c1yhg6to5d0" path="res://ui/UI/Buttons/Button_Hover_9Slides.png" id="5_2unte"]
 [ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="5_j3dyy"]
+[ext_resource type="Texture2D" uid="uid://c2u3cqq6apyey" path="res://ui/UI/Icons/Disable_10.png" id="6_vwhi1"]
 
 [node name="levels" type="Control"]
 layout_mode = 3
@@ -38,9 +40,10 @@ columns = 5
 
 [node name="level1" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level1"]
 layout_mode = 1
@@ -62,9 +65,9 @@ text = "1"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level2"]
 layout_mode = 1
@@ -84,9 +87,9 @@ text = "2"
 
 [node name="level3" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level3"]
 layout_mode = 1
@@ -106,9 +109,9 @@ text = "3"
 
 [node name="level4" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level4"]
 layout_mode = 1
@@ -128,9 +131,9 @@ text = "4"
 
 [node name="level5" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level5"]
 layout_mode = 1
@@ -150,9 +153,9 @@ text = "5"
 
 [node name="level6" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level6"]
 layout_mode = 1
@@ -172,9 +175,9 @@ text = "6"
 
 [node name="level7" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level7"]
 layout_mode = 1
@@ -194,9 +197,9 @@ text = "7"
 
 [node name="level8" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level8"]
 layout_mode = 1
@@ -216,9 +219,9 @@ text = "8"
 
 [node name="level9" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level9"]
 layout_mode = 1
@@ -238,9 +241,9 @@ text = "9"
 
 [node name="level10" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level10"]
 layout_mode = 1
@@ -260,9 +263,9 @@ text = "10"
 
 [node name="level11" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level11"]
 layout_mode = 1
@@ -282,9 +285,9 @@ text = "11"
 
 [node name="level12" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level12"]
 layout_mode = 1
@@ -304,9 +307,9 @@ text = "12"
 
 [node name="level13" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level13"]
 layout_mode = 1
@@ -326,9 +329,9 @@ text = "13"
 
 [node name="level14" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level14"]
 layout_mode = 1
@@ -348,9 +351,9 @@ text = "14"
 
 [node name="level15" type="TextureButton" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="Label" type="Label" parent="CanvasLayer/GridContainer/level15"]
 layout_mode = 1
@@ -374,16 +377,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -96.0
-offset_right = 66.0
-offset_bottom = 68.0
+offset_left = -78.0
+offset_top = -66.0
+offset_right = 114.0
+offset_bottom = 126.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureButton"]
 layout_mode = 1
@@ -406,10 +409,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -58.0
-offset_top = -56.0
-offset_right = 270.0
-offset_bottom = 108.0
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 288.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
@@ -418,9 +421,9 @@ alignment = 1
 
 [node name="left" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/left"]
 layout_mode = 1
@@ -439,9 +442,9 @@ texture = ExtResource("3_jslpx")
 
 [node name="right" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_54i4o")
-texture_pressed = ExtResource("1_54i4o")
-texture_hover = ExtResource("2_dgs3u")
+texture_normal = ExtResource("3_2pdnc")
+texture_pressed = ExtResource("4_tpnni")
+texture_hover = ExtResource("5_2unte")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/right"]
 layout_mode = 1
