@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.has_method("set_health"):  # Ensure the player has a health setter
 			body.set_health(body.get_health()-erea_damage)  # Apply damage
 			print("Player hit! Damage:", erea_damage)
+			GlobalInteract.plyer_geting_damge=true
 			pass
 				
 	 # Replace with function body.
@@ -19,4 +20,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_dameg_area_body_exited(body: Node2D) -> void:
+	GlobalInteract.plyer_geting_damge=false
 	pass # Replace with function body.
