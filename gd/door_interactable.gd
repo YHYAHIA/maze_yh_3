@@ -22,6 +22,7 @@ var collected_key = 0
 var door_open: bool
 var locked = true
 
+
 @onready var collision_polygon_2d: CollisionShape2D = $"../Camera2D/CollisionPolygon2D"
 @onready var collision = $CollisionShape2D
 @onready var status_label: Label = $"../Label"
@@ -48,12 +49,14 @@ func _update_animations():
 			anim.play(open_anim)
 			if collision_polygon_2d != null:
 				collision_polygon_2d.set_disabled(true)
+				
 			else:
 				print("CollisionPolygon2D is null. Check the node path or scene setup.")
 		else:
 			anim.play(closed_anim)
 			if collision_polygon_2d != null:
 				collision_polygon_2d.set_disabled(false)
+
 			else:
 				print("CollisionPolygon2D is null. Check the node path or scene setup.")
 

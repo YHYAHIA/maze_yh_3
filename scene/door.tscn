@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh8nff4ruujpv"]
+[gd_scene load_steps=9 format=3 uid="uid://dh8nff4ruujpv"]
 
 [ext_resource type="Script" path="res://gd/door_interactable.gd" id="1_0l6l6"]
 [ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="1_ld0ja"]
@@ -33,6 +33,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2b6l"]
 size = Vector2(36, 41)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ns8q4"]
+polygon = PackedVector2Array(36, -31.5, 36, -26.5, -37, -25.5, -37, -30.5)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cuhg4"]
 radius = 51.0098
 
@@ -51,6 +54,9 @@ light_mask = 16
 position = Vector2(6, 10.5)
 shape = SubResource("RectangleShape2D_v2b6l")
 debug_color = Color(0.996405, 0, 0.187348, 0.42)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Camera2D/CollisionPolygon2D"]
+occluder = SubResource("OccluderPolygon2D_ns8q4")
 
 [node name="dooriteractableArea2D" type="Area2D" parent="." node_paths=PackedStringArray("anim")]
 script = ExtResource("1_0l6l6")
