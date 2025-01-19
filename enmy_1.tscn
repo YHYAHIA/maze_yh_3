@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cq25288d0mj6n"]
 
-[ext_resource type="Script" path="res://enmy_1.gd" id="1_hscb6"]
+[ext_resource type="Script" path="res://gd/enmy_1.gd" id="1_hscb6"]
 [ext_resource type="Texture2D" uid="uid://bhwuxxb3pwb1f" path="res://char/TNT_Purple.png" id="1_i1yay"]
 [ext_resource type="Texture2D" uid="uid://drsjmdkj6h6a2" path="res://char/Dynamite.png" id="2_kfia2"]
 [ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="3_fpmdb"]

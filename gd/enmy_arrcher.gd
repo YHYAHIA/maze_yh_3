@@ -46,6 +46,8 @@ func _physics_process(_delta: float) -> void:
 	if attack_finished:
 		update_anim()
 
+func set_player(player_ref: Node2D) -> void:
+	player = player_ref
 func update_anim() -> void:
 	# Handle animations
 	if is_attacking:

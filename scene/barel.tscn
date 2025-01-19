@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7oiw8bwv58j7" path="res://char/Barrel_Blue.png" id="1_rttmn"]
 [ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="2_fo2wj"]
 [ext_resource type="Texture2D" uid="uid://cchaejyh3dxud" path="res://char/Explosions.png" id="3_ggb66"]
-[ext_resource type="Script" path="res://dameg_area.gd" id="4_8g612"]
+[ext_resource type="Script" path="res://gd/dameg_area.gd" id="4_8g612"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="5_b80sn"]
 [ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="6_pt1ef"]
 [ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="7_ntvut"]

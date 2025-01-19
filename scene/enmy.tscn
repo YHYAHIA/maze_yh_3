@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://mcq136wkl4pa"]
 
-[ext_resource type="Script" path="res://enmy.gd" id="1_uqp33"]
+[ext_resource type="Script" path="res://gd/enmy.gd" id="1_uqp33"]
 [ext_resource type="Texture2D" uid="uid://bw72gca7gqjwt" path="res://char/TNT_Red.png" id="2_557sd"]
 [ext_resource type="Texture2D" uid="uid://drsjmdkj6h6a2" path="res://char/Dynamite.png" id="3_2ugy0"]
 

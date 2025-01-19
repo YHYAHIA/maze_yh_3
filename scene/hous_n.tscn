@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://bxtg4vylhues5"]
+
+[ext_resource type="Script" path="res://scene/hous_g.gd" id="1_c7tec"]
+[ext_resource type="Texture2D" uid="uid://dptyu8uw00usj" path="res://char/Tree.png" id="2_rxj4d"]
+[ext_resource type="Texture2D" uid="uid://b5y1g1px3t7as" path="res://char/Castle_Blue.png" id="3_k44ha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lvl7r"]
+radius = 306.007
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umffq"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmpcx"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62uyb"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj3oj"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbc2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umffq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmpcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62uyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj3oj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jswbs"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlwka"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl6og"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dpxy"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16ql2"]
+atlas = ExtResource("2_rxj4d")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcnox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlwka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl6og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dpxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16ql2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktrnu"]
+
+[node name="hous_n" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_c7tec")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(63, 98)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = -2
+shape = SubResource("CircleShape2D_lvl7r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="tree" type="AnimatedSprite2D" parent="."]
+position = Vector2(103, 98)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_bbc2d")
+autoplay = "default"
+frame_progress = 0.41116
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tree"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree/StaticBody2D"]
+z_index = -2
+position = Vector2(2, 64)
+shape = SubResource("CircleShape2D_jswbs")
+
+[node name="tree2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-114, 98)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jcnox")
+autoplay = "default"
+frame_progress = 0.326425
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tree2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree2/StaticBody2D"]
+z_index = -2
+position = Vector2(0, 68)
+shape = SubResource("CircleShape2D_ktrnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_k44ha")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
+z_index = -2
+position = Vector2(2, 90)
+rotation = -1.57058
+polygon = PackedVector2Array(-7.02393, -110.998, -20.0168, -77.9957, -17.9823, 82.0039, -7.97585, 112.002, 5.02802, 129.999, 38.028, 129.992, 32.9711, -134.007, 7.97089, -135.002)

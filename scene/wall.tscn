@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dfrvqhfsjqr6s"]
+[gd_scene load_steps=58 format=4 uid="uid://dfrvqhfsjqr6s"]
 
 [ext_resource type="Texture2D" uid="uid://ofotwm4dk6n4" path="res://Texture/TX Tileset Stone Ground.png" id="1_ndmas"]
 [ext_resource type="Texture2D" uid="uid://eatuis6krg3" path="res://Texture/TX Struct.png" id="2_85yj3"]
@@ -344,6 +344,9 @@ polygon = PackedVector2Array(32, -8, 32, 0, -32, 0, -32, -8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_71inq"]
 polygon = PackedVector2Array(32, -32, 32, -26.6667, -32, -26.6667, -32, -32)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o4b4k"]
+polygon = PackedVector2Array(-30.4, -27.2, -30.4, -33.6, 30.4, -33.6, 30.4, -27.2)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rmhem"]
 polygon = PackedVector2Array(-8, 0, 0, 0, 0, 8, 8, 8, 8, -8, -8, -8)
 
@@ -530,10 +533,15 @@ texture = ExtResource("3_kwa1k")
 10:2/1/y_sort_origin = 25
 10:2/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_nck0b")
 3:6/size_in_atlas = Vector2i(4, 4)
+3:6/next_alternative_id = 2
 3:6/0 = 0
 3:6/0/y_sort_origin = 25
 3:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_71inq")
 3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 24, 32, 24, 32, 32, -32, 32)
+3:6/1 = 1
+3:6/1/y_sort_origin = 30
+3:6/1/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_o4b4k")
+3:6/1/physics_layer_0/polygon_0/points = PackedVector2Array(30.4, 24, -30.4, 24, -30.4, 30.4, 30.4, 30.4)
 7:6/size_in_atlas = Vector2i(1, 4)
 7:6/0 = 0
 7:6/0/y_sort_origin = 25
@@ -564,9 +572,13 @@ texture = ExtResource("3_kwa1k")
 21:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dbusv")
 21:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 40, 0, -40, 8, -40, 8, 40)
 18:3/size_in_atlas = Vector2i(1, 5)
+18:3/next_alternative_id = 3
 18:3/0 = 0
 18:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_vwhlv")
 18:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 40, -8, -40, 0, -40, 0, 40)
+18:3/1 = 1
+18:3/1/y_sort_origin = 50
+18:3/2 = 2
 16:3/size_in_atlas = Vector2i(1, 4)
 16:3/0 = 0
 16:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kv1d5")
@@ -799,12 +811,21 @@ texture = ExtResource("3_kwa1k")
 13:12/0 = 0
 13:12/0/y_sort_origin = 25
 13:12/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_mtxao")
+13:13/next_alternative_id = 2
 13:13/0 = 0
 13:13/0/y_sort_origin = 25
+13:13/1 = 1
+13:13/1/y_sort_origin = 30
+12:13/next_alternative_id = 2
 12:13/0 = 0
 12:13/0/y_sort_origin = 25
+12:13/1 = 1
+12:13/1/y_sort_origin = 30
+12:14/next_alternative_id = 2
 12:14/0 = 0
 12:14/0/y_sort_origin = 25
+12:14/1 = 1
+12:14/1/y_sort_origin = 20
 12:15/0 = 0
 12:15/0/y_sort_origin = 25
 12:12/0 = 0
@@ -812,8 +833,11 @@ texture = ExtResource("3_kwa1k")
 12:12/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_mtxao")
 13:15/0 = 0
 13:15/0/y_sort_origin = 25
+13:14/next_alternative_id = 2
 13:14/0 = 0
 13:14/0/y_sort_origin = 25
+13:14/1 = 1
+13:14/1/y_sort_origin = 20
 3:14/0 = 0
 3:14/0/y_sort_origin = 25
 

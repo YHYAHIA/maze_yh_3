@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://baut5hxggjjs6"]
 
-[ext_resource type="Script" path="res://arow.gd" id="1_0fihq"]
+[ext_resource type="Script" path="res://gd/arow.gd" id="1_0fihq"]
 [ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="2_va4mv"]
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_v4lt7"]

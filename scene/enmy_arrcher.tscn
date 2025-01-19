@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://fs7a0dp6iw5e"]
 
-[ext_resource type="Script" path="res://enmy_arrcher.gd" id="1_0tvyu"]
+[ext_resource type="Script" path="res://gd/enmy_arrcher.gd" id="1_0tvyu"]
 [ext_resource type="PackedScene" uid="uid://baut5hxggjjs6" path="res://scene/arow.tscn" id="2_8jo4w"]
 [ext_resource type="Texture2D" uid="uid://bgayrx1ehjdb8" path="res://char/Archer_Blue.png" id="2_42s8p"]
 [ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="3_lyqdn"]

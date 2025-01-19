@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://i5610puwgawh" path="res://char/Torch_Blue.png" id="1_f4wh3"]
 [ext_resource type="Script" path="res://scene/enemy_torch.gd" id="1_nxv1u"]
 [ext_resource type="PackedScene" uid="uid://docq1u1tvem8" path="res://scene/fire.tscn" id="2_pmebl"]
-[ext_resource type="Script" path="res://dameg_area.gd" id="3_wgnvd"]
+[ext_resource type="Script" path="res://gd/dameg_area.gd" id="3_wgnvd"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="4_xu24t"]
 [ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="5_4qhnh"]
 [ext_resource type="AudioStream" uid="uid://cy3wtuovwq0hu" path="res://sfx/explosion-91872.mp3" id="6_0kepf"]
