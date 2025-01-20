@@ -1,7 +1,8 @@
 extends RigidBody2D
 
 @export var speed: float = 300  # Speed of the arrow
-@export var lifespan: float = 3.0  # Arrow exists for 3 seconds
+@export var lifespan: float = 5
+  # Arrow exists for 3 seconds
 @export var arrow_damage: int = 10  # Damage dealt by the arrow
 var direction: Vector2 = Vector2.ZERO  # Direction of the arrow
 
@@ -19,7 +20,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 
 func _on_tree_exiting() -> void:
 	# Optional: Debugging or cleanup logic when the arrow leaves the scene
-	print("Arrow is leaving the scene.")
+	pass
 
 func _on_tree_exited() -> void:
 	# Optional: Additional cleanup logic
@@ -40,15 +41,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 	# Handle collision with obstacles
 	elif body.is_in_group("obstacle"):
-		print("Arrow hit an obstacle!")
+		
 		queue_free()  # Destroy the arrow on impact
 	# Handle collision with obstacles
 	elif body.is_in_group("obstacle"):
-		print("Arrow hit an obstacle!")
+		
 		queue_free()  # Destroy the arrow on
 	 # Replace with function body.
 
 
 func _on_area_2d_tree_exiting() -> void:
-	print("Arrow is leaving the scene.")
+	pass
 	 # Replace with function body.

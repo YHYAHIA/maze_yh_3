@@ -11,7 +11,7 @@
 radius = 27.0185
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wveg"]
-radius = 15.5012
+radius = 17.1964
 
 [sub_resource type="Animation" id="Animation_8a7jo"]
 resource_name = "dead"
@@ -320,8 +320,9 @@ _data = {
 
 [node name="player1" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
-scale = Vector2(1.1, 1.1)
-collision_mask = 7
+scale = Vector2(1.25, 1.25)
+collision_mask = 15
+platform_floor_layers = 4294967041
 script = ExtResource("1_yyot2")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
@@ -365,6 +366,7 @@ vframes = 2
 [node name="dead2" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_n2xn7")
+offset = Vector2(0, -30)
 hframes = 8
 vframes = 4
 frame = 16
@@ -384,6 +386,7 @@ autoplay = "FLASH_HIT"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.515625, 0.498992)
+zoom = Vector2(0.8, 0.8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 follow_viewport_enabled = true

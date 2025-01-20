@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="27_dtqnn"]
 [ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="28_1xa2u"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mynwd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdl4d"]
 texture = ExtResource("8_j5r2e")
 2:2/0 = 0
 3:2/0 = 0
@@ -349,7 +349,7 @@ texture = ExtResource("8_j5r2e")
 11:21/0/y_sort_origin = 10
 
 [sub_resource type="TileSet" id="TileSet_2yd1e"]
-sources/0 = SubResource("TileSetAtlasSource_mynwd")
+sources/0 = SubResource("TileSetAtlasSource_cdl4d")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pkbvc"]
 radius = 17.9662
@@ -597,6 +597,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("25_7qci5")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

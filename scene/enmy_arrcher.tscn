@@ -747,10 +747,10 @@ _data = {
 radius = 13.0384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4x3y4"]
-radius = 483.125
+radius = 638.111
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0e82"]
-radius = 214.037
+radius = 433.429
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j52c6"]
 radius = 408.001
@@ -826,7 +826,7 @@ debug_color = Color(0.7, 0.395529, 0.141606, 0.42)
 [node name="Timer2" type="Timer" parent="."]
 
 [node name="arow" parent="." instance=ExtResource("2_8jo4w")]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.6, 0.6)
 
 [node name="path2" type="Area2D" parent="."]
 visible = false

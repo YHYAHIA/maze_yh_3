@@ -2013,7 +2013,7 @@ texture = ExtResource("1_k5s1k")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tnhem"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.258824, 0.25098, 1)

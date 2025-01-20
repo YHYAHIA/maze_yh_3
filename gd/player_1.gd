@@ -97,9 +97,9 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO  # Stop movement
 	anime.play("dead")  # Play the death animation
-	print("Playing dead animation")
+	
 	death_timer.start()  # Start the death timer
-	print("Timer started")
+	
 	GlobalInteract.collectedKeys = 0
 
 
@@ -111,7 +111,5 @@ func die() -> void:
 
 
 func _on_death_timer_timeout() -> void:
-	print("Timer timeout triggered")
 	TransitionScene.transition()
-	print("Scene transitioning")
 	get_tree().reload_current_scene()
