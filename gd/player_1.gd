@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var flash_hit: AnimationPlayer = $AnimatedSprite2D/flash_hit
+@onready var flash_hit: AnimationPlayer = $flash_hit
 
 # Player stats
 @export var health: int = 100

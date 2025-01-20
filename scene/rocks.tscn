@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c5ecxh4eqae23"]
+[gd_scene load_steps=19 format=4 uid="uid://c5ecxh4eqae23"]
 
 [ext_resource type="Texture2D" uid="uid://dvftublre34h1" path="res://Texture/Rocks/Rocks_04.png" id="1_7gj2r"]
 [ext_resource type="Texture2D" uid="uid://cbxrlxeur0jiu" path="res://Texture/Rocks/Rocks_03.png" id="2_hpqv1"]
@@ -18,13 +18,7 @@ tile_data = PackedInt32Array(65536, 3, 0, 196609, 5, 0, 131075, 2, 0, 4, 65537, 
 [sub_resource type="TileMapPattern" id="TileMapPattern_d7a44"]
 tile_data = PackedInt32Array(131072, 3, 0, 262144, 2, 0, 2, 65537, 0, 131074, 3, 0, 262147, 5, 0, 131077, 2, 0, 262149, 5, 0, 7, 65537, 0, 262151, 2, 0)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_jd84a"]
-tile_data = PackedInt32Array(2, 65537, 0, 786434, 65537, 0, 1638402, 65537, 0, 7, 65537, 0, 786439, 65537, 0, 1638407, 65537, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_d0i4m"]
-tile_data = PackedInt32Array(2, 65537, 0, 786434, 65537, 0, 1638402, 65537, 0, 7, 65537, 0, 786439, 65537, 0, 1638407, 65537, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_m84v1"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_85id7"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_trqwx"]
 polygon = PackedVector2Array(-33.6, -20.8, -4.8, -30.4, 17.6, -8, 27.2, 8, -4.8, -24, -17.6, -24, -40, -11.2, -59.2, 8)
@@ -122,9 +116,7 @@ pattern_0 = SubResource("TileMapPattern_x0wog")
 pattern_1 = SubResource("TileMapPattern_d16if")
 pattern_2 = SubResource("TileMapPattern_vthgh")
 pattern_3 = SubResource("TileMapPattern_d7a44")
-pattern_4 = SubResource("TileMapPattern_jd84a")
-pattern_5 = SubResource("TileMapPattern_d0i4m")
-pattern_6 = SubResource("TileMapPattern_m84v1")
+pattern_4 = SubResource("TileMapPattern_85id7")
 
 [node name="rocks" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AABuABIAAwAAAAAAAABuABQAAgAAAAAAAABuAB4AAwAAAAAAAABuACAAAgAAAAAAAABuACsAAwAAAAAAAABuAC0AAgAAAAAAAABwABAAAQABAAAAAABwABIAAwAAAAAAAABwABwAAQABAAAAAABwAB4AAwAAAAAAAABwACkAAQABAAAAAABwACsAAwAAAAAAAABxABQABQAAAAAAAABxABgABAAAAAAAAABxACAABQAAAAAAAABxACQABAAAAAAAAABxAC0ABQAAAAAAAABzABIAAgAAAAAAAABzABQABQAAAAAAAABzAB4AAgAAAAAAAABzACAABQAAAAAAAABzACsAAgAAAAAAAABzAC0ABQAAAAAAAAB1ABAAAQABAAAAAAB1ABQAAgAAAAAAAAB1ABwAAQABAAAAAAB1ACAAAgAAAAAAAAB1ACkAAQABAAAAAAB1AC0AAgAAAAAAAAB6ABIABAAAAAAAAAB6ABgABAAAAAAAAAB6ACUABAAAAAAAAAB7AB4ABAAAAAAAAAB7ACsABAAAAAAAAAA=")
