@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckhjd62arc8gv"]
+
+[ext_resource type="Script" path="res://scene/quests.gd" id="1_ouqlw"]
+
+[node name="quests" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouqlw")
+
+[node name="TITLE" type="Label" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 63.0
+offset_right = 341.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 25
+text = "QUEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QUESTS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 101.0
+offset_right = 444.0
+offset_bottom = 218.0
+text = "QUEST:"
+horizontal_alignment = 1

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 TransitionScene="*res://scene/transition_scene.tscn"
 GlobalInteract="*res://gd/global-interact.gd"
+Game="*res://gd/global/game.gd"
 
 [display]
 
