@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ctp7bqcudyypg"]
+[gd_scene load_steps=34 format=4 uid="uid://ctp7bqcudyypg"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_m8uo7"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_n4egs"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://scene/damge_2.gd" id="20_k7m8w"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_d1lrg"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="23_qj8y8"]
+[ext_resource type="PackedScene" uid="uid://cg8snod2ik6rj" path="res://scene/sheep.tscn" id="24_cju1t"]
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="24_mvs2p"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="25_7qci5"]
 [ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="27_dtqnn"]
@@ -527,6 +528,10 @@ rotation = -3.12939
 
 [node name="hous_g" parent="." instance=ExtResource("23_qj8y8")]
 position = Vector2(223, 335)
+
+[node name="sheep" parent="." instance=ExtResource("24_cju1t")]
+position = Vector2(158, 353)
+scale = Vector2(0.8, 0.8)
 
 [node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_mvs2p")]
 position = Vector2(477, 410)
