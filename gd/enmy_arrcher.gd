@@ -65,6 +65,7 @@ func update_anim() -> void:
 
 func play_attack_animation() -> void:
 	# Calculate the direction to the player
+	
 	var dir = (player.global_position - global_position).normalized()
 
 	# Determine the direction and play the corresponding animation
@@ -102,13 +103,14 @@ func _spawn_arrow() -> void:
 	# Instantiate the arrow
 	var arrow = arrow_scene.instantiate() as RigidBody2D
 	arrow.global_position = self.global_position  # Start at the Marker2D position
-
+	var x = global_position.direction_to(player.global_position)
 	# Calculate direction and apply it to the arrow
 	var direction = (player.global_position - arrow.global_position).normalized()
-	arrow.direction = direction
+	print(direction)
+	arrow.direction = x
 
 	# Set the arrow's rotation to face the direction
-	arrow.rotation = direction.angle()
+	#arrow.rotation = direction.angle()
 
 	# Track the active arrow
 	current_arrow = arrow

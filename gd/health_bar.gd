@@ -8,7 +8,10 @@ func change_health(change_value: int) -> void:
 	var old_value = healthbar1.value
 	var new_value = clamp(old_value + change_value, 0, healthbar1.max_value)
 	# Update the primary health bar value
-	healthbar1.value = new_value
+	if(change_value < 0):
+		healthbar1.value = new_value
+	else :
+		healthbar2.value = new_value
 
 	# Update the style based on healing or damage
 	var stylebox: StyleBox = healthbar1.get_theme_stylebox("fill").duplicate()
@@ -19,13 +22,15 @@ func change_health(change_value: int) -> void:
 	healthbar1.add_theme_stylebox_override("fill", stylebox)
 
 	# Smoothly adjust the secondary health bar
-	_catch_up_change(new_value)
+	_catch_up_change(new_value, change_value)
 
 # Smoothly adjusts the secondary health bar to match the primary one
-func _catch_up_change(target_value: int) -> void:
-	while healthbar2.value != target_value:
-		await get_tree().create_timer(0.05).timeout
-		if healthbar2.value < target_value:
-			healthbar2.value += 1
-		elif healthbar2.value > target_value:
+func _catch_up_change(target_value: int, change_value:int) -> void:
+	if(change_value < 0):
+		while healthbar2.value != target_value:
+			await get_tree().create_timer(0.05).timeout
 			healthbar2.value -= 1
+	else :
+		while healthbar1.value != target_value:
+			await get_tree().create_timer(0.05).timeout
+			healthbar1.value += 1

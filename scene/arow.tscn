@@ -25,12 +25,10 @@ length = 52.9996
 
 [node name="arow" type="RigidBody2D" groups=["enmy"]]
 script = ExtResource("1_0fihq")
-speed = 400.0
-lifespan = 3.0
 arrow_damage = 15
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(19, 3)
+position = Vector2(-9, 1)
 amount = 2000
 lifetime = 0.4
 emission_shape = 1
@@ -45,10 +43,12 @@ scale_amount_curve = SubResource("Curve_h54nh")
 color_ramp = SubResource("Gradient_kkoxy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-28, -2)
 texture = ExtResource("2_va4mv")
 vframes = 2
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-28, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-26, 3)
@@ -56,7 +56,7 @@ rotation = -1.58215
 shape = SubResource("SeparationRayShape2D_v4lt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-26, 2)
+position = Vector2(-54, 0)
 rotation = -1.56695
 shape = SubResource("SeparationRayShape2D_ordij")
 debug_color = Color(0.7, 0.142413, 0.283744, 0.42)

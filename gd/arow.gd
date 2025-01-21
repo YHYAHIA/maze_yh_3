@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-@export var speed: float = 300  # Speed of the arrow
-@export var lifespan: float = 5
+@export var speed: float = 200  # Speed of the arrow
+@export var lifespan: float = 10
   # Arrow exists for 3 seconds
 @export var arrow_damage: int = 10  # Damage dealt by the arrow
 var direction: Vector2 = Vector2.ZERO  # Direction of the arrow
@@ -13,8 +13,11 @@ func _ready() -> void:
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	# Set the linear velocity based on the direction and speed
-	linear_velocity = direction * speed
-	rotation = direction.angle()
+	var player: CharacterBody2D = get_tree().get_first_node_in_group('player');
+	var x = global_position.direction_to(player.global_position)
+	direction = (player.global_position - global_position)
+	linear_velocity = (x - Vector2(0,0.03)) * speed
+	rotation = x.angle()
 
 
 

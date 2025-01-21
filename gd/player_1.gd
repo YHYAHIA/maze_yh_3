@@ -101,6 +101,9 @@ func die() -> void:
 	death_timer.start()  # Start the death timer
 	
 	GlobalInteract.collectedKeys = 0
+	GlobalInteract.gold_amount=0
+	GlobalInteract.meet_amount=0
+	GlobalInteract.wood_amount=0
 
 
 # Called when the death timer times out

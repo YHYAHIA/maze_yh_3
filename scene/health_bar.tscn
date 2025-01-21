@@ -21,7 +21,7 @@ border_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtvwa"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.615686, 0.027451, 0.121569, 0.0117647)
 skew = Vector2(1, 0)
 border_width_left = 3
 border_width_top = 3
@@ -58,6 +58,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_doqcv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2pbek")
 step = 1.0
 value = 100.0
+show_percentage = false
 
 [node name="ProgressBar1" type="ProgressBar" parent="."]
 layout_mode = 0

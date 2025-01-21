@@ -825,9 +825,6 @@ debug_color = Color(0.7, 0.395529, 0.141606, 0.42)
 
 [node name="Timer2" type="Timer" parent="."]
 
-[node name="arow" parent="." instance=ExtResource("2_8jo4w")]
-scale = Vector2(0.6, 0.6)
-
 [node name="path2" type="Area2D" parent="."]
 visible = false
 
@@ -838,4 +835,3 @@ shape = SubResource("CircleShape2D_j52c6")
 [connection signal="body_exited" from="path" to="." method="_on_path_body_exited"]
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
 [connection signal="body_exited" from="attack" to="." method="_on_attack_body_exited"]
-[connection signal="tree_exited" from="arow" to="." method="_on_arow_tree_exited"]

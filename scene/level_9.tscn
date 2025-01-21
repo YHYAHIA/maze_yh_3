@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://betbk120w6gnu" path="res://scene/keybox.tscn" id="17_nasn7"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_c2ryw"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_g2ucs"]
-[ext_resource type="PackedScene" uid="uid://dkrbd71nv3uev" path="res://scene/gold.tscn" id="20_1s3qq"]
+[ext_resource type="PackedScene" path="res://scene/gold.tscn" id="20_1s3qq"]
 [ext_resource type="Script" path="res://scene/damge_2.gd" id="20_mrs11"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_mi65k"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="22_t0xgc"]
@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="27_kg8s0"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="28_pedsk"]
 [ext_resource type="PackedScene" uid="uid://fs7a0dp6iw5e" path="res://scene/enmy_arrcher.tscn" id="30_gjrlp"]
-[ext_resource type="PackedScene" uid="uid://cgwxbxqtjvvf6" path="res://scene/meet.tscn" id="32_upfm1"]
+[ext_resource type="PackedScene" uid="uid://bhmrxoar6qm46" path="res://scene/meet.tscn" id="32_upfm1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmc7x"]
 radius = 17.9662
@@ -335,6 +335,14 @@ player = NodePath("../player1")
 position = Vector2(516, 1564)
 player = NodePath("../player1")
 
+[node name="meet6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+position = Vector2(352, 1532)
+player = NodePath("../player1")
+
+[node name="meet7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+position = Vector2(430, 1400)
+player = NodePath("../player1")
+
 [node name="meet2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
 position = Vector2(3205, 3170)
 player = NodePath("../player1")
@@ -344,6 +352,10 @@ position = Vector2(28, 272)
 player = NodePath("../player1")
 
 [node name="meet4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+position = Vector2(842, -5)
+player = NodePath("../player1")
+
+[node name="meet5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
 position = Vector2(842, -5)
 player = NodePath("../player1")
 
