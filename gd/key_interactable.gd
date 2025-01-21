@@ -10,11 +10,11 @@ class_name door_keys
 func interact(_user: Node2D):
 	GlobalInteract.collectedKeys += 1;
 	key.queue_free()
-	push_warning("not_implemented")
+	
 	
 	
 func stop_interaction(_user : Node2D):
-	push_warning("not_implemented")
+	pass
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

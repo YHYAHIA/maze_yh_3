@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvbwxxqijyjm1"]
+[gd_scene load_steps=8 format=3 uid="uid://dvbwxxqijyjm1"]
 
 [ext_resource type="Script" path="res://scene/control.gd" id="1_hbco1"]
+[ext_resource type="Texture2D" uid="uid://cvaqw5f4kra2y" path="res://Resources/Resources/G_Idle.png" id="2_qvwxx"]
 [ext_resource type="Texture2D" uid="uid://bwt0n66y68a0m" path="res://ui/Icon/Pause@2x.png" id="3_632na"]
+[ext_resource type="Texture2D" uid="uid://djp0bt2do6ooo" path="res://Resources/Resources/M_Idle.png" id="3_yiq1n"]
 [ext_resource type="Texture2D" uid="uid://wdmpif8acq0m" path="res://Texture/LargeHandleFilled.png" id="4_p84j5"]
+[ext_resource type="Texture2D" uid="uid://dyidffcw3pfgq" path="res://Resources/Resources/W_Idle.png" id="4_q7osm"]
 [ext_resource type="Texture2D" uid="uid://cvwrhq35nhnhq" path="res://ui/Icon/ArrowRight@2x.png" id="6_e37e8"]
 
 [node name="Controls_on_screen" type="Control"]
@@ -15,6 +18,59 @@ offset_right = 40.0
 grow_vertical = 0
 script = ExtResource("1_hbco1")
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer2/Panel/MarginContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="GIdle" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_qvwxx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="gold" type="Label" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="meet2" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_yiq1n")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="meet" type="Label" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+
+[node name="wood2" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_q7osm")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="wood" type="Label" parent="CanvasLayer2/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(20, 20)

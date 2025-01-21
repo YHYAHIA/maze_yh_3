@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3fpufydpc42c"]
+
+[ext_resource type="Texture2D" uid="uid://cvaqw5f4kra2y" path="res://Resources/Resources/G_Idle.png" id="1_47faa"]
+[ext_resource type="Texture2D" uid="uid://djp0bt2do6ooo" path="res://Resources/Resources/M_Idle.png" id="2_itn3c"]
+[ext_resource type="Texture2D" uid="uid://dyidffcw3pfgq" path="res://Resources/Resources/W_Idle.png" id="3_5t1mb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jsmwk"]
+line_spacing = 1.0
+
+[node name="inter_face" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/MarginContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="GIdle" type="TextureRect" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_47faa")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="gold" type="Label" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "100"
+
+[node name="meet2" type="TextureRect" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_itn3c")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="meet" type="Label" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "100"
+
+[node name="wood2" type="TextureRect" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_5t1mb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="wood" type="Label" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "100"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUESTs"
+
+[node name="quest" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "quest:"
+
+[node name="text" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "\"The way out? Oh, sure! Just follow the path... unless you hear growling. Then, uh, maybe run the other way.\""
+label_settings = SubResource("LabelSettings_jsmwk")
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2

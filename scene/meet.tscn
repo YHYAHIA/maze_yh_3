@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgwxbxqtjvvf6"]
+
+[ext_resource type="Script" path="res://area_2d.gd" id="1_de0b4"]
+[ext_resource type="Texture2D" uid="uid://djp0bt2do6ooo" path="res://Resources/Resources/M_Idle.png" id="2_4bb60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ty15"]
+radius = 66.0681
+
+[node name="meet" type="Area2D" node_paths=PackedStringArray("key_node")]
+script = ExtResource("1_de0b4")
+key_node = NodePath(".")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3ty15")
+
+[node name="GSpawn" type="Sprite2D" parent="."]
+texture = ExtResource("2_4bb60")

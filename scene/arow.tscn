@@ -1,7 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://baut5hxggjjs6"]
+[gd_scene load_steps=8 format=3 uid="uid://baut5hxggjjs6"]
 
 [ext_resource type="Script" path="res://gd/arow.gd" id="1_0fihq"]
 [ext_resource type="Texture2D" uid="uid://bjo0dx0v7xr5" path="res://char/Arrow.png" id="2_va4mv"]
+
+[sub_resource type="Curve" id="Curve_p2ok1"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0.0348011, 8.09833), 0.0, 0.0, 0, 0, Vector2(1, -57.5091), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_h54nh"]
+_data = [Vector2(0.0134943, 0.981548), 0.0, 0.0, 0, 0, Vector2(1, 0.0589439), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kkoxy"]
+offsets = PackedFloat32Array(0, 0.190909, 0.436364, 0.7, 1)
+colors = PackedColorArray(0.69403, 0, 0.205957, 1, 0.752442, 0.304507, 0, 1, 0.827544, 0.676838, 0.476397, 1, 0.908209, 0.733662, 0.41177, 1, 1, 0.819608, 0.313726, 0.517647)
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_v4lt7"]
 length = 53.3299
@@ -14,6 +28,21 @@ script = ExtResource("1_0fihq")
 speed = 400.0
 lifespan = 3.0
 arrow_damage = 15
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(19, 3)
+amount = 2000
+lifetime = 0.4
+emission_shape = 1
+emission_sphere_radius = 4.0
+gravity = Vector2(-400, 0)
+radial_accel_min = -87.5
+radial_accel_max = 47.5
+radial_accel_curve = SubResource("Curve_p2ok1")
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_h54nh")
+color_ramp = SubResource("Gradient_kkoxy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_va4mv")
