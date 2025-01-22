@@ -87,4 +87,4 @@ shape = SubResource("CircleShape2D_4nqcv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xt104")
 autoplay = "default"
-frame_progress = 0.779457
+frame_progress = 0.401201

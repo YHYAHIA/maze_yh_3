@@ -25,7 +25,9 @@ length = 52.9996
 
 [node name="arow" type="RigidBody2D" groups=["enmy"]]
 script = ExtResource("1_0fihq")
-arrow_damage = 15
+speed = 300.0
+lifespan = 5.0
+arrow_damage = 5
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(-9, 1)

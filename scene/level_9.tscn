@@ -152,7 +152,7 @@ scale = Vector2(0.2, 0.2)
 player = NodePath("../player1")
 
 [node name="keybox2" parent="." instance=ExtResource("17_nasn7")]
-position = Vector2(3257, 3267)
+position = Vector2(3265, 3326)
 scale = Vector2(0.7, 0.7)
 
 [node name="keybox3" parent="." instance=ExtResource("17_nasn7")]
@@ -176,7 +176,7 @@ position = Vector2(-586, 1330)
 scale = Vector2(0.3, 0.3)
 
 [node name="key2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
-position = Vector2(3261, 3344)
+position = Vector2(3279, 3381)
 scale = Vector2(0.2, 0.2)
 player = NodePath("../player1")
 
@@ -357,7 +357,7 @@ scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(3262, 3196)
+position = Vector2(3237, 3208)
 scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 

@@ -6,13 +6,14 @@ class_name Resorses1
 @export var player: CharacterBody2D = null  # Reference to the player
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
+
 var animation_played: bool = false  # Flag to track if the animation has been played
 
 func interact(_user: Node2D):
 	# Add the item to the global inventory and remove it from the scene
 	GlobalInteract.add_item(item_type, amount)
 	queue_free()
-	GlobalInteract.sheep_dead =false
+
 
 func stop_interaction(_user: Node2D):
 	# Define behavior for stopping interaction (optional)

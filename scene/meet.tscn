@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpymuk65rmfh4" path="res://Resources/Resources/M_Spawn.png" id="3_lu3e4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ty15"]
-radius = 66.0681
+radius = 31.257
 
 [sub_resource type="Animation" id="Animation_jkj3b"]
 resource_name = "dead"

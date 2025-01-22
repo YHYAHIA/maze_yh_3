@@ -11,6 +11,7 @@ extends "res://gd/interactable.gd"
 	set(value):
 		anim = value
 		_update_animations()
+@onready var timer: Timer = $"../Timer"
 
 @export_group("Animation Names")
 @export var open_anim: StringName = "open"
@@ -27,7 +28,7 @@ func interact(_user: Node2D):
 		print("The box is now open.")
 	else:
 		print("The box is now closed.")
-
+	timer.start()
 func _update_animations():
 	# Update animations based on the `is_open` state
 	if anim != null:
@@ -55,3 +56,9 @@ func stop_interaction(_user: Node2D):
 	#is_open = false
 	#_update_animations()
 	#print("Interaction stopped. The box is now closed.")
+
+
+func _on_timer_timeout() -> void:
+	anim.play(closed_anim)
+	GlobalInteract.is_pox_open = false
+	pass # Replace with function body.
