@@ -1,12 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhmrxoar6qm46"]
+[gd_scene load_steps=8 format=3 uid="uid://bhmrxoar6qm46"]
 
 [ext_resource type="Script" path="res://area_2d.gd" id="1_de0b4"]
 [ext_resource type="Texture2D" uid="uid://djp0bt2do6ooo" path="res://Resources/Resources/M_Idle.png" id="2_4bb60"]
+[ext_resource type="Texture2D" uid="uid://dpymuk65rmfh4" path="res://Resources/Resources/M_Spawn.png" id="3_lu3e4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ty15"]
 radius = 66.0681
 
+[sub_resource type="Animation" id="Animation_jkj3b"]
+resource_name = "dead"
+length = 0.16667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GSpawn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ywml3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GSpawn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua7r5"]
+_data = {
+"RESET": SubResource("Animation_ywml3"),
+"dead": SubResource("Animation_jkj3b")
+}
+
 [node name="meet" type="Area2D" node_paths=PackedStringArray("key_node")]
+y_sort_enabled = true
 script = ExtResource("1_de0b4")
 key_node = NodePath(".")
 
@@ -14,4 +101,16 @@ key_node = NodePath(".")
 shape = SubResource("CircleShape2D_3ty15")
 
 [node name="GSpawn" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_4bb60")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ua7r5")
+}
+speed_scale = 0.3
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_lu3e4")
+hframes = 7

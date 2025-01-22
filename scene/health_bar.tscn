@@ -62,10 +62,10 @@ show_percentage = false
 
 [node name="ProgressBar1" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 17.0
-offset_right = 611.0
-offset_bottom = 46.0
+offset_left = 472.0
+offset_top = 16.0
+offset_right = 612.0
+offset_bottom = 45.0
 theme_override_styles/background = SubResource("StyleBoxFlat_vtvwa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yi6ks")
 step = 1.0

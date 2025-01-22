@@ -34,8 +34,8 @@ func interact(_user: Node2D):
 		_update_label()
 		return
 	
-	if GlobalInteract.collectedKeys > 0:
-		GlobalInteract.collectedKeys -= 1
+	if GlobalInteract.key_amount > 0:
+		GlobalInteract.key_amount -= 1
 		locked = false
 		is_open = true
 		print("Door unlocked!")

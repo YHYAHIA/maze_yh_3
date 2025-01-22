@@ -20,6 +20,13 @@ func handle_input() -> void:
 	if is_dead:
 		return  # Prevent input if the player is dead
 	velocity = Vector2.ZERO
+	if Input.is_action_just_pressed("heall"):
+		if health == max_health:
+			return
+		else :
+			if GlobalInteract.meet_amount>0:
+				GlobalInteract.meet_amount -= 1
+				set_health(get_health() + 20)
 	if Input.is_action_pressed("up"):
 		velocity.y = -1
 	elif Input.is_action_pressed("down"):
@@ -100,7 +107,7 @@ func die() -> void:
 	
 	death_timer.start()  # Start the death timer
 	
-	GlobalInteract.collectedKeys = 0
+	GlobalInteract.key_amount = 0
 	GlobalInteract.gold_amount=0
 	GlobalInteract.meet_amount=0
 	GlobalInteract.wood_amount=0

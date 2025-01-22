@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dqq8ywvmsgxsm" path="res://sfx/Win.wav" id="4_vkcg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn2hl"]
-radius = 27.0185
+radius = 18.5311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wveg"]
 radius = 17.1964
@@ -324,6 +324,7 @@ scale = Vector2(1.25, 1.25)
 collision_mask = 15
 platform_floor_layers = 4294967041
 script = ExtResource("1_yyot2")
+health = 1000
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(-4.76837e-07, 0)
@@ -341,7 +342,6 @@ script = ExtResource("3_d40v0")
 interactor = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area2d"]
-visible = false
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_hn2hl")
 

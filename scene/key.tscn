@@ -1,6 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dhyawrx0qvjat"]
 
 [ext_resource type="Texture2D" uid="uid://wlamqs2ufe3a" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0001.png" id="1_01cql"]
+[ext_resource type="Script" path="res://scene/key.gd" id="1_8bs23"]
 [ext_resource type="Texture2D" uid="uid://r6ejaof5ngfx" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0002.png" id="2_os3ci"]
 [ext_resource type="Texture2D" uid="uid://2fiquh5ivfh" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0003.png" id="3_w27dq"]
 [ext_resource type="Texture2D" uid="uid://di4tx0fnb0d0b" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0004.png" id="4_eg8ny"]
@@ -8,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://q04mf5dnwpmk" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0006.png" id="6_r2d0s"]
 [ext_resource type="Texture2D" uid="uid://dkt7f7t1vc0bs" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0007.png" id="7_fhvn5"]
 [ext_resource type="Texture2D" uid="uid://dd66lte2aa6rr" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0008.png" id="8_sbnwq"]
-[ext_resource type="Script" path="res://gd/key_interactable.gd" id="9_tdt47"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4nqcv"]
+radius = 146.185
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kk6wd"]
 atlas = ExtResource("1_01cql")
@@ -74,19 +77,14 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4nqcv"]
-radius = 146.185
+[node name="key" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_8bs23")
 
-[node name="key" type="Node2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4nqcv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xt104")
 autoplay = "default"
-frame_progress = 0.798665
-
-[node name="key_interactable" type="Area2D" parent="." node_paths=PackedStringArray("key_node")]
-script = ExtResource("9_tdt47")
-key_node = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key_interactable"]
-shape = SubResource("CircleShape2D_4nqcv")
+frame_progress = 0.779457

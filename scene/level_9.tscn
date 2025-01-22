@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://betbk120w6gnu" path="res://scene/keybox.tscn" id="17_nasn7"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_c2ryw"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_g2ucs"]
-[ext_resource type="PackedScene" path="res://scene/gold.tscn" id="20_1s3qq"]
+[ext_resource type="PackedScene" uid="uid://dkrbd71nv3uev" path="res://scene/gold.tscn" id="20_1s3qq"]
 [ext_resource type="Script" path="res://scene/damge_2.gd" id="20_mrs11"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_mi65k"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="22_t0xgc"]
@@ -141,12 +141,22 @@ autoplay = true
 position = Vector2(540, 731)
 scale = Vector2(0.7, 0.7)
 
-[node name="key" parent="." instance=ExtResource("18_c2ryw")]
+[node name="key" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
 position = Vector2(554, 778)
 scale = Vector2(0.2, 0.2)
+player = NodePath("../player1")
+
+[node name="key3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
+position = Vector2(-211, 213)
+scale = Vector2(0.2, 0.2)
+player = NodePath("../player1")
 
 [node name="keybox2" parent="." instance=ExtResource("17_nasn7")]
 position = Vector2(3257, 3267)
+scale = Vector2(0.7, 0.7)
+
+[node name="keybox3" parent="." instance=ExtResource("17_nasn7")]
+position = Vector2(-271, 202)
 scale = Vector2(0.7, 0.7)
 
 [node name="gold" parent="." instance=ExtResource("20_1s3qq")]
@@ -165,9 +175,10 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(-586, 1330)
 scale = Vector2(0.3, 0.3)
 
-[node name="key2" parent="." instance=ExtResource("18_c2ryw")]
+[node name="key2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
 position = Vector2(3261, 3344)
 scale = Vector2(0.2, 0.2)
+player = NodePath("../player1")
 
 [node name="numarea" parent="." instance=ExtResource("19_g2ucs")]
 position = Vector2(1125, -529)
@@ -235,7 +246,15 @@ rotation = -3.12939
 position = Vector2(223, 335)
 
 [node name="sheep" parent="." instance=ExtResource("23_lml70")]
-position = Vector2(158, 353)
+position = Vector2(16, 1431)
+scale = Vector2(0.8, 0.8)
+
+[node name="sheep2" parent="." instance=ExtResource("23_lml70")]
+position = Vector2(117, 358)
+scale = Vector2(0.8, 0.8)
+
+[node name="sheep3" parent="." instance=ExtResource("23_lml70")]
+position = Vector2(3237, 3207)
 scale = Vector2(0.8, 0.8)
 
 [node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_dsbht")]
@@ -255,7 +274,8 @@ explosion_damage = 20
 explosion_radius = 120.0
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("26_wdg8y")]
-position = Vector2(-526, 1452)
+position = Vector2(-491, 1559)
+max_health = 1000
 health_bar = NodePath("../CanvasLayer2/health_bar")
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
@@ -332,31 +352,43 @@ scale = Vector2(1.2, 1.2)
 player = NodePath("../player1")
 
 [node name="meet" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(516, 1564)
+position = Vector2(17, 1432)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../player1")
+
+[node name="meet8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+position = Vector2(3262, 3196)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(352, 1532)
+position = Vector2(34, 1428)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(430, 1400)
+position = Vector2(0, 1414)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(3205, 3170)
+position = Vector2(117, 359)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(28, 272)
+position = Vector2(90, 334)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(842, -5)
+position = Vector2(164, 337)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [node name="meet5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(842, -5)
+position = Vector2(32, 361)
+scale = Vector2(0.5, 0.5)
 player = NodePath("../player1")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
