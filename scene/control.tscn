@@ -109,7 +109,7 @@ offset = Vector2(20, 20)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 20, 20)
 
-[node name="left2" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="heal" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(0.489422, 1, 0.0073505, 0.647059)
 self_modulate = Color(1, 0.773644, 0.438709, 0.513726)
 position = Vector2(1407.5, 532.5)
@@ -139,7 +139,7 @@ offset_bottom = 129.0
 theme_override_font_sizes/font_size = 50
 text = "E"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+[node name="pous" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(12.5, -17.5)
 scale = Vector2(0.7, 0.7)
