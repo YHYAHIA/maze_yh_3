@@ -10,9 +10,10 @@ class_name Resorses1
 var animation_played: bool = false  # Flag to track if the animation has been played
 
 func _ready() -> void:
+	coll.disabled = true
 	# Connect to the sheep's death signal
 	if associated_sheep and associated_sheep.has_signal("sheep_died"):
-		associated_sheep.connect("sheep_died",Callable(self, "_on_sheep_died"))
+		associated_sheep.connect("sheep_died", Callable(self, "_on_sheep_died"))
 
 func _on_sheep_died() -> void:
 	# Trigger meat visibility and animation when the sheep dies

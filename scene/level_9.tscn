@@ -235,35 +235,42 @@ position = Vector2(223, 335)
 position = Vector2(236, 1433)
 scale = Vector2(0.8, 0.8)
 
-[node name="meet" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+[node name="meet" parent="sheeps/sheep1" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(17, 1477)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep")
 
-[node name="meet6" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+[node name="meet6" parent="sheeps/sheep1" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(34, 1428)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep")
 
-[node name="meet7" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+[node name="meet7" parent="sheeps/sheep1" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(-65, 1462)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep")
 
 [node name="sheep2" type="Node" parent="sheeps"]
 
-[node name="meet2" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+[node name="meet2" parent="sheeps/sheep2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(-183, 1446)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep2")
 
-[node name="meet3" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+[node name="meet3" parent="sheeps/sheep2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(-400, 1458)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep2")
 
-[node name="meet4" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+[node name="meet4" parent="sheeps/sheep2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(-168, 1415)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep2")
 
-[node name="meet5" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+[node name="meet5" parent="sheeps/sheep2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(-397, 1422)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep2")
 
 [node name="sheep2" parent="sheeps/sheep2" instance=ExtResource("23_lml70")]
 position = Vector2(-281, 1424)
@@ -275,13 +282,15 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(3237, 3207)
 scale = Vector2(0.8, 0.8)
 
-[node name="meet8" parent="sheeps/sheep3" instance=ExtResource("32_upfm1")]
+[node name="meet8" parent="sheeps/sheep3" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(3237, 3208)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep3")
 
-[node name="meet9" parent="sheeps/sheep3" instance=ExtResource("32_upfm1")]
+[node name="meet9" parent="sheeps/sheep3" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(3237, 3208)
 scale = Vector2(0.5, 0.5)
+associated_sheep = NodePath("../sheep3")
 
 [node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_dsbht")]
 position = Vector2(477, 410)
@@ -387,21 +396,25 @@ position = Vector2(-720, 1346)
 [node name="gold_mine2" parent="gold_mine" instance=ExtResource("33_deyhp")]
 position = Vector2(-733, 1645)
 
-[node name="gold" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+[node name="gold" parent="gold_mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-580, 1332)
 scale = Vector2(0.3, 0.3)
-gold_mine = NodePath("../gold_mine")
+associated_sheep = NodePath("../gold_mine")
 
-[node name="gold2" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+[node name="gold2" parent="gold_mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-535, 1323)
 scale = Vector2(0.3, 0.3)
-gold_mine = NodePath("../gold_mine")
+associated_sheep = NodePath("../gold_mine")
 
-[node name="gold3" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+[node name="gold3" parent="gold_mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-584, 1631)
 scale = Vector2(0.3, 0.3)
-gold_mine = NodePath("../gold_mine")
+associated_sheep = NodePath("../gold_mine2")
 
-[node name="gold4" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+[node name="gold4" parent="gold_mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-503, 1654)
 scale = Vector2(0.3, 0.3)
-gold_mine = NodePath("../gold_mine")
+associated_sheep = NodePath("../gold_mine2")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

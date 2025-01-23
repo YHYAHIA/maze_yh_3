@@ -30,7 +30,7 @@ func interact():
 func play_destroyed_animation():
 	  # Debug
 	anim.play("destroyed")
-	emit_signal("destroyed")
+	
 	  # Debug
 	
 	# Disable further interactions by disabling the collision shape
@@ -40,5 +40,5 @@ func _on_timer_timeout():
 	if interaction_count < max_interactions:
 		anim.play("idle")  # Play idle animation after 0.3 seconds
 	else:
-		 # Debug
+		emit_signal("destroyed")
 		anim.play("destroyed")  # Keep in idle animation after being destroyed
