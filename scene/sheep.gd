@@ -1,5 +1,8 @@
 extends Node2D
 
+
+@onready var timer: Timer = $"../Timer"
+var is_dead: bool = false  # Tracks if the sheep is dead
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var player: Node2D = null  # Assign the player node in the editor or dynamically
 var facing_left: bool = false
@@ -30,3 +33,18 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 			facing_left = false
 			anim.play("idle_right")
 			print("right")
+
+# Called when the player interacts with the sheep
+
+
+
+# Timer timeout logic
+func _on_timer_timeout() -> void:
+	is_dead = false  # Reset local state if needed
+	pass
+
+# Handle sheep death
+func die():
+	is_dead = true
+	#anim.play("dead")  # Play death animation if available
+	queue_free()  # Remove the sheep from the scene

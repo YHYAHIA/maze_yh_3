@@ -91,23 +91,23 @@ z_index = 0
 scale = Vector2(1.8, 1.8)
 tile_map_data = PackedByteArray("AAAgADsAAQAAAAUAAAAgAD8AAQAAAAcAAAAgAEUAAQAAAAcAAAAgAEkAAQAAAA0AAAAZAE4AAQAJAAAAAAAVAE4AAQADAAAAAAAPAE4AAQADAAAAAAALAE4AAQABAAAAAAAgAFQAAQAAAAUAAAAgAFgAAQAAAAcAAAAgAF4AAQAAAAcAAAAgAGIAAQAAAA0AAAAmAGcAAQABAAAAAAAqAGcAAQADAAAAAAAwAGcAAQADAAAAAAA2AGcAAQADAAAAAAA8AGcAAQADAAAAAABAAGcAAQAJAAAAAAAgAGwAAQAAAAUAAAAgAHAAAQAAAAcAAAAgAHYAAQAAAAcAAAAgAHoAAQAAAA0AAAAaAGcAAQAJAAQAABD//04AAQAJAAQAABAmAH8AAQABAAAAAAAqAH8AAQADAAAAAAAwAH8AAQADAAAAAAA2AH8AAQADAAAAAAA8AH8AAQADAAAAAABAAH8AAQAJAAAAAABFAGwAAQAAAAUAAABFAHAAAQAAAAcAAABFAHUAAQAAAAcAAABFAHkAAQAAAA0AAABMAH8AAQABAAAAAABQAH8AAQADAAAAAABWAH8AAQADAAAAAABcAH8AAQADAAAAAABiAH8AAQADAAAAAABoAH8AAQADAAAAAABsAH8AAQAJAAAAAABzAH8AAQAJAAQAAABvAHoAAQAAAAcAAABvAHcAAQAAAAUAAABvAH0AAQAAAA0AAABmAHIAAQAJAAAAAABiAHIAAQADAAAAAABcAHIAAQADAAAAAABWAHIAAQADAAAAAABSAHIAAQABAAAAAABLAHAAAQAAAA0AAABLAGwAAQAAAAcAAABLAGgAAQAAAAUAAAA=")
 
-[node name="door" parent="." instance=ExtResource("11_bn5ak")]
+[node name="door" parent="." groups=["obstacle"] instance=ExtResource("11_bn5ak")]
 light_mask = 512
 z_index = 0
 position = Vector2(818, 763)
 
-[node name="door2" parent="." instance=ExtResource("11_bn5ak")]
+[node name="door2" parent="." groups=["obstacle"] instance=ExtResource("11_bn5ak")]
 light_mask = 512
 z_index = 0
 position = Vector2(338, 908)
 
-[node name="door3" parent="." instance=ExtResource("11_bn5ak")]
+[node name="door3" parent="." groups=["obstacle"] instance=ExtResource("11_bn5ak")]
 light_mask = 512
 z_index = 0
 y_sort_enabled = true
 position = Vector2(132, -72)
 
-[node name="door4" parent="." instance=ExtResource("11_bn5ak")]
+[node name="door4" parent="." groups=["obstacle"] instance=ExtResource("11_bn5ak")]
 light_mask = 512
 z_index = 0
 y_sort_enabled = true
@@ -141,15 +141,13 @@ autoplay = true
 position = Vector2(540, 731)
 scale = Vector2(0.7, 0.7)
 
-[node name="key" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
+[node name="key" parent="." instance=ExtResource("18_c2ryw")]
 position = Vector2(554, 778)
 scale = Vector2(0.2, 0.2)
-player = NodePath("../player1")
 
-[node name="key3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
+[node name="key3" parent="." instance=ExtResource("18_c2ryw")]
 position = Vector2(-211, 213)
 scale = Vector2(0.2, 0.2)
-player = NodePath("../player1")
 
 [node name="keybox2" parent="." instance=ExtResource("17_nasn7")]
 position = Vector2(3265, 3326)
@@ -175,10 +173,9 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(-586, 1330)
 scale = Vector2(0.3, 0.3)
 
-[node name="key2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_c2ryw")]
+[node name="key2" parent="." instance=ExtResource("18_c2ryw")]
 position = Vector2(3279, 3381)
 scale = Vector2(0.2, 0.2)
-player = NodePath("../player1")
 
 [node name="numarea" parent="." instance=ExtResource("19_g2ucs")]
 position = Vector2(1125, -529)
@@ -246,11 +243,11 @@ rotation = -3.12939
 position = Vector2(223, 335)
 
 [node name="sheep" parent="." instance=ExtResource("23_lml70")]
-position = Vector2(16, 1431)
+position = Vector2(236, 1433)
 scale = Vector2(0.8, 0.8)
 
 [node name="sheep2" parent="." instance=ExtResource("23_lml70")]
-position = Vector2(117, 358)
+position = Vector2(-281, 1424)
 scale = Vector2(0.8, 0.8)
 
 [node name="sheep3" parent="." instance=ExtResource("23_lml70")]
@@ -351,45 +348,43 @@ position = Vector2(1424, 3219)
 scale = Vector2(1.2, 1.2)
 player = NodePath("../player1")
 
-[node name="meet" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(17, 1432)
+[node name="meet" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
+position = Vector2(17, 1477)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep")
 
-[node name="meet8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+[node name="meet8" parent="." instance=ExtResource("32_upfm1")]
 position = Vector2(3237, 3208)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
 
-[node name="meet6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
+[node name="meet6" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
 position = Vector2(34, 1428)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep")
 
-[node name="meet7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(0, 1414)
+[node name="meet7" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
+position = Vector2(-65, 1462)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep")
 
-[node name="meet2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(117, 359)
+[node name="meet2" parent="." instance=ExtResource("32_upfm1")]
+position = Vector2(-183, 1446)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
 
-[node name="meet3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(90, 334)
+[node name="meet3" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
+position = Vector2(-400, 1458)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep2")
 
-[node name="meet4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(164, 337)
+[node name="meet4" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
+position = Vector2(-168, 1415)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep2")
 
-[node name="meet5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_upfm1")]
-position = Vector2(32, 361)
+[node name="meet5" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
+position = Vector2(-397, 1422)
 scale = Vector2(0.5, 0.5)
-player = NodePath("../player1")
+associated_sheep = NodePath("../sheep2")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

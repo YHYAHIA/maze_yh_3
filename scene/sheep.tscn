@@ -372,17 +372,15 @@ z_index = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1mpys")
 
-[node name="sheeb_interactabel area" type="Area2D" parent="."]
-z_index = -1
-script = ExtResource("5_a0rnc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sheeb_interactabel area"]
-shape = SubResource("CircleShape2D_i6t7k")
-debug_color = Color(0.559702, 0.0695632, 0.105496, 0.42)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("5_a0rnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_i6t7k")
+debug_color = Color(0.559702, 0.0695632, 0.105496, 0.42)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="Timer" to="sheeb_interactabel area" method="_on_timer_timeout"]

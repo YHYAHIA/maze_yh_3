@@ -4,7 +4,7 @@ extends "res://gd/interactable.gd"
 
 
 func interact(_user: Node2D):
-	sheep.queue_free()
+	sheep.die()
 	GlobalInteract.sheep_dead = true
 	timer.start()
 	print("true")

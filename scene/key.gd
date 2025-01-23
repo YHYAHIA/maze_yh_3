@@ -5,7 +5,7 @@ class_name door_keys
 @export var item_type: String = "key"  # Type of item (gold, meet, wood)
 @export var amount: int = 1  # Amount to add
 
-@export var player :CharacterBody2D = null
+
 
 
 func interact(_user: Node2D):

@@ -852,7 +852,7 @@ physics_layer_0/collision_layer = 4
 sources/4 = SubResource("TileSetAtlasSource_wtp4t")
 sources/0 = SubResource("TileSetAtlasSource_ravth")
 
-[node name="dec" type="TileMapLayer"]
+[node name="dec" type="TileMapLayer" groups=["obstacle"]]
 y_sort_enabled = true
 position = Vector2(54, 134)
 tile_set = SubResource("TileSet_o168b")
