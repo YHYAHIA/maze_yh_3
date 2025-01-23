@@ -6,7 +6,8 @@ var is_dead: bool = false  # Tracks if the sheep is dead
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var player: Node2D = null  # Assign the player node in the editor or dynamically
 var facing_left: bool = false
-
+# Signal to notify meat about sheep's death
+signal sheep_died
 func _ready() -> void:
 	# You can initialize any setup here if needed
 	pass
@@ -46,5 +47,5 @@ func _on_timer_timeout() -> void:
 # Handle sheep death
 func die():
 	is_dead = true
-	#anim.play("dead")  # Play death animation if available
+	emit_signal("sheep_died")  # Notify meat
 	queue_free()  # Remove the sheep from the scene

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dcdwg03wxjg1x"]
+[gd_scene load_steps=36 format=4 uid="uid://dcdwg03wxjg1x"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_8cjgp"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_yqb7e"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="28_pedsk"]
 [ext_resource type="PackedScene" uid="uid://fs7a0dp6iw5e" path="res://scene/enmy_arrcher.tscn" id="30_gjrlp"]
 [ext_resource type="PackedScene" uid="uid://bhmrxoar6qm46" path="res://scene/meet.tscn" id="32_upfm1"]
+[ext_resource type="PackedScene" uid="uid://jpusmbhik7xt" path="res://scene/gold_mine.tscn" id="33_deyhp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmc7x"]
 radius = 17.9662
@@ -157,22 +158,6 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(-271, 202)
 scale = Vector2(0.7, 0.7)
 
-[node name="gold" parent="." instance=ExtResource("20_1s3qq")]
-position = Vector2(-528, 1322)
-scale = Vector2(0.3, 0.3)
-
-[node name="gold2" parent="." instance=ExtResource("20_1s3qq")]
-position = Vector2(-565, 1372)
-scale = Vector2(0.3, 0.3)
-
-[node name="gold3" parent="." instance=ExtResource("20_1s3qq")]
-position = Vector2(-600, 1360)
-scale = Vector2(0.3, 0.3)
-
-[node name="gold4" parent="." instance=ExtResource("20_1s3qq")]
-position = Vector2(-586, 1330)
-scale = Vector2(0.3, 0.3)
-
 [node name="key2" parent="." instance=ExtResource("18_c2ryw")]
 position = Vector2(3279, 3381)
 scale = Vector2(0.2, 0.2)
@@ -242,17 +227,61 @@ rotation = -3.12939
 [node name="hous_g" parent="." instance=ExtResource("22_t0xgc")]
 position = Vector2(223, 335)
 
-[node name="sheep" parent="." instance=ExtResource("23_lml70")]
+[node name="sheeps" type="Node" parent="."]
+
+[node name="sheep1" type="Node" parent="sheeps"]
+
+[node name="sheep" parent="sheeps/sheep1" instance=ExtResource("23_lml70")]
 position = Vector2(236, 1433)
 scale = Vector2(0.8, 0.8)
 
-[node name="sheep2" parent="." instance=ExtResource("23_lml70")]
+[node name="meet" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+position = Vector2(17, 1477)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet6" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+position = Vector2(34, 1428)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet7" parent="sheeps/sheep1" instance=ExtResource("32_upfm1")]
+position = Vector2(-65, 1462)
+scale = Vector2(0.5, 0.5)
+
+[node name="sheep2" type="Node" parent="sheeps"]
+
+[node name="meet2" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+position = Vector2(-183, 1446)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet3" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+position = Vector2(-400, 1458)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet4" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+position = Vector2(-168, 1415)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet5" parent="sheeps/sheep2" instance=ExtResource("32_upfm1")]
+position = Vector2(-397, 1422)
+scale = Vector2(0.5, 0.5)
+
+[node name="sheep2" parent="sheeps/sheep2" instance=ExtResource("23_lml70")]
 position = Vector2(-281, 1424)
 scale = Vector2(0.8, 0.8)
 
-[node name="sheep3" parent="." instance=ExtResource("23_lml70")]
+[node name="sheep3" type="Node" parent="sheeps"]
+
+[node name="sheep3" parent="sheeps/sheep3" instance=ExtResource("23_lml70")]
 position = Vector2(3237, 3207)
 scale = Vector2(0.8, 0.8)
+
+[node name="meet8" parent="sheeps/sheep3" instance=ExtResource("32_upfm1")]
+position = Vector2(3237, 3208)
+scale = Vector2(0.5, 0.5)
+
+[node name="meet9" parent="sheeps/sheep3" instance=ExtResource("32_upfm1")]
+position = Vector2(3237, 3208)
+scale = Vector2(0.5, 0.5)
 
 [node name="enmy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_dsbht")]
 position = Vector2(477, 410)
@@ -321,70 +350,58 @@ metadata/_edit_use_anchors_ = true
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("28_pedsk")]
 metadata/_edit_use_anchors_ = true
 
-[node name="enemy_archer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
+[node name="enemy_archers" type="Node" parent="."]
+
+[node name="enemy_archer" parent="enemy_archers" node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
 y_sort_enabled = true
 position = Vector2(1433, 2449)
 scale = Vector2(1.2, 1.2)
-player = NodePath("../player1")
+player = NodePath("../../player1")
 
-[node name="enemy_archer2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
+[node name="enemy_archer2" parent="enemy_archers" node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(514, 2517)
 scale = Vector2(1.2, 1.2)
-player = NodePath("../player1")
+player = NodePath("../../player1")
 
-[node name="enemy_archer3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
+[node name="enemy_archer3" parent="enemy_archers" node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(2703, 2839)
 scale = Vector2(1.2, 1.2)
-player = NodePath("../player1")
+player = NodePath("../../player1")
 
-[node name="enemy_archer4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
+[node name="enemy_archer4" parent="enemy_archers" node_paths=PackedStringArray("player") instance=ExtResource("30_gjrlp")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(1424, 3219)
 scale = Vector2(1.2, 1.2)
-player = NodePath("../player1")
+player = NodePath("../../player1")
 
-[node name="meet" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(17, 1477)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep")
+[node name="gold_mine" type="Node" parent="."]
 
-[node name="meet8" parent="." instance=ExtResource("32_upfm1")]
-position = Vector2(3237, 3208)
-scale = Vector2(0.5, 0.5)
+[node name="gold_mine" parent="gold_mine" instance=ExtResource("33_deyhp")]
+position = Vector2(-720, 1346)
 
-[node name="meet6" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(34, 1428)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep")
+[node name="gold_mine2" parent="gold_mine" instance=ExtResource("33_deyhp")]
+position = Vector2(-733, 1645)
 
-[node name="meet7" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(-65, 1462)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep")
+[node name="gold" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+scale = Vector2(0.3, 0.3)
+gold_mine = NodePath("../gold_mine")
 
-[node name="meet2" parent="." instance=ExtResource("32_upfm1")]
-position = Vector2(-183, 1446)
-scale = Vector2(0.5, 0.5)
+[node name="gold2" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+scale = Vector2(0.3, 0.3)
+gold_mine = NodePath("../gold_mine")
 
-[node name="meet3" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(-400, 1458)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep2")
+[node name="gold3" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+scale = Vector2(0.3, 0.3)
+gold_mine = NodePath("../gold_mine")
 
-[node name="meet4" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(-168, 1415)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep2")
-
-[node name="meet5" parent="." node_paths=PackedStringArray("associated_sheep") instance=ExtResource("32_upfm1")]
-position = Vector2(-397, 1422)
-scale = Vector2(0.5, 0.5)
-associated_sheep = NodePath("../sheep2")
+[node name="gold4" parent="gold_mine" node_paths=PackedStringArray("gold_mine") instance=ExtResource("20_1s3qq")]
+scale = Vector2(0.3, 0.3)
+gold_mine = NodePath("../gold_mine")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
