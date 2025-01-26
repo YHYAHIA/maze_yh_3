@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dcdwg03wxjg1x"]
+[gd_scene load_steps=38 format=4 uid="uid://dcdwg03wxjg1x"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_8cjgp"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_yqb7e"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://i6jwsqi0fbqk" path="res://scene/npc.tscn" id="32_arsip"]
 [ext_resource type="PackedScene" uid="uid://bhmrxoar6qm46" path="res://scene/meet.tscn" id="32_upfm1"]
 [ext_resource type="PackedScene" uid="uid://jpusmbhik7xt" path="res://scene/gold_mine.tscn" id="33_deyhp"]
+[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="35_ipctu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmc7x"]
 radius = 17.9662
@@ -118,12 +119,11 @@ position = Vector2(962, 204)
 [node name="Control" parent="." instance=ExtResource("12_lj4q8")]
 
 [node name="next_level4" type="Area2D" parent="."]
-position = Vector2(209, 606)
+position = Vector2(830, 1208)
 collision_layer = 8
 script = ExtResource("13_gmcht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
-position = Vector2(896, -1134)
 rotation = 1.57252
 shape = SubResource("CapsuleShape2D_gmc7x")
 
@@ -151,12 +151,20 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(-211, 213)
 scale = Vector2(0.2, 0.2)
 
+[node name="key4" parent="." instance=ExtResource("18_c2ryw")]
+position = Vector2(-510, 1432)
+scale = Vector2(0.2, 0.2)
+
 [node name="keybox2" parent="." instance=ExtResource("17_nasn7")]
 position = Vector2(3265, 3326)
 scale = Vector2(0.7, 0.7)
 
 [node name="keybox3" parent="." instance=ExtResource("17_nasn7")]
 position = Vector2(-271, 202)
+scale = Vector2(0.7, 0.7)
+
+[node name="keybox4" parent="." instance=ExtResource("17_nasn7")]
+position = Vector2(-556, 1434)
 scale = Vector2(0.7, 0.7)
 
 [node name="key2" parent="." instance=ExtResource("18_c2ryw")]
@@ -313,6 +321,14 @@ explosion_radius = 120.0
 position = Vector2(-491, 1559)
 max_health = 1000
 health_bar = NodePath("../heal/health_bar")
+
+[node name="arow_gide" parent="player1" instance=ExtResource("35_ipctu")]
+scale = Vector2(0.4, 0.4)
+player = NodePath("..")
+end_location = NodePath("../../next_level4")
+rotation_speed = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player1"]
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="."]
 modulate = Color(1, 1, 1, 0.929412)
