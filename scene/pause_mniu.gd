@@ -80,3 +80,9 @@ func _on_mute_toggled(toggled_on: bool):
 func _on_voluem_setting_back_pressed() -> void:
 	hide_all_menus()
 	# Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/start.tscn")#go pack to home 
+	
+	

@@ -43,7 +43,7 @@ offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 13
+theme_override_constants/v_separation = 9
 
 [node name="Label" type="Label" parent="Control/GridContainer"]
 layout_mode = 2
@@ -62,6 +62,14 @@ layout_mode = 2
 [node name="setting" type="Button" parent="Control/GridContainer"]
 layout_mode = 2
 text = "setting"
+
+[node name="HSeparator3" type="HSeparator" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(195, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+text = "home"
 
 [node name="HSeparator2" type="HSeparator" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(195, 30)
@@ -142,6 +150,7 @@ text = "resume"
 
 [connection signal="pressed" from="Control/GridContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/GridContainer/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/GridContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="volume_setting/GridContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="volume_setting/GridContainer/mute" to="." method="_on_mute_toggled"]

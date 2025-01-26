@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bplb0s8vxiw8v"]
+[gd_scene load_steps=15 format=3 uid="uid://bplb0s8vxiw8v"]
 
 [ext_resource type="Script" path="res://gd/start.gd" id="1_otg3n"]
 [ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_3u55e"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b6c1yhg6to5d0" path="res://ui/UI/Buttons/Button_Hover_9Slides.png" id="8_he0th"]
 [ext_resource type="Texture2D" uid="uid://chv6sha8ed6n3" path="res://ui/UI/Ribbons/Ribbon_Red_3Slides.png" id="10_dxhjd"]
 [ext_resource type="Texture2D" uid="uid://4po3reqij4ke" path="res://ui/UI/Ribbons/Ribbon_Blue_3Slides.png" id="10_o3syf"]
+[ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="13_l7kno"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tbko"]
 
@@ -206,6 +207,13 @@ offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_qpt4w")
+
+[node name="pause_mniu1" parent="." instance=ExtResource("13_l7kno")]
+layout_mode = 1
+offset_left = 63.0
+offset_top = 44.0
+offset_right = 63.0
+offset_bottom = 44.0
 
 [connection signal="pressed" from="Panel/CanvasLayer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/CanvasLayer/HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
