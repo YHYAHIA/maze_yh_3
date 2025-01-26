@@ -3,6 +3,7 @@ extends Node2D
 # References to the player and target
 @export var player: NodePath
 @export var end_location: NodePath
+@onready var sprite: Sprite2D = $Sprite2D
 
 # Arrow behavior parameters
 @export var distance_from_player: float = 100.0
@@ -10,7 +11,7 @@ extends Node2D
 @export var rotation_speed: float = 8.0  # Speed for smooth rotation
 @export var float_speed: float = 2.0  # Speed for floating to the endpoint
 @export var free_distance: float = 500.0  # Distance threshold for free movement
-
+@export var hide_distance : float = 50
 # Internal variable for the arrow's target position
 var target_position: Vector2
 var bobbing_offset: float = 0.0  # To control the bobbing motion
@@ -19,7 +20,6 @@ func _process(delta):
 	# Ensure the player and target nodes are valid
 	if not player or not end_location:
 		return
-
 	var player_node = get_node(player)
 	var end_node = get_node(end_location)
 
@@ -27,17 +27,18 @@ func _process(delta):
 	var distance_to_target = player_node.global_position.distance_to(end_node.global_position)
 
 	if distance_to_target <= free_distance:
+		
 		# The arrow stops following the player and starts floating towards the end location smoothly
 		global_position = global_position.lerp(end_node.global_position, float_speed * delta)
 
 		# Point the arrow at the endpoint
 		var direction_to_target = (end_node.global_position - global_position).normalized()
 		var target_rotation = direction_to_target.angle()
-		rotation = lerp_angle(rotation, target_rotation, rotation_speed * delta)
+		rotation = lerp_angle(rotation, target_rotation, rotation_speed )
 
 		# Apply smooth bobbing effect
-		bobbing_offset = sin(Time.get_ticks_msec() / 150.0) * 6 # Sine wave for smooth up and down motion
-		global_position.y += bobbing_offset
+		#bobbing_offset = sin(Time.get_ticks_msec() / 150.0) * 6 # Sine wave for smooth up and down motion
+		#global_position.y += bobbing_offset
 	else:
 		# Calculate the direction vector
 		var direction = (end_node.global_position - player_node.global_position).normalized()

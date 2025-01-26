@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cuokh3s0h3ke7"]
+[gd_scene load_steps=35 format=4 uid="uid://cuokh3s0h3ke7"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_un032"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_nyups"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="26_lv0tb"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="27_v1xqd"]
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="28_lxsoq"]
+[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="29_rloe2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb7o1"]
 texture = ExtResource("8_8c6jq")
@@ -616,6 +617,10 @@ position = Vector2(625, 216.25)
 scale = Vector2(0.8, 0.8)
 damage = 10
 player = NodePath("../../player1")
+
+[node name="arow_gide" parent="." instance=ExtResource("29_rloe2")]
+player = NodePath("../player1")
+end_location = NodePath("../next_level4")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

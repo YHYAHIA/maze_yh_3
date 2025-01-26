@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c80u63dkfsetm"]
+[gd_scene load_steps=23 format=4 uid="uid://c80u63dkfsetm"]
 
 [ext_resource type="Script" path="res://gd/level_1.gd" id="1_nmasa"]
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_skk8k"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_2cium"]
 [ext_resource type="PackedScene" uid="uid://c6mxk03pqvyep" path="res://scene/stirs_2.tscn" id="19_3810j"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="20_i7a0q"]
+[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="22_acnj3"]
 
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
@@ -104,6 +105,10 @@ position = Vector2(1424, -1041)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="pause_mniu1" parent="CanvasLayer2" instance=ExtResource("20_i7a0q")]
+
+[node name="arow_gide" parent="." instance=ExtResource("22_acnj3")]
+player = NodePath("../player1")
+end_location = NodePath("../next_level")
 
 [connection signal="tree_entered" from="flor dc" to="player1" method="_on_flor_dc_tree_entered"]
 [connection signal="body_entered" from="next_level" to="next_level" method="_on_body_entered"]

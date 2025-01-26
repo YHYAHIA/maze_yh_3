@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bqb7wxk7s2g6i"]
+[gd_scene load_steps=29 format=4 uid="uid://bqb7wxk7s2g6i"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_xr1nn"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_xxemb"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ecxh4eqae23" path="res://scene/rocks.tscn" id="22_k4ogu"]
 [ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="23_k56fo"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="24_w3868"]
+[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="25_4goh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rv54"]
 texture = ExtResource("7_q1x5j")
@@ -480,6 +481,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pause_mniu1" parent="CanvasLayer2" instance=ExtResource("24_w3868")]
 metadata/_edit_use_anchors_ = true
+
+[node name="arow_gide" parent="." instance=ExtResource("25_4goh5")]
+player = NodePath("../player1")
+end_location = NodePath("../next_level4")
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
