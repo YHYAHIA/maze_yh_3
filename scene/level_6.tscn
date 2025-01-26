@@ -562,6 +562,7 @@ metadata/_edit_use_anchors_ = true
 [node name="arow_gide" parent="." instance=ExtResource("26_45dyn")]
 player = NodePath("../player1")
 end_location = NodePath("../next_level4")
+rotation_speed = 1.0
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

@@ -315,6 +315,8 @@ max_health = 1000
 health_bar = NodePath("../heal/health_bar")
 
 [node name="arow_gide" parent="player1" instance=ExtResource("35_ipctu")]
+modulate = Color(0.419608, 0.117647, 0.0392157, 0.682353)
+self_modulate = Color(0.248025, 0.525812, 0.843284, 1)
 scale = Vector2(0.4, 0.4)
 player = NodePath("..")
 end_location = NodePath("../../next_level4")
