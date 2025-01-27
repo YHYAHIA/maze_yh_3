@@ -404,12 +404,12 @@ offset_right = 45.0
 offset_bottom = 367.0
 
 [node name="next_level3" type="Area2D" parent="."]
-position = Vector2(-209, 1187)
+position = Vector2(687, 54)
 collision_layer = 8
 script = ExtResource("8_vn7qk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level3"]
-position = Vector2(896, -1134)
+position = Vector2(3, -1)
 rotation = 1.57252
 shape = SubResource("CapsuleShape2D_e85ix")
 
@@ -456,7 +456,6 @@ metadata/_edit_use_anchors_ = true
 [node name="arow_gide" parent="." instance=ExtResource("22_15quu")]
 player = NodePath("../player1")
 end_location = NodePath("../next_level3")
-rotation_speed = 1.0
 
 [connection signal="body_entered" from="next_level3" to="next_level3" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

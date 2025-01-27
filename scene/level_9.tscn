@@ -424,8 +424,6 @@ associated_sheep = NodePath("../gold_mine2")
 scale = Vector2(1, 1)
 player = NodePath("../player1")
 end_location = NodePath("../next_level4")
-rotation_speed = 1.0
-hide_distance = 150.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

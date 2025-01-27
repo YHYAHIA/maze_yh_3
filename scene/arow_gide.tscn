@@ -6,8 +6,10 @@
 [node name="arow_gide" type="Node2D"]
 modulate = Color(0.419608, 0.117647, 0.0392157, 0.682353)
 self_modulate = Color(0.248025, 0.525812, 0.843284, 1)
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8skoc")
+follow_speed = 8.0
+rotation_speed = 1.0
+hide_distance = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.714098

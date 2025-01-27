@@ -428,12 +428,12 @@ texture = ExtResource("13_6h7x3")
 texture_scale = 2.9
 
 [node name="next_level4" type="Area2D" parent="."]
-position = Vector2(-208, 1187)
+position = Vector2(688, 58)
 collision_layer = 8
 script = ExtResource("12_htcud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
-position = Vector2(896, -1134)
+position = Vector2(1, -5)
 rotation = 1.57252
 shape = SubResource("CapsuleShape2D_vcidw")
 
