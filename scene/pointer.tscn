@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://bybo0a1jqxcb6"]
+
+[ext_resource type="Texture2D" uid="uid://ceqaf3alwc804" path="res://arrow_gide_2/Pointers/03.png" id="2_5rlii"]
+[ext_resource type="Texture2D" uid="uid://df5t6utgo7gtv" path="res://arrow_gide_2/Pointers/04.png" id="3_3eb74"]
+[ext_resource type="Texture2D" uid="uid://nxre1oj6s472" path="res://arrow_gide_2/Pointers/05.png" id="4_p5na4"]
+[ext_resource type="Texture2D" uid="uid://cuoo82vs57acw" path="res://arrow_gide_2/Pointers/06.png" id="5_hgkia"]
+
+[sub_resource type="Animation" id="Animation_vwgnb"]
+resource_name = "pointer"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, -15), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, -15), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 17), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21, 17), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ccu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, 17)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(21, 17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w20yf"]
+_data = {
+"RESET": SubResource("Animation_7ccu5"),
+"pointer": SubResource("Animation_vwgnb")
+}
+
+[node name="pointer" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w20yf")
+}
+autoplay = "pointer"
+speed_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-17, -15)
+texture = ExtResource("2_5rlii")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(20, -15)
+texture = ExtResource("3_3eb74")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-17, 17)
+texture = ExtResource("4_p5na4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(21, 17)
+texture = ExtResource("5_hgkia")

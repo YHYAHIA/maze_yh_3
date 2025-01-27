@@ -99,12 +99,8 @@ player = NodePath("../player1")
 position = Vector2(1424, -1041)
 
 [node name="arow_gide" parent="." instance=ExtResource("22_acnj3")]
-modulate = Color(0.419608, 0.117647, 0.0392157, 0.682353)
-self_modulate = Color(0.248025, 0.525812, 0.843284, 1)
 z_index = 2
 player = NodePath("../player1")
-end_location = NodePath("../next_level")
-rotation_speed = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
