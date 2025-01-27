@@ -421,7 +421,6 @@ scale = Vector2(0.3, 0.3)
 associated_sheep = NodePath("../gold_mine2")
 
 [node name="arow_gide" parent="." instance=ExtResource("35_ipctu")]
-scale = Vector2(1, 1)
 player = NodePath("../player1")
 end_location = NodePath("../next_level4")
 

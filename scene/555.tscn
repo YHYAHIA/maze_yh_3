@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://1xuiv32d73d2"]
+
+[ext_resource type="Script" path="res://555.gd" id="1_u80af"]
+[ext_resource type="Texture2D" uid="uid://ddjtso7l31qyl" path="res://arrow_gide_2/Pointers/01.png" id="2_x2gk2"]
+
+[node name="555" type="Node2D"]
+script = ExtResource("1_u80af")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+rotation = 0.714098
+scale = Vector2(0.839286, 0.464286)
+texture = ExtResource("2_x2gk2")
+offset = Vector2(-9, 14)
+flip_h = true
