@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="26_lv0tb"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="27_v1xqd"]
 [ext_resource type="PackedScene" uid="uid://cq25288d0mj6n" path="res://enmy_1.tscn" id="28_lxsoq"]
-[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="29_rloe2"]
+[ext_resource type="PackedScene" uid="uid://1xuiv32d73d2" path="res://scene/555.tscn" id="29_vm2wk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb7o1"]
 texture = ExtResource("8_8c6jq")
@@ -617,9 +617,9 @@ scale = Vector2(0.8, 0.8)
 damage = 10
 player = NodePath("../../player1")
 
-[node name="arow_gide" parent="." instance=ExtResource("29_rloe2")]
+[node name="555" parent="." instance=ExtResource("29_vm2wk")]
 player = NodePath("../player1")
-end_location = NodePath("../next_level4")
+missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../keybox2"), NodePath("../door2"), NodePath("../door3"), NodePath("../next_level4")])
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
