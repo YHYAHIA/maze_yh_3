@@ -1,6 +1,7 @@
 extends "res://gd/interactable.gd"
 
 var collected_key = 0
+@onready var door: Node2D = $".."
 
 @export var is_open = true:
 	set(value):
@@ -46,6 +47,7 @@ func interact(_user: Node2D):
 func _update_animations():
 	if anim != null:
 		if is_open:
+			door.call("on_item_collected")
 			anim.play(open_anim)
 			if collision_polygon_2d != null:
 				collision_polygon_2d.set_disabled(true)
@@ -87,3 +89,5 @@ func _on_fade_timer_timeout() -> void:
 	if status_label != null:
 		status_label.hide()
 	 # Replace with function body.
+
+	

@@ -422,7 +422,6 @@ associated_sheep = NodePath("../gold_mine2")
 
 [node name="arow_gide" parent="." instance=ExtResource("35_ipctu")]
 player = NodePath("../player1")
-end_location = NodePath("../next_level4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

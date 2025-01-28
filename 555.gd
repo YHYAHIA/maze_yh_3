@@ -70,17 +70,38 @@ func check_mission_completion(player_node):
 		complete_current_mission()
 
 func complete_current_mission():
-	# Trigger mission completion logic (e.g., play sound, show message)
+	# Get the current mission node
+	var current_mission_node = get_current_mission_node()
+	if not current_mission_node:
+		return
+
+	# Trigger mission-specific logic if the node has a script
+	if current_mission_node.get_script() != null:
+		if current_mission_node.has_method("on_mission_complete"):
+			current_mission_node.call("on_mission_complete")
+		else:
+			print("Mission node has a script but no 'on_mission_complete' method.")
+	else:
+		print("Mission node has no script attached.")
+
+	# General mission completion logic
 	print("Mission", current_mission_index + 1, "completed!")
 
 	# Move to the next mission
 	current_mission_index += 1
 
-	# If all missions are completed, handle the end state
+	# Check if all missions are completed
 	if current_mission_index >= missions.size():
-		print("All missions completed!")
-		sprite.hide()  # Hide the pointer
-		return
+		handle_all_missions_completed()
+	else:
+		print("Next mission unlocked!")
+
+func handle_all_missions_completed():
+	print("All missions completed! Congratulations!")
+	#sprite.hide()  # Hide the arrow
+	# Example: Show a victory screen or restart the game
+	#var ui = get_node("Path/To/UI")
+	#ui.show_victory_screen()
 
 func follow_player(player_node, mission_node, delta):
 	# Calculate the direction vector

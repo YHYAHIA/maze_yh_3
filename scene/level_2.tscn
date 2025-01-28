@@ -62,14 +62,13 @@ z_index = -3
 position = Vector2(1, -4)
 tile_map_data = PackedByteArray("AADGAgX+AAAUABEAAADeAvj9AAAVABEAAACyAvP9AAAUABAAAADKAub9AAAVABAAAADO/v8CAAAVABAAAADh/hEDAAAVABEAAADJ/h4DAAAUABEAAAC2/gwDAAAUABAAAAA=")
 
+[node name="dec" parent="." instance=ExtResource("6_jqj3j")]
+tile_map_data = PackedByteArray("AABcAND/BAAWAAoAAADT/1EABAAbAAEAAABOAND/BAAWAAoAAABdAB4ABAAWAAoAAABLAB8ABAAWAAoAAABfAFgABAAWAAoAAABJAE8ABAAWAAoAAAAkAFsABAAWAAoAAAAgAFAABAAWAAoAAAD2/1EABAAWAAoAAAD2/1sABAAWAAoAAABgAE4ABAAGAA4AAFBcALX/BAAbAAEAAABfAO3/BAAGAAoAAFBgAD0ABAAGAAoAAFAvAFAABAAGAAoAABDl/1UABAAGAAoAAEA=")
+
 [node name="arow_gide" parent="." instance=ExtResource("10_v5bse")]
 position = Vector2(54, 134)
 player = NodePath("../player1")
-end_location = NodePath("../next_level2")
-rotation_speed = 1.0
-
-[node name="dec" parent="." instance=ExtResource("6_jqj3j")]
-tile_map_data = PackedByteArray("AABcAND/BAAWAAoAAADT/1EABAAbAAEAAABOAND/BAAWAAoAAABdAB4ABAAWAAoAAABLAB8ABAAWAAoAAABfAFgABAAWAAoAAABJAE8ABAAWAAoAAAAkAFsABAAWAAoAAAAgAFAABAAWAAoAAAD2/1EABAAWAAoAAAD2/1sABAAWAAoAAABgAE4ABAAGAA4AAFBcALX/BAAbAAEAAABfAO3/BAAGAAoAAFBgAD0ABAAGAAoAAFAvAFAABAAGAAoAABDl/1UABAAGAAoAAEA=")
+missions = Array[NodePath]([NodePath("../Node2D"), NodePath("../next_level2")])
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("4_6fh4l")]
 position = Vector2(1424, -1055)
@@ -109,6 +108,9 @@ position = Vector2(-616, 1560)
 position = Vector2(1446, -895)
 rotation = 1.54164
 player = NodePath("../player1")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1431, 1550)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

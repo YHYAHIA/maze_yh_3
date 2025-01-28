@@ -453,9 +453,15 @@ metadata/_edit_use_anchors_ = true
 [node name="pause_mniu1" parent="CanvasLayer2" instance=ExtResource("21_6cpiw")]
 metadata/_edit_use_anchors_ = true
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(876, 1558)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(97, 545)
+
 [node name="arow_gide" parent="." instance=ExtResource("22_15quu")]
 player = NodePath("../player1")
-end_location = NodePath("../next_level3")
+missions = Array[NodePath]([NodePath("../Node2D"), NodePath("../Node2D2"), NodePath("../next_level3")])
 
 [connection signal="body_entered" from="next_level3" to="next_level3" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

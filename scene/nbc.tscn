@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7aoi2vhs7wnh"]
+[gd_scene load_steps=16 format=3 uid="uid://b7aoi2vhs7wnh"]
 
 [ext_resource type="Texture2D" uid="uid://cu8kms7n8thxx" path="res://64X128_Idle_Free.png" id="1_es5oe"]
+[ext_resource type="Script" path="res://scene/nbc.gd" id="1_hplpi"]
 [ext_resource type="PackedScene" uid="uid://bgichcqj0i04f" path="res://scene/dy.tscn" id="2_c71h6"]
 [ext_resource type="Script" path="res://gd/dy_npc_interactable.gd" id="3_ynq55"]
 
@@ -75,6 +76,7 @@ animations = [{
 radius = 158.003
 
 [node name="nbc" type="Node2D"]
+script = ExtResource("1_hplpi")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(7, 1)

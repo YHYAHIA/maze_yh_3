@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh8nff4ruujpv"]
+[gd_scene load_steps=10 format=3 uid="uid://dh8nff4ruujpv"]
 
 [ext_resource type="Script" path="res://gd/door_interactable.gd" id="1_0l6l6"]
 [ext_resource type="Texture2D" uid="uid://lxd63pge8a61" path="res://Texture/TX Props.png" id="1_ld0ja"]
+[ext_resource type="Script" path="res://scene/door.gd" id="1_wl63q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osrpk"]
 atlas = ExtResource("1_ld0ja")
@@ -41,6 +42,7 @@ radius = 51.0098
 
 [node name="door" type="Node2D"]
 z_index = -1
+script = ExtResource("1_wl63q")
 
 [node name="Camera2D" type="StaticBody2D" parent="."]
 

@@ -1,8 +1,8 @@
 extends Node2D
 
-# References to the player and target
+# References to the player and mission locations
 @export var player: NodePath
-@export var end_location: NodePath
+@export var missions: Array[NodePath] = []  # List of mission locations
 @onready var sprite: Sprite2D = $Sprite2D
 
 # Arrow behavior parameters
@@ -20,20 +20,21 @@ var bobbing_offset: float = 0.0  # To control the bobbing motion
 var player_last_position: Vector2
 var idle_timer: float = 0.0
 var pointer_instance: Node2D = null  # Pointer scene instance
+var current_mission_index: int = 0  # Tracks the current mission
 
 func _ready():
 	player_last_position = Vector2.ZERO
 
 func _process(delta):
-	# Ensure the player and target nodes are valid
-	if not player or not end_location:
+	# Ensure the player and mission nodes are valid
+	if not player or missions.size() == 0:
 		return
 
 	var player_node = get_node(player)
-	var end_node = get_node(end_location)
+	var current_mission_node = get_current_mission_node()
 
-	# Calculate the distance between the player and the end location
-	var distance_to_target = player_node.global_position.distance_to(end_node.global_position)
+	if not current_mission_node:
+		return
 
 	# Check if the player is idle
 	if player_node.global_position == player_last_position:
@@ -47,53 +48,87 @@ func _process(delta):
 		idle_arrow_motion(delta)
 		return
 
-	# Behavior when close to the end location
+	# Check mission completion
+	check_mission_completion(player_node)
+
+	# Behavior when close to the mission location
+	var distance_to_target = player_node.global_position.distance_to(current_mission_node.global_position)
 	if distance_to_target <= hide_distance:
-		# Show the pointer scene at the end node's position
-		show_pointer(end_node)
-	elif distance_to_target > hide_distance:
-		# Player is far enough from the end location, show the arrow again
-		show_arrow(end_node)
-		follow_player(player_node, end_node, delta)
+		show_pointer(current_mission_node)
+	else:
+		show_arrow(current_mission_node)
+		follow_player(player_node, current_mission_node, delta)
 
-func follow_player(player_node, end_node, delta):
-	# Calculate the direction vector
-	var direction = (end_node.global_position - player_node.global_position).normalized()
+func get_current_mission_node() -> Node:
+	if missions.size() > current_mission_index:
+		return get_node(missions[current_mission_index])
+	return null
 
-	# Calculate the target position for the arrow (100 pixels away from the player)
+func check_mission_completion(player_node):
+	var current_mission_node = get_current_mission_node()
+	if not current_mission_node:
+		return
+
+	# Check if the mission node has the `is_mission_completed` method
+	if current_mission_node.has_method("is_mission_completed"):
+		if current_mission_node.call("is_mission_completed"):
+			complete_current_mission()
+	else:
+		# Fallback: Use distance-based completion if `is_mission_completed` is not defined
+		if player_node.global_position.distance_to(current_mission_node.global_position) <= hide_distance:
+			complete_current_mission()
+
+func complete_current_mission():
+	var current_mission_node = get_current_mission_node()
+	if not current_mission_node:
+		return
+
+	# Trigger mission-specific logic if the node has a script
+	if current_mission_node.get_script() != null:
+		if current_mission_node.has_method("on_mission_complete"):
+			current_mission_node.call("on_mission_complete")
+		else:
+			print("Mission node has a script but no 'on_mission_complete' method.")
+	else:
+		print("Mission node has no script attached.")
+
+	# General mission completion logic
+	print("Mission", current_mission_index + 1, "completed!")
+
+	# Move to the next mission
+	current_mission_index += 1
+
+	# Check if all missions are completed
+	if current_mission_index >= missions.size():
+		handle_all_missions_completed()
+	else:
+		print("Next mission unlocked!")
+
+func handle_all_missions_completed():
+	print("All missions completed! Congratulations!")
+	sprite.hide()
+
+func follow_player(player_node, mission_node, delta):
+	var direction = (mission_node.global_position - player_node.global_position).normalized()
 	target_position = player_node.global_position + direction * distance_from_player
-
-	# Smoothly move the arrow towards the target position
 	global_position = global_position.lerp(target_position, follow_speed * delta)
+	rotation = lerp_angle(rotation, direction.angle(), rotation_speed * delta)
 
-	# Smoothly rotate the arrow to point toward the target
-	var target_rotation = direction.angle()
-	rotation = lerp_angle(rotation, target_rotation, rotation_speed * delta)
-
-# Oscillate the arrow when idle
 func idle_arrow_motion(delta):
-	if player_last_position == get_node(player).global_position:
-		var oscillation_amplitude = 20.0  # How much the arrow moves back and forth
-		var oscillation_speed = 2.0  # Speed of the oscillation
-		bobbing_offset = sin(Time.get_ticks_msec() / (1000.0 / oscillation_speed)) * oscillation_amplitude
-		global_position.x = get_node(player).global_position.x + bobbing_offset
+	var oscillation_amplitude = 20.0
+	var oscillation_speed = 2.0
+	bobbing_offset = sin(Time.get_ticks_msec() / (1000.0 / oscillation_speed)) * oscillation_amplitude
+	global_position.x = get_node(player).global_position.x + bobbing_offset
 
-# Show the pointer scene when the player is close to the end location
-func show_pointer(end_node):
+func show_pointer(mission_node):
 	if pointer_instance == null:
 		pointer_instance = POINTER.instantiate()
 		get_parent().add_child(pointer_instance)
-	
-	# Set the pointer's global position to the end node's position
-	pointer_instance.global_position = end_node.global_position
-	# Hide the arrow
-	sprite.hide() # Removes the arrow from the scene
+	pointer_instance.global_position = mission_node.global_position
+	sprite.hide()
 
-# Show the arrow again and remove the pointer when the player is far enough
-func show_arrow(end_node):
+func show_arrow(mission_node):
 	if pointer_instance != null:
-		pointer_instance.queue_free()  # Remove the pointer scene
+		pointer_instance.queue_free()
 		pointer_instance = null
-
-	# Ensure the arrow is visible and positioned correctly
 	sprite.show()

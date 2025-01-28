@@ -508,7 +508,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="arow_gide" parent="." instance=ExtResource("26_svr80")]
 player = NodePath("../player1")
-end_location = NodePath("../next_level4")
+missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../door"), NodePath("../next_level4")])
 
 [connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]

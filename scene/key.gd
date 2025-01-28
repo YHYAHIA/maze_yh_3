@@ -4,12 +4,14 @@ class_name door_keys
 
 @export var item_type: String = "key"  # Type of item (gold, meet, wood)
 @export var amount: int = 1  # Amount to add
-
+var is_completed: bool = false
 
 
 
 func interact(_user: Node2D):
 	GlobalInteract.add_item(item_type, amount)
+	
+	
 	queue_free()
 	
 	
@@ -31,7 +33,9 @@ func _process(_delta: float) -> void:
 		#print("+1")
 		
 		
-		
+func is_mission_completed() -> bool:
+	return is_completed
 	
-		
-	
+func on_item_collected():
+	is_completed = true
+	print("Item collected! Mission completed.")

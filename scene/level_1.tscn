@@ -98,10 +98,14 @@ player = NodePath("../player1")
 [node name="numarea" parent="." instance=ExtResource("19_2cium")]
 position = Vector2(1424, -1041)
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1514, 1535)
+
 [node name="arow_gide" parent="." instance=ExtResource("22_acnj3")]
 z_index = 2
 player = NodePath("../player1")
-end_location = NodePath("../next_level")
+missions = Array[NodePath]([NodePath("../Node2D"), NodePath("../next_level")])
+hide_distance = 200.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
