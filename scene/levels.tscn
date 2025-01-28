@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c570uffcicj36"]
+[gd_scene load_steps=11 format=3 uid="uid://c570uffcicj36"]
 
 [ext_resource type="Script" path="res://gd/levels.gd" id="1_7wwe4"]
 [ext_resource type="PackedScene" uid="uid://d0e75utwaqonb" path="res://scene/bg.tscn" id="2_nqkum"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6c1yhg6to5d0" path="res://ui/UI/Buttons/Button_Hover_9Slides.png" id="5_2unte"]
 [ext_resource type="Texture2D" uid="uid://cyaeut8vu537o" path="res://ui/Icon/Home@2x.png" id="5_j3dyy"]
 [ext_resource type="Texture2D" uid="uid://c2u3cqq6apyey" path="res://ui/UI/Icons/Disable_10.png" id="6_vwhi1"]
+[ext_resource type="Texture2D" uid="uid://10okipvm2roj" path="res://ui/UI/Buttons/Button_Red_9Slides_Pressed.png" id="7_5ryo0"]
 
 [node name="levels" type="Control"]
 layout_mode = 3
@@ -49,6 +50,7 @@ texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level1"]
 layout_mode = 1
@@ -66,13 +68,21 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "1"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level1"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level2" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+disabled = true
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level2"]
 layout_mode = 1
@@ -90,11 +100,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "2"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level2"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level3" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level3"]
 layout_mode = 1
@@ -112,11 +129,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "3"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level3"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level4" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level4"]
 layout_mode = 1
@@ -134,11 +158,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "4"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level4"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level5" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level5"]
 layout_mode = 1
@@ -156,11 +187,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "5"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level5"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level6" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level6"]
 layout_mode = 1
@@ -178,11 +216,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "6"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level6"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level7" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level7"]
 layout_mode = 1
@@ -200,11 +245,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "7"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level7"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level8" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level8"]
 layout_mode = 1
@@ -222,11 +274,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "8"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level8"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level9" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level9"]
 layout_mode = 1
@@ -244,11 +303,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "9"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level9"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level10" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level10"]
 layout_mode = 1
@@ -266,11 +332,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "10"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level10"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level11" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level11"]
 layout_mode = 1
@@ -288,11 +361,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "11"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level11"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level12" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level12"]
 layout_mode = 1
@@ -310,11 +390,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "12"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level12"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level13" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level13"]
 layout_mode = 1
@@ -332,11 +419,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "13"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level13"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(96, 99)
+
 [node name="level14" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level14"]
 layout_mode = 1
@@ -354,11 +448,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "14"
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level14"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(95, 99)
+
 [node name="level15" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
+texture_disabled = ExtResource("6_vwhi1")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level15"]
 layout_mode = 1
@@ -375,6 +476,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "15"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/GridContainer/level15"]
+z_index = -1
+texture = ExtResource("7_5ryo0")
+offset = Vector2(95, 99)
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 3
