@@ -77,7 +77,6 @@ offset = Vector2(96, 99)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-disabled = true
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")

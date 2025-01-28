@@ -2,6 +2,36 @@ extends Control
 
 
 
+# Reference to the save system
+@onready var save_system = preload("res://gd/global/SaveSystem.gd").new()
+
+# List of level buttons (add all your level buttons here)
+@onready var level_buttons = {
+	"Level1": $CanvasLayer/MarginContainer/GridContainer/level1,
+	"Level2": $CanvasLayer/MarginContainer/GridContainer/level2,
+	"Level3": $CanvasLayer/MarginContainer/GridContainer/level3,
+	"Level4": $CanvasLayer/MarginContainer/GridContainer/level4,
+	"Level5": $CanvasLayer/MarginContainer/GridContainer/level5,
+	"Level6": $CanvasLayer/MarginContainer/GridContainer/level6,
+	"Level7": $CanvasLayer/MarginContainer/GridContainer/level7,
+	"Level8": $CanvasLayer/MarginContainer/GridContainer/level8,
+	"Level9": $CanvasLayer/MarginContainer/GridContainer/level9
+}
+
+func _ready() -> void:
+	update_level_buttons()
+
+# Updates the state of level buttons based on completed levels
+func update_level_buttons() -> void:
+	var completed_levels = SaveSystem.load_completed_levels()
+	for level_name in level_buttons.keys():
+		var button = level_buttons[level_name]
+		if level_name in completed_levels:
+			button.disabled = false  # Enable button if level is completed
+		else:
+				button.disabled = true  # Disable button if level is not completed
+
+
 
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/level_1.tscn")

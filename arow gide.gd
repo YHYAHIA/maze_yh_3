@@ -9,7 +9,7 @@ extends Node2D
 @export var distance_from_player: float = 100.0
 @export var follow_speed: float = 5.0  # Speed for the arrow to catch up
 @export var rotation_speed: float = 8.0  # Speed for smooth rotation
-
+@export var pointer_to_distance: float = 50.0 
 @export var hide_distance: float = 50.0  # Distance threshold for stopping follow
 @export var idle_time_threshold: float = 3.0  # Time before nudging the player
 const POINTER = preload("res://scene/pointer.tscn")
@@ -75,7 +75,7 @@ func check_mission_completion(player_node):
 			complete_current_mission()
 	else:
 		# Fallback: Use distance-based completion if `is_mission_completed` is not defined
-		if player_node.global_position.distance_to(current_mission_node.global_position) <= hide_distance:
+		if player_node.global_position.distance_to(current_mission_node.global_position) <= pointer_to_distance:
 			complete_current_mission()
 
 func complete_current_mission():
