@@ -23,29 +23,34 @@ script = ExtResource("1_7wwe4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -214.0
-offset_top = -141.5
-offset_right = 612.0
-offset_bottom = 358.5
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_top = 55.0
+offset_right = 431.0
+offset_bottom = 279.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.38, 0.38)
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 columns = 5
 
-[node name="level1" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level1" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 texture_disabled = ExtResource("6_vwhi1")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level1"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level1"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,7 +66,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "1"
 
-[node name="level2" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level2" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -69,7 +74,7 @@ texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level2"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,13 +90,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "2"
 
-[node name="level3" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level3" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level3"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,13 +112,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "3"
 
-[node name="level4" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level4" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level4"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,13 +134,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "4"
 
-[node name="level5" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level5" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level5"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level5"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -151,13 +156,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "5"
 
-[node name="level6" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level6" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level6"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level6"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -173,13 +178,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "6"
 
-[node name="level7" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level7" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level7"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level7"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -195,13 +200,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "7"
 
-[node name="level8" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level8" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level8"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level8"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -217,13 +222,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "8"
 
-[node name="level9" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level9" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level9"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level9"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -239,13 +244,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "9"
 
-[node name="level10" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level10" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level10"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level10"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -261,13 +266,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "10"
 
-[node name="level11" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level11" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level11"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level11"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -283,13 +288,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "11"
 
-[node name="level12" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level12" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level12"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level12"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -305,13 +310,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "12"
 
-[node name="level13" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level13" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level13"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level13"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -327,13 +332,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "13"
 
-[node name="level14" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level14" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level14"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level14"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -349,13 +354,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "14"
 
-[node name="level15" type="TextureButton" parent="CanvasLayer/GridContainer"]
+[node name="level15" type="TextureButton" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_2pdnc")
 texture_pressed = ExtResource("4_tpnni")
 texture_hover = ExtResource("5_2unte")
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/level15"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/GridContainer/level15"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -461,13 +466,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_nw8mo")
 
-[connection signal="pressed" from="CanvasLayer/GridContainer/level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level4" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level5" to="." method="_on_level_5_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level6" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level7" to="." method="_on_level_7_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/GridContainer/level9" to="." method="_on_level_9_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
