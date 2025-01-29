@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjjotic6j02p"]
+[gd_scene load_steps=18 format=3 uid="uid://bjjotic6j02p"]
 
 [ext_resource type="Texture2D" uid="uid://vkwilf2bx727" path="res://char/Goblin_House.png" id="1_ajf2u"]
 [ext_resource type="Script" path="res://scene/hous_g.gd" id="1_pgrkr"]
+[ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="2_3yg81"]
 [ext_resource type="Texture2D" uid="uid://dptyu8uw00usj" path="res://char/Tree.png" id="2_51tho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fw3sg"]
@@ -87,6 +88,7 @@ radius = 12.0
 
 [node name="hous_g" type="Node2D"]
 script = ExtResource("1_pgrkr")
+enemy = ExtResource("2_3yg81")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(63, 98)
@@ -98,7 +100,7 @@ z_index = -2
 shape = SubResource("CircleShape2D_fw3sg")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 
 [node name="tree" type="AnimatedSprite2D" parent="."]
 position = Vector2(89, -8)
@@ -138,3 +140,7 @@ z_index = -2
 position = Vector2(2, 31)
 rotation = -1.57058
 polygon = PackedVector2Array(48.9901, -46.0106, 33.9931, -32.0073, 25.9961, -18.0056, 27.003, 13.9942, 33.006, 27.9929, 50.0088, 40.9892)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

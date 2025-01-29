@@ -7,7 +7,7 @@ extends Control
 
 # List of level buttons (add all your level buttons here)
 @onready var level_buttons = {
-	"Level1": $CanvasLayer/MarginContainer/GridContainer/level1,
+
 	"Level2": $CanvasLayer/MarginContainer/GridContainer/level2,
 	"Level3": $CanvasLayer/MarginContainer/GridContainer/level3,
 	"Level4": $CanvasLayer/MarginContainer/GridContainer/level4,
@@ -15,7 +15,7 @@ extends Control
 	"Level6": $CanvasLayer/MarginContainer/GridContainer/level6,
 	"Level7": $CanvasLayer/MarginContainer/GridContainer/level7,
 	"Level8": $CanvasLayer/MarginContainer/GridContainer/level8,
-	"Level9": $CanvasLayer/MarginContainer/GridContainer/level9
+
 }
 
 func _ready() -> void:

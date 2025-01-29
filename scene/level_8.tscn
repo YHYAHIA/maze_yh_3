@@ -590,7 +590,7 @@ max_distance = 9992.0
 
 [node name="arow_gide" parent="." instance=ExtResource("30_ljpgt")]
 player = NodePath("../player1")
-end_location = NodePath("../next_level4")
+missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../keybox2"), NodePath("../door2"), NodePath("../door3"), NodePath("../next_level4")])
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

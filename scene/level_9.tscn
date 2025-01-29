@@ -37,8 +37,8 @@
 [ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="35_ipctu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmc7x"]
-radius = 17.9662
-height = 48.0
+radius = 14.0
+height = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ieolk"]
 radius = 35.0571
@@ -119,7 +119,7 @@ position = Vector2(962, 204)
 [node name="Control" parent="." instance=ExtResource("12_lj4q8")]
 
 [node name="next_level4" type="Area2D" parent="."]
-position = Vector2(617, 1462)
+position = Vector2(1103, -532)
 collision_layer = 8
 script = ExtResource("13_gmcht")
 
@@ -298,19 +298,22 @@ position = Vector2(477, 410)
 damage = 20
 player = NodePath("../player1")
 
-[node name="hous_g2" parent="." instance=ExtResource("22_t0xgc")]
-position = Vector2(-161, 559)
+[node name="hous_g2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_t0xgc")]
+position = Vector2(-145, 590)
 scale = Vector2(0.6, 0.6)
-
-[node name="Barel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("25_q4tdi")]
-position = Vector2(-285, 638)
-scale = Vector2(0.4, 0.4)
 player = NodePath("../player1")
+
+[node name="Barel" parent="." instance=ExtResource("25_q4tdi")]
+position = Vector2(-775, 1341)
+scale = Vector2(0.4, 0.4)
+jump_force = 120.0
 explosion_damage = 20
 explosion_radius = 120.0
+speed = 100.0
+jump_duration = 1.0
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("26_wdg8y")]
-position = Vector2(-491, 1559)
+position = Vector2(-508, 1547)
 max_health = 1000
 health_bar = NodePath("../heal/health_bar")
 
@@ -385,43 +388,60 @@ scale = Vector2(1.2, 1.2)
 player = NodePath("../../player1")
 
 [node name="npc" parent="." instance=ExtResource("32_arsip")]
-position = Vector2(-774, 1466)
-scale = Vector2(0.7, 0.7)
+position = Vector2(985, 1281)
+scale = Vector2(0.65, 0.65)
 
 [node name="gold_mines" type="Node" parent="."]
 
 [node name="gold mine" type="Node" parent="gold_mines"]
 
 [node name="gold_mine" parent="gold_mines/gold mine" instance=ExtResource("33_deyhp")]
-position = Vector2(-720, 1346)
+position = Vector2(-347, 1100)
 
 [node name="gold" parent="gold_mines/gold mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
-position = Vector2(-580, 1332)
+position = Vector2(-276, 1145)
+scale = Vector2(0.3, 0.3)
+associated_sheep = NodePath("../gold_mine")
+
+[node name="gold4" parent="gold_mines/gold mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-230, 1097)
 scale = Vector2(0.3, 0.3)
 associated_sheep = NodePath("../gold_mine")
 
 [node name="gold2" parent="gold_mines/gold mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
-position = Vector2(-535, 1323)
+position = Vector2(-383, 1157)
+scale = Vector2(0.3, 0.3)
+associated_sheep = NodePath("../gold_mine")
+
+[node name="gold3" parent="gold_mines/gold mine" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(-335, 1149)
 scale = Vector2(0.3, 0.3)
 associated_sheep = NodePath("../gold_mine")
 
 [node name="gold_min2" type="Node" parent="gold_mines"]
 
 [node name="gold_mine2" parent="gold_mines/gold_min2" instance=ExtResource("33_deyhp")]
-position = Vector2(-733, 1645)
+position = Vector2(702, 877)
 
 [node name="gold3" parent="gold_mines/gold_min2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
-position = Vector2(-584, 1631)
+position = Vector2(724, 916)
 scale = Vector2(0.3, 0.3)
 associated_sheep = NodePath("../gold_mine2")
 
 [node name="gold4" parent="gold_mines/gold_min2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
-position = Vector2(-503, 1654)
+position = Vector2(646, 919)
+scale = Vector2(0.3, 0.3)
+associated_sheep = NodePath("../gold_mine2")
+
+[node name="gold5" parent="gold_mines/gold_min2" node_paths=PackedStringArray("associated_sheep") instance=ExtResource("20_1s3qq")]
+position = Vector2(785, 910)
 scale = Vector2(0.3, 0.3)
 associated_sheep = NodePath("../gold_mine2")
 
 [node name="arow_gide" parent="." instance=ExtResource("35_ipctu")]
+z_index = 1
 player = NodePath("../player1")
+missions = Array[NodePath]([NodePath("../npc"), NodePath("../gold_mines/gold mine/gold_mine"), NodePath("../gold_mines/gold_min2/gold_mine2"), NodePath("../npc"), NodePath("../keybox2"), NodePath("../keybox3"), NodePath("../door2"), NodePath("../keybox"), NodePath("../door4"), NodePath("../door3"), NodePath("../next_level4")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
