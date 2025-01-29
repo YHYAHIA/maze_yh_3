@@ -10,7 +10,7 @@ extends Control
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_inventory_display()
 
 func update_inventory_display() -> void:

@@ -114,7 +114,7 @@ func follow_player(player_node, mission_node, delta):
 	global_position = global_position.lerp(target_position, follow_speed * delta)
 	rotation = lerp_angle(rotation, direction.angle(), rotation_speed * delta)
 
-func idle_arrow_motion(delta):
+func idle_arrow_motion(_delta):
 	var oscillation_amplitude = 20.0
 	var oscillation_speed = 2.0
 	bobbing_offset = sin(Time.get_ticks_msec() / (1000.0 / oscillation_speed)) * oscillation_amplitude
@@ -127,7 +127,7 @@ func show_pointer(mission_node):
 	pointer_instance.global_position = mission_node.global_position
 	sprite.hide()
 
-func show_arrow(mission_node):
+func show_arrow(_mission_node):
 	if pointer_instance != null:
 		pointer_instance.queue_free()
 		pointer_instance = null

@@ -30,7 +30,7 @@ func show_dialogue():
 
 	dialogue_label.visible = true
 
-func _process(delta):
+func _process(_delta):
 	if player and Input.is_action_just_pressed("interact"): # Assuming "ui_accept" is mapped to a key like 'E'
 		handle_interaction()
 
