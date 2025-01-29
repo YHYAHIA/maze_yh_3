@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://1xuiv32d73d2"]
 
-[ext_resource type="Script" path="res://555.gd" id="1_u80af"]
+[ext_resource type="Script" path="res://gd/555.gd" id="1_u80af"]
 [ext_resource type="Texture2D" uid="uid://ddjtso7l31qyl" path="res://arrow_gide_2/Pointers/01.png" id="2_x2gk2"]
 
 [node name="555" type="Node2D"]

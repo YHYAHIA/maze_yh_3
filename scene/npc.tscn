@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://i6jwsqi0fbqk"]
+[gd_scene load_steps=15 format=3 uid="uid://i6jwsqi0fbqk"]
 
-[ext_resource type="Script" path="res://npc.gd" id="1_cmbhd"]
+[ext_resource type="Script" path="res://gd/npc1.gd" id="1_p0hgn"]
 [ext_resource type="Texture2D" uid="uid://cu8kms7n8thxx" path="res://64X128_Idle_Free.png" id="2_n2a11"]
-[ext_resource type="Script" path="res://scene/npc_area.gd" id="3_raxa7"]
+[ext_resource type="Script" path="res://gd/npc_area.gd" id="3_raxa7"]
+[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="4_rgf2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51e4r"]
 atlas = ExtResource("2_n2a11")
@@ -72,7 +73,7 @@ animations = [{
 radius = 108.665
 
 [node name="npc" type="Node2D"]
-script = ExtResource("1_cmbhd")
+script = ExtResource("1_p0hgn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4vcb0")
@@ -82,16 +83,17 @@ offset = Vector2(0, -30)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_raxa7")
+player = ExtResource("4_rgf2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = -1
 shape = SubResource("CircleShape2D_cxtxl")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Area2D"]
 offset_left = -131.0
 offset_top = -136.0
 offset_right = -33.0
 offset_bottom = -82.0
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_area_2d_body_exited"]

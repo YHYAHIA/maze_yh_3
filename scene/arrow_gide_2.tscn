@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://mdoibxufxt0m"]
 
-[ext_resource type="Script" path="res://arrow_gide_2.gd" id="1_hh8ln"]
+[ext_resource type="Script" path="res://gd/arrow_gide_2.gd" id="1_hh8ln"]
 
 [node name="arrow_gide_2" type="Control"]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bjjotic6j02p"]
 
 [ext_resource type="Texture2D" uid="uid://vkwilf2bx727" path="res://char/Goblin_House.png" id="1_ajf2u"]
-[ext_resource type="Script" path="res://scene/hous_g.gd" id="1_pgrkr"]
+[ext_resource type="Script" path="res://gd/hous_g.gd" id="1_pgrkr"]
 [ext_resource type="PackedScene" uid="uid://c72ms8y7iwcy6" path="res://scene/barel.tscn" id="2_3yg81"]
 [ext_resource type="Texture2D" uid="uid://dptyu8uw00usj" path="res://char/Tree.png" id="2_51tho"]
 
@@ -100,7 +100,7 @@ z_index = -2
 shape = SubResource("CircleShape2D_fw3sg")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.5
 
 [node name="tree" type="AnimatedSprite2D" parent="."]
 position = Vector2(89, -8)

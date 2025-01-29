@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0q7s50qfmqew"]
 
 [ext_resource type="Texture2D" uid="uid://cnwt244ievcn4" path="res://icon.svg" id="1_2py3c"]
-[ext_resource type="Script" path="res://scene/path_follow_2d.gd" id="1_vbl66"]
+[ext_resource type="Script" path="res://gd/path_follow_2d.gd" id="1_vbl66"]
 
 [sub_resource type="Curve2D" id="Curve2D_aq7kv"]
 _data = {

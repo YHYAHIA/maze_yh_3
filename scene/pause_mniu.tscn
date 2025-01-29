@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1cy12yqnrt5f"]
 
-[ext_resource type="Script" path="res://scene/pause_mniu.gd" id="1_cyyrp"]
+[ext_resource type="Script" path="res://gd/pause_mniu.gd" id="1_cyyrp"]
 
 [node name="pause_mniu1" type="Control"]
 process_mode = 3
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.192157, 0.192157, 0.623529)
+color = Color(0.396078, 0.333333, 0.333333, 0.862745)
 
 [node name="GridContainer" type="GridContainer" parent="Control"]
 layout_mode = 1
@@ -95,7 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.192157, 0.192157, 0.623529)
+color = Color(0.439216, 0.270588, 0.270588, 0.764706)
 
 [node name="GridContainer" type="GridContainer" parent="volume_setting"]
 layout_mode = 1

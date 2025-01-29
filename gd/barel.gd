@@ -87,7 +87,7 @@ func jump_to_player() -> void:
 	jump_target_position = player.global_position
 	jump_elapsed_time = 0.0
 	is_jumping = true
-	anim.play("jump")
+	
 
 func explode() -> void:
 	is_exploding = true

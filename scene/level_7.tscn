@@ -22,7 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="17_lw0wq"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_1a3h4"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_cqanh"]
-[ext_resource type="Script" path="res://scene/damge_2.gd" id="21_rusum"]
+[ext_resource type="Script" path="res://gd/damge_2.gd" id="21_rusum"]
 [ext_resource type="PackedScene" uid="uid://bx82bhoewmttr" path="res://scene/damge.tscn" id="22_crlmx"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="22_p3lr5"]
 [ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="26_lv0tb"]

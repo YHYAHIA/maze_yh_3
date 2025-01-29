@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bxtg4vylhues5"]
 
-[ext_resource type="Script" path="res://scene/hous_g.gd" id="1_c7tec"]
+[ext_resource type="Script" path="res://gd/hous_g.gd" id="1_c7tec"]
 [ext_resource type="Texture2D" uid="uid://dptyu8uw00usj" path="res://char/Tree.png" id="2_rxj4d"]
 [ext_resource type="Texture2D" uid="uid://b5y1g1px3t7as" path="res://char/Castle_Blue.png" id="3_k44ha"]
 

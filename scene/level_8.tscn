@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://betbk120w6gnu" path="res://scene/keybox.tscn" id="17_v610t"]
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_l3yro"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_hx5v7"]
-[ext_resource type="Script" path="res://scene/damge_2.gd" id="20_k7m8w"]
+[ext_resource type="Script" path="res://gd/damge_2.gd" id="20_k7m8w"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_d1lrg"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="23_qj8y8"]
 [ext_resource type="PackedScene" uid="uid://cg8snod2ik6rj" path="res://scene/sheep.tscn" id="24_cju1t"]

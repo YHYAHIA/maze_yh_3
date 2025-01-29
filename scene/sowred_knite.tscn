@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dee6nj2wamyuf"]
 
 [ext_resource type="Texture2D" uid="uid://xre0njtei63q" path="res://char/Warrior_Blue.png" id="1_2eg8o"]
-[ext_resource type="Script" path="res://scene/sowred_knite.gd" id="1_2futk"]
+[ext_resource type="Script" path="res://gd/sowred_knite.gd" id="1_2futk"]
 [ext_resource type="Script" path="res://gd/dameg_area.gd" id="4_njx5d"]
 [ext_resource type="AudioStream" uid="uid://dkqmyliheus1n" path="res://sfx/Footsteps_ running.wav" id="5_omm1p"]
 [ext_resource type="AudioStream" uid="uid://c6mqr4ryu4jh2" path="res://sfx/Swoosh_3.wav" id="6_3h55i"]

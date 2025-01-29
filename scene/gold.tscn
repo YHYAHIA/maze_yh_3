@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dkrbd71nv3uev"]
 
-[ext_resource type="Script" path="res://gold.gd" id="1_tr06q"]
+[ext_resource type="Script" path="res://gd/gold.gd" id="1_tr06q"]
 [ext_resource type="Texture2D" uid="uid://cvaqw5f4kra2y" path="res://Resources/Resources/G_Idle.png" id="2_b1yea"]
 [ext_resource type="Texture2D" uid="uid://dw13fl6jujng7" path="res://Resources/Resources/G_Spawn.png" id="3_2quvb"]
 

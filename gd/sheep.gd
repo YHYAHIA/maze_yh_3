@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var timer: Timer = $"../Timer"
+@onready var timer: Timer = $Timer
 var is_dead: bool = false  # Tracks if the sheep is dead
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var player: Node2D = null  # Assign the player node in the editor or dynamically

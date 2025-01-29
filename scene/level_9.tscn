@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dhyawrx0qvjat" path="res://scene/key.tscn" id="18_c2ryw"]
 [ext_resource type="PackedScene" uid="uid://q0ukj0ak3onf" path="res://scene/numarea.tscn" id="19_g2ucs"]
 [ext_resource type="PackedScene" uid="uid://dkrbd71nv3uev" path="res://scene/gold.tscn" id="20_1s3qq"]
-[ext_resource type="Script" path="res://scene/damge_2.gd" id="20_mrs11"]
+[ext_resource type="Script" path="res://gd/damge_2.gd" id="20_mrs11"]
 [ext_resource type="PackedScene" uid="uid://v2ke7lb33ak6" path="res://scene/stirs.tscn" id="21_mi65k"]
 [ext_resource type="PackedScene" uid="uid://bjjotic6j02p" path="res://scene/hous.tscn" id="22_t0xgc"]
 [ext_resource type="PackedScene" uid="uid://cg8snod2ik6rj" path="res://scene/sheep.tscn" id="23_lml70"]
@@ -312,7 +312,7 @@ speed = 100.0
 jump_duration = 1.0
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("26_wdg8y")]
-position = Vector2(-508, 1547)
+position = Vector2(-510, 1537)
 max_health = 1000
 health_bar = NodePath("../heal/health_bar")
 

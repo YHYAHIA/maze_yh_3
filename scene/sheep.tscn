@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://cg8snod2ik6rj"]
 
 [ext_resource type="Texture2D" uid="uid://8g8h188j6vnm" path="res://props/props/2ddungeonassetpackwithoutline/Sheep/HappySheep_Idle.png" id="1_kb6lw"]
-[ext_resource type="Script" path="res://scene/sheep.gd" id="1_tljba"]
+[ext_resource type="Script" path="res://gd/sheep.gd" id="1_tljba"]
 [ext_resource type="Texture2D" uid="uid://bmp2sq04sw1qv" path="res://props/props/2ddungeonassetpackwithoutline/Sheep/HappySheep_Bouncing.png" id="2_6jxv2"]
-[ext_resource type="Script" path="res://scene/area_2d_2.gd" id="5_a0rnc"]
+[ext_resource type="Script" path="res://gd/area_2d_2.gd" id="5_a0rnc"]
 
 [sub_resource type="Animation" id="Animation_eo2x7"]
 resource_name = "dead"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dhyawrx0qvjat"]
 
 [ext_resource type="Texture2D" uid="uid://wlamqs2ufe3a" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0001.png" id="1_01cql"]
-[ext_resource type="Script" path="res://scene/key.gd" id="1_8bs23"]
+[ext_resource type="Script" path="res://gd/key.gd" id="1_8bs23"]
 [ext_resource type="Texture2D" uid="uid://r6ejaof5ngfx" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0002.png" id="2_os3ci"]
 [ext_resource type="Texture2D" uid="uid://2fiquh5ivfh" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0003.png" id="3_w27dq"]
 [ext_resource type="Texture2D" uid="uid://di4tx0fnb0d0b" path="res://props/props/2ddungeonassetpackwithoutline/strokedungeon0004.png" id="4_eg8ny"]

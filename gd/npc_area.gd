@@ -1,9 +1,12 @@
-extends Node2D
+extends "res://gd/interactable.gd"
+
+class_name npc_area
+
+@export var player :PackedScene=null
 
 @export var quest_gold_required: int = 4
 var player_gold: int = GlobalInteract.gold_amount
 var quest_complete: bool = false
-
 # Dialogue lines
 var dialogue = [
 	"Hello there, traveler!",
@@ -15,7 +18,7 @@ var dialogue = [
 var dialogue_index: int = 0
 
 # Reference to the player (set dynamically)
-var player: Node = null
+var player_1: Node = null
 
 # Reference to the Label (Dialogue Box)
 @onready var dialogue_label = $Label
@@ -24,7 +27,6 @@ var player: Node = null
 func _ready():
 	# Make sure the player reference is set dynamically when the player enters the area
 	player = null
-
 # Show the appropriate dialogue based on quest progress
 func show_dialogue():
 	if quest_complete:
@@ -36,13 +38,7 @@ func show_dialogue():
 
 	dialogue_label.visible = true
 
-# Process input for interaction (e.g., when the player presses 'E')
-func _process(_delta):
-	if player and Input.is_action_just_pressed("interact"): # Assuming "interact" is mapped to 'E'
-		handle_interaction()
-
-# Handle the interaction logic
-func handle_interaction():
+func interact(_user: Node2D):
 	if quest_complete:
 		return
 
@@ -52,29 +48,31 @@ func handle_interaction():
 		dialogue_index = 2  # Skip to the quest completion dialogue
 		show_dialogue()
 
-# Complete the quest and give the player a reward
+	
 func complete_quest():
 	quest_complete = true
 	player_gold -= quest_gold_required
 	# Call your custom function here to reward the player
 	reward_player()
 	print("Quest completed!")
-
-# Reward the player (you can customize this function)
+	
+	
 func reward_player():
 	# Add custom reward logic here (e.g., giving the player an item or gold)
 	print("Player rewarded with gold or items!")
-
+	
+	
 # Called when the player enters the interaction area
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		print("Player entered the area")
-		player = body  # Set the player reference when they enter the area
+	if body == player:
+		player_1 = body  # Set the player reference when they enter the area
 		show_dialogue()
 
 # Called when the player exits the interaction area
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		print("Player exited the area")
+	if body == player:
 		dialogue_label.visible = false  # Hide dialogue when player exits area
 		player = null  # Reset player reference
+func stop_interaction(_user : Node2D):
+	pass
+# Called when the node enters the scene tree for the first time.

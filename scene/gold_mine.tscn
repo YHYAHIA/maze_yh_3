@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://jpusmbhik7xt"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_2gfsl"]
-[ext_resource type="Script" path="res://scene/area_2d.gd" id="2_gb62j"]
+[ext_resource type="Script" path="res://gd/area_2d (2).gd" id="2_gb62j"]
 [ext_resource type="Texture2D" uid="uid://dgbur53jp7p1g" path="res://Resources/Gold Mine/GoldMine_Inactive.png" id="2_yqdsx"]
 [ext_resource type="Texture2D" uid="uid://25v4c22u1vyx" path="res://Resources/Gold Mine/GoldMine_Active.png" id="3_tgt24"]
 [ext_resource type="Texture2D" uid="uid://d3jaodom3xtw3" path="res://Resources/Gold Mine/GoldMine_Destroyed.png" id="4_4vtba"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv6tbk6cys1f6"]
 
-[ext_resource type="Script" path="res://arow gide.gd" id="1_8skoc"]
+[ext_resource type="Script" path="res://gd/arow gide.gd" id="1_8skoc"]
 [ext_resource type="Texture2D" uid="uid://ddjtso7l31qyl" path="res://arrow_gide_2/Pointers/01.png" id="2_5wl3m"]
 
 [node name="arow_gide" type="Node2D"]
