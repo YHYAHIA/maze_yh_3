@@ -59,7 +59,6 @@ func _on_enemy_removed() -> void:
 	enemy_count -= 1
 
 	if enemy_count < max_enemies:
-		await get_tree().process_frame  # Wait a frame to ensure accuracy
 		if player in $Area2D.get_overlapping_bodies():
 			 
 			timer.start()

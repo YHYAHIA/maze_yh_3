@@ -17,19 +17,18 @@ var dialogue_index: int = 0
 # Reference to the player (set dynamically)
 var player: Node = null
 
-
-
-
+# Reference to the Label (Dialogue Box)
+@onready var dialogue_label = $Label
 
 func show_dialogue():
 	if quest_complete:
-		$Label.text = dialogue[2]
+		dialogue_label.text = dialogue[2]
 	elif player_gold < quest_gold_required:
-		$Label.text = dialogue[dialogue_index]
+		dialogue_label.text = dialogue[dialogue_index]
 	else:
-		$Label.text = "Do you want to complete the quest? Press [E] to confirm."
+		dialogue_label.text = "Do you want to complete the quest? Press [E] to confirm."
 
-	$Label.visible = true
+	dialogue_label.visible = true
 
 func _process(delta):
 	if player and Input.is_action_just_pressed("interact"): # Assuming "ui_accept" is mapped to a key like 'E'
@@ -57,13 +56,11 @@ func reward_player():
 	# Add custom reward logic here
 	print("Player rewarded!")
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		player = body
+	if body.is_in_group("Player"):
 		show_dialogue()
-	
-
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("Player"):
+		dialogue_label.visible = false  # Hide dialogue when player exits area
+		player = null  # Reset player reference
