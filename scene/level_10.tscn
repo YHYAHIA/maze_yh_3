@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://kelw2xnmlg4e"]
+
+[ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="1_7mil5"]
+[ext_resource type="PackedScene" uid="uid://c5kflm8bbt3sk" path="res://scene/health_bar.tscn" id="2_o1lhj"]
+[ext_resource type="PackedScene" uid="uid://c1cy12yqnrt5f" path="res://scene/pause_mniu.tscn" id="3_kso31"]
+[ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="4_vx4wx"]
+
+[node name="level_10" type="Node2D"]
+
+[node name="tiles" type="Node2D" parent="."]
+
+[node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("1_7mil5")]
+max_health = 110
+health_bar = NodePath("../CanvasLayer/health_bar")
+
+[node name="enemys" type="Node2D" parent="."]
+
+[node name="houses" type="Node2D" parent="."]
+
+[node name="damge_areas" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health_bar" parent="CanvasLayer" instance=ExtResource("2_o1lhj")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="pause_mniu1" parent="CanvasLayer2" instance=ExtResource("3_kso31")]
+visible = false
+
+[node name="arow_gide" parent="." instance=ExtResource("4_vx4wx")]
+player = NodePath("../player1")
+missions = Array[NodePath]([NodePath("../CanvasLayer/health_bar")])
