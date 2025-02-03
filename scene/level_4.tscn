@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bqb7wxk7s2g6i"]
+[gd_scene load_steps=28 format=4 uid="uid://bqb7wxk7s2g6i"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_xr1nn"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_xxemb"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://deo3pbuiw2k2d" path="res://scene/dec.tscn" id="6_xmu85"]
 [ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="7_a5byu"]
 [ext_resource type="Texture2D" uid="uid://f35ab6hc3pbr" path="res://Texture/TX Tileset Wall.png" id="7_q1x5j"]
-[ext_resource type="Script" path="res://gd/next_level_3.gd" id="8_2flro"]
 [ext_resource type="PackedScene" uid="uid://cvnlgpauscy5w" path="res://scene/num.tscn" id="8_tiuh8"]
+[ext_resource type="PackedScene" uid="uid://ctklm73civu0o" path="res://scene/next_level.tscn" id="9_8bo33"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="10_fnjlo"]
 [ext_resource type="PackedScene" uid="uid://betbk120w6gnu" path="res://scene/keybox.tscn" id="11_6lsrv"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="11_8uxk2"]
@@ -347,10 +347,6 @@ texture = ExtResource("7_q1x5j")
 [sub_resource type="TileSet" id="TileSet_cxcm0"]
 sources/0 = SubResource("TileSetAtlasSource_4rv54")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6mq4a"]
-radius = 17.9662
-height = 48.0
-
 [node name="level4" type="Node2D"]
 
 [node name="flor" parent="." instance=ExtResource("1_xr1nn")]
@@ -387,6 +383,10 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAwACUAAAAYAAIAAAAxACUAAAAZAAIAAAAyACUAAAAaAAIAAAAzACUAAAAbAAIAAAA0ACUAAAAcAAIAAAA1ACUAAAAYAAIAAAA2ACUAAAAZAAIAAAA3ACUAAAAaAAIAAAA4ACUAAAAbAAIAAAA5ACUAAAAcAAIAAAA6ACUAAAAdAAIAAAA=")
 tile_set = SubResource("TileSet_cxcm0")
 
+[node name="transtionscene" parent="." instance=ExtResource("9_8bo33")]
+position = Vector2(689, 54)
+level_name = "Level5"
+
 [node name="door" parent="." instance=ExtResource("6_e8r5w")]
 light_mask = 512
 z_index = 0
@@ -413,15 +413,6 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(-492, 1550)
 collision_mask = 519
 health_bar = NodePath(".")
-
-[node name="next_level4" type="Area2D" parent="."]
-position = Vector2(689, 53)
-collision_layer = 8
-script = ExtResource("8_2flro")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
-rotation = 1.57252
-shape = SubResource("CapsuleShape2D_6mq4a")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_fnjlo")
@@ -483,9 +474,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="arow_gide" parent="." instance=ExtResource("25_4goh5")]
 player = NodePath("../player1")
-missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../next_level4")])
+missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("")])
 
-[connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
 [connection signal="body_entered" from="numarea2" to="numarea2" method="_on_body_entered"]

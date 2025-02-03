@@ -68,6 +68,7 @@ position = Vector2(-499, 1534)
 health_bar = NodePath("../CanvasLayer/health_bar")
 
 [node name="next_level" parent="." instance=ExtResource("7_ys3eg")]
+position = Vector2(1426, -1043)
 
 [node name="Control" parent="." instance=ExtResource("11_r4osj")]
 offset_top = 337.0
@@ -121,6 +122,5 @@ hide_distance = 200.0
 position = Vector2(1424, -1042)
 
 [connection signal="tree_entered" from="flor dc" to="player1" method="_on_flor_dc_tree_entered"]
-[connection signal="body_entered" from="next_level" to="next_level" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]

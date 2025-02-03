@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dcdwg03wxjg1x"]
+[gd_scene load_steps=37 format=4 uid="uid://dcdwg03wxjg1x"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_8cjgp"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_yqb7e"]
@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cvnlgpauscy5w" path="res://scene/num.tscn" id="9_a4gxr"]
 [ext_resource type="PackedScene" uid="uid://ceaovhqbs7khk" path="res://scene/pridg.tscn" id="10_tgln0"]
 [ext_resource type="PackedScene" uid="uid://dh8nff4ruujpv" path="res://scene/door.tscn" id="11_bn5ak"]
+[ext_resource type="PackedScene" uid="uid://ctklm73civu0o" path="res://scene/next_level.tscn" id="12_7blhg"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="12_lj4q8"]
-[ext_resource type="Script" path="res://gd/next_level_3.gd" id="13_gmcht"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="14_hkhjv"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="15_5kl8b"]
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="16_wkjnl"]
@@ -35,10 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://bhmrxoar6qm46" path="res://scene/meet.tscn" id="32_upfm1"]
 [ext_resource type="PackedScene" uid="uid://jpusmbhik7xt" path="res://scene/gold_mine.tscn" id="33_deyhp"]
 [ext_resource type="PackedScene" uid="uid://dv6tbk6cys1f6" path="res://scene/arow_gide.tscn" id="35_ipctu"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmc7x"]
-radius = 14.0
-height = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ieolk"]
 radius = 35.0571
@@ -94,6 +90,10 @@ z_index = 0
 scale = Vector2(1.8, 1.8)
 tile_map_data = PackedByteArray("AAAgADsAAQAAAAUAAAAgAD8AAQAAAAcAAAAgAEUAAQAAAAcAAAAgAEkAAQAAAA0AAAAZAE4AAQAJAAAAAAAVAE4AAQADAAAAAAAPAE4AAQADAAAAAAALAE4AAQABAAAAAAAgAFQAAQAAAAUAAAAgAFgAAQAAAAcAAAAgAF4AAQAAAAcAAAAgAGIAAQAAAA0AAAAmAGcAAQABAAAAAAAqAGcAAQADAAAAAAAwAGcAAQADAAAAAAA2AGcAAQADAAAAAAA8AGcAAQADAAAAAABAAGcAAQAJAAAAAAAgAGwAAQAAAAUAAAAgAHAAAQAAAAcAAAAgAHYAAQAAAAcAAAAgAHoAAQAAAA0AAAAaAGcAAQAJAAQAABD//04AAQAJAAQAABAmAH8AAQABAAAAAAAqAH8AAQADAAAAAAAwAH8AAQADAAAAAAA2AH8AAQADAAAAAAA8AH8AAQADAAAAAABAAH8AAQAJAAAAAABFAGwAAQAAAAUAAABFAHAAAQAAAAcAAABFAHUAAQAAAAcAAABFAHkAAQAAAA0AAABMAH8AAQABAAAAAABQAH8AAQADAAAAAABWAH8AAQADAAAAAABcAH8AAQADAAAAAABiAH8AAQADAAAAAABoAH8AAQADAAAAAABsAH8AAQAJAAAAAABzAH8AAQAJAAQAAABvAHoAAQAAAAcAAABvAHcAAQAAAAUAAABvAH0AAQAAAA0AAABmAHIAAQAJAAAAAABiAHIAAQADAAAAAABcAHIAAQADAAAAAABWAHIAAQADAAAAAABSAHIAAQABAAAAAABLAHAAAQAAAA0AAABLAGwAAQAAAAcAAABLAGgAAQAAAAUAAAA=")
 
+[node name="transtionscene" parent="." instance=ExtResource("12_7blhg")]
+position = Vector2(1101, -532)
+level_name = "Level10"
+
 [node name="door" parent="." groups=["obstacle"] instance=ExtResource("11_bn5ak")]
 light_mask = 512
 z_index = 0
@@ -117,15 +117,6 @@ y_sort_enabled = true
 position = Vector2(962, 204)
 
 [node name="Control" parent="." instance=ExtResource("12_lj4q8")]
-
-[node name="next_level4" type="Area2D" parent="."]
-position = Vector2(1103, -532)
-collision_layer = 8
-script = ExtResource("13_gmcht")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
-rotation = 1.57252
-shape = SubResource("CapsuleShape2D_gmc7x")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_hkhjv")
@@ -440,7 +431,7 @@ associated_sheep = NodePath("../gold_mine2")
 [node name="arow_gide" parent="." instance=ExtResource("35_ipctu")]
 z_index = 1
 player = NodePath("../player1")
-missions = Array[NodePath]([NodePath("../npc"), NodePath("../gold_mines/gold mine/gold_mine"), NodePath("../gold_mines/gold_min2/gold_mine2"), NodePath("../npc"), NodePath("../keybox2"), NodePath("../keybox3"), NodePath("../door2"), NodePath("../keybox"), NodePath("../door4"), NodePath("../door3"), NodePath("../next_level4")])
+missions = Array[NodePath]([NodePath("../npc"), NodePath("../gold_mines/gold mine/gold_mine"), NodePath("../gold_mines/gold_min2/gold_mine2"), NodePath("../npc"), NodePath("../keybox2"), NodePath("../keybox3"), NodePath("../door2"), NodePath("../keybox"), NodePath("../door4"), NodePath("../door3"), NodePath("")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -449,7 +440,6 @@ missions = Array[NodePath]([NodePath("../npc"), NodePath("../gold_mines/gold min
 [node name="pause_mniu1" parent="pause" instance=ExtResource("28_pedsk")]
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
 [connection signal="body_entered" from="numarea2" to="numarea2" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ctp7bqcudyypg"]
+[gd_scene load_steps=34 format=4 uid="uid://ctp7bqcudyypg"]
 
 [ext_resource type="PackedScene" uid="uid://b6iwcmyamuo1q" path="res://scene/flor.tscn" id="1_m8uo7"]
 [ext_resource type="PackedScene" uid="uid://dvdduivsbbjgm" path="res://scene/shadow.tscn" id="2_n4egs"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://f35ab6hc3pbr" path="res://Texture/TX Tileset Wall.png" id="8_j5r2e"]
 [ext_resource type="PackedScene" uid="uid://dh8nff4ruujpv" path="res://scene/door.tscn" id="9_knq3f"]
 [ext_resource type="PackedScene" uid="uid://b7aoi2vhs7wnh" path="res://scene/nbc.tscn" id="10_lssw2"]
+[ext_resource type="PackedScene" uid="uid://ctklm73civu0o" path="res://scene/next_level.tscn" id="11_f02lk"]
 [ext_resource type="PackedScene" uid="uid://dvbwxxqijyjm1" path="res://scene/control.tscn" id="11_fh1j2"]
 [ext_resource type="PackedScene" uid="uid://cn1di4x7xyr38" path="res://scene/player_1.tscn" id="12_fdr1x"]
-[ext_resource type="Script" path="res://gd/next_level_3.gd" id="13_h80cd"]
 [ext_resource type="AudioStream" uid="uid://bdg2usouk2mc2" path="res://sfx/whoosh2.wav" id="14_7t1fd"]
 [ext_resource type="AudioStream" uid="uid://vdagu6ddsfrq" path="res://sfx/Piano_drone_low_sustained_2.wav" id="15_scpn5"]
 [ext_resource type="AudioStream" uid="uid://cftnvisx4jxav" path="res://sfx/game-music-loop-7-145285.mp3" id="16_edcah"]
@@ -352,10 +352,6 @@ texture = ExtResource("8_j5r2e")
 [sub_resource type="TileSet" id="TileSet_2yd1e"]
 sources/0 = SubResource("TileSetAtlasSource_cdl4d")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pkbvc"]
-radius = 17.9662
-height = 48.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xtih"]
 radius = 35.0571
 
@@ -406,6 +402,10 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAwACUAAAAYAAIAAAAxACUAAAAZAAIAAAAyACUAAAAaAAIAAAAzACUAAAAbAAIAAAA0ACUAAAAcAAIAAAA1ACUAAAAYAAIAAAA2ACUAAAAZAAIAAAA3ACUAAAAaAAIAAAA4ACUAAAAbAAIAAAA5ACUAAAAcAAIAAAA6ACUAAAAdAAIAAABBAEgAAAAVAAUAAABBAFMAAAAVAAcAAAA=")
 tile_set = SubResource("TileSet_2yd1e")
 
+[node name="transtionscene" parent="." instance=ExtResource("11_f02lk")]
+position = Vector2(1105, -530)
+level_name = "Level9"
+
 [node name="door" parent="." instance=ExtResource("9_knq3f")]
 light_mask = 512
 z_index = 0
@@ -427,16 +427,6 @@ position = Vector2(901, 1559)
 scale = Vector2(0.4, 0.4)
 
 [node name="Control" parent="." instance=ExtResource("11_fh1j2")]
-
-[node name="next_level4" type="Area2D" parent="."]
-position = Vector2(209, 606)
-collision_layer = 8
-script = ExtResource("13_h80cd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="next_level4"]
-position = Vector2(896, -1134)
-rotation = 1.57252
-shape = SubResource("CapsuleShape2D_pkbvc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_7t1fd")
@@ -543,11 +533,9 @@ player = NodePath("../player1")
 position = Vector2(-161, 559)
 scale = Vector2(0.6, 0.6)
 
-[node name="Barel" parent="." node_paths=PackedStringArray("player") instance=ExtResource("27_dtqnn")]
+[node name="Barel" parent="." instance=ExtResource("27_dtqnn")]
 position = Vector2(-285, 638)
 scale = Vector2(0.4, 0.4)
-player = NodePath("../player1")
-explosion_damage = 20
 explosion_radius = 120.0
 
 [node name="player1" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("12_fdr1x")]
@@ -590,7 +578,7 @@ max_distance = 9992.0
 
 [node name="arow_gide" parent="." instance=ExtResource("30_ljpgt")]
 player = NodePath("../player1")
-missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../keybox2"), NodePath("../door2"), NodePath("../door3"), NodePath("../next_level4")])
+missions = Array[NodePath]([NodePath("../nbc"), NodePath("../keybox"), NodePath("../keybox2"), NodePath("../door2"), NodePath("../door3"), NodePath("")])
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -604,7 +592,6 @@ metadata/_edit_use_anchors_ = true
 [node name="pause_mniu1" parent="CanvasLayer" instance=ExtResource("25_7qci5")]
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="next_level4" to="next_level4" method="_on_body_entered"]
 [connection signal="body_entered" from="numarea" to="numarea" method="_on_body_entered"]
 [connection signal="body_exited" from="numarea" to="numarea" method="_on_body_exited"]
 [connection signal="body_entered" from="numarea2" to="numarea2" method="_on_body_entered"]
