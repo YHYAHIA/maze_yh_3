@@ -89,7 +89,7 @@ player = ExtResource("4_rgf2m")
 z_index = -1
 shape = SubResource("CircleShape2D_cxtxl")
 
-[node name="Label" type="Label" parent="Area2D"]
+[node name="Label" type="Label" parent="."]
 offset_left = -131.0
 offset_top = -136.0
 offset_right = -33.0

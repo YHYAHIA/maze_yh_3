@@ -21,12 +21,22 @@ var dialogue_index: int = 0
 var player_1: Node = null
 
 # Reference to the Label (Dialogue Box)
-@onready var dialogue_label = $Label
+
+@onready var dialogue_label: Label = $"../Label"
 
 # Called when the node enters the scene tree for the first time
 func _ready():
 	# Make sure the player reference is set dynamically when the player enters the area
 	player = null
+	
+	
+func _process(_delta):
+	if Input.is_action_just_pressed("interact") and player_1:
+		if dialogue_label.visible and dialogue_label.text == "Do you want to complete the quest? Press [E] to confirm." and player_gold >= quest_gold_required:
+			complete_quest()  # Complete the quest if requirements are met
+		else:
+			interact(player_1)  # Proceed with the regular interaction
+
 # Show the appropriate dialogue based on quest progress
 func show_dialogue():
 	if quest_complete:
@@ -52,10 +62,10 @@ func interact(_user: Node2D):
 func complete_quest():
 	quest_complete = true
 	player_gold -= quest_gold_required
-	# Call your custom function here to reward the player
 	reward_player()
-	print("Quest completed!")
-	
+	print("Quest completed!")  # Debug line
+	dialogue_label.text = dialogue[2]
+
 	
 func reward_player():
 	# Add custom reward logic here (e.g., giving the player an item or gold)
@@ -64,13 +74,13 @@ func reward_player():
 	
 # Called when the player enters the interaction area
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player:
+	if body.is_in_group("player"):
 		player_1 = body  # Set the player reference when they enter the area
 		show_dialogue()
 
 # Called when the player exits the interaction area
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body == player:
+	if body.is_in_group("player"):
 		dialogue_label.visible = false  # Hide dialogue when player exits area
 		player = null  # Reset player reference
 func stop_interaction(_user : Node2D):

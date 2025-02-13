@@ -377,9 +377,10 @@ position = Vector2(1424, 3219)
 scale = Vector2(1.2, 1.2)
 player = NodePath("../../player1")
 
-[node name="npc" parent="." instance=ExtResource("32_arsip")]
+[node name="npc" parent="." node_paths=PackedStringArray("player") instance=ExtResource("32_arsip")]
 position = Vector2(-525, 1658)
 scale = Vector2(0.65, 0.65)
+player = NodePath("../player1")
 
 [node name="gold_mines" type="Node" parent="."]
 
